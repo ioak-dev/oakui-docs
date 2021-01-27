@@ -52,6 +52,7 @@
     "no-unused-vars": "off",
     "no-undef": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "no-new": "off"
+    "no-new": "off",
+    "react/style-prop-object": "off"
   }
 }
