@@ -17,7 +17,7 @@ const OakPrompt = (props: Props) => {
   //     return () => document.removeEventListener("keydown", escFunction, false);
   // }, []);
 
-  // const escFunction = (event) => {
+  // const escFunction = (event: any) => {
   //     if(event.keyCode === 27) {
   //       if (props.visible) {
   //         props.toggleVisibility();

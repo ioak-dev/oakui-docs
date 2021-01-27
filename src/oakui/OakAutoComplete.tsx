@@ -33,7 +33,7 @@ const OakAutoComplete = (props: Props) => {
     setSearchOn(true);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setCriteria({ [event.target.name]: event.target.value });
     updateSearchResults(event.target.value);
   };

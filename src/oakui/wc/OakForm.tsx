@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { FORM_SUBMIT_EVENT } from 'lit-element-starter-ts/dist/types/FormEventTypes';
-// import { OakForm as OakFormTag } from 'lit-element-starter-ts/dist/components/public/oak-form';
+import { FORM_SUBMIT_EVENT } from 'oakui/dist/types/FormEventTypes';
+// import { OakForm as OakFormTag } from 'oakui/dist/components/public/oak-form';
 
 interface Props {
   handleSubmit: any;
@@ -11,9 +11,9 @@ interface Props {
 const OakForm = (props: Props) => {
   const elementRef = useRef();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     console.log(event);
-    event.detail.validationResults.forEach((item) => {
+    event.detail.validationResults.forEach((item: any) => {
       console.log(item.formControlValue, typeof item.formControlValue);
     });
     if (props.handleSubmit) {

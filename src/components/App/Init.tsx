@@ -24,7 +24,7 @@ const Init = () => {
   }, [authorization]);
 
   useEffect(() => {
-    receiveMessage().subscribe((event) => {
+    receiveMessage().subscribe((event: any) => {
       if (event.name === 'spaceChange') {
         setSpace(event.data);
       }
@@ -40,7 +40,7 @@ const Init = () => {
     });
 
     // Re-enable focus styling when Tab is pressed
-    document.body.addEventListener('keydown', (event) => {
+    document.body.addEventListener('keydown', (event: any) => {
       if (event.keyCode === 9) {
         sendMessage('usingMouse', false);
       }

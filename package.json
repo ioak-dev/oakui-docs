@@ -6,7 +6,7 @@
   "homepage": "https://oakui-docs.ioak.io",
   "scripts": {
     "start": "webpack serve --config webpack.config.js --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.config.js --mode production",
     "deploy": "npm run build&&gh-pages -d build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
@@ -63,7 +63,7 @@
     "date-fns": "^2.16.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
-    "lit-element-starter-ts": "file:../lit-element-starter-ts-master/lit-element-starter-ts-0.0.0.tgz",
+    "oakui": "file:../oakui/oakui-0.0.0.tgz",
     "query-string": "^6.13.8",
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",

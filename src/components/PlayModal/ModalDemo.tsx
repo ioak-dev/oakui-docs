@@ -13,10 +13,10 @@ const ModalDemo = () => {
     price: 0,
   });
   const [visible, setVisible] = useState(false);
-  const submitForm = (event) => {
+  const submitForm = (event: any) => {
     console.log(event, state);
   };
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     console.log(event);
     setState({ ...state, [event.name]: event.value });
   };

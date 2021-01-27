@@ -9,7 +9,7 @@ const SelectInput = () => {
     testField: '',
   });
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     console.log(event);
     setState({
       ...state,

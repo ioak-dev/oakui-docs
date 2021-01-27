@@ -12,7 +12,7 @@ interface Props {
 }
 
 const TableCell = (props: Props) => {
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     // setState({
     //   ...state,
     //   [event.currentTarget.name]: event.currentTarget.value,

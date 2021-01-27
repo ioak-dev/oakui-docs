@@ -24,7 +24,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    receiveMessage().subscribe((event) => {
+    receiveMessage().subscribe((event: any) => {
       if (event.name === 'spaceChange') {
         setSpace(event.data);
       }

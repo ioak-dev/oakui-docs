@@ -22,7 +22,7 @@ const Home = (props: Props) => {
     category: '',
   });
 
-  const submit = (event) => {
+  const submit = (event: any) => {
     // event.preventDefault();
     console.log(event);
     console.log(state);

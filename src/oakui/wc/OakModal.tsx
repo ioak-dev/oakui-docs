@@ -1,5 +1,5 @@
 import React, { useEffect, ReactNode, useState, useRef } from 'react';
-import ModalEventTypes from 'lit-element-starter-ts/dist/types/ModalEventTypes';
+import ModalEventTypes from 'oakui/dist/types/ModalEventTypes';
 
 interface Props {
   showModal: boolean;

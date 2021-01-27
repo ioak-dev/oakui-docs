@@ -21,7 +21,7 @@ const GettingStartedAsset = (props: Props) => {
     description: '',
   });
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,

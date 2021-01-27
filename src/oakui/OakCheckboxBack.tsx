@@ -11,7 +11,7 @@ interface Props {
   theme?: 'primary' | 'secondary' | 'tertiary' | 'default';
 }
 function OakCheckboxBack(props: Props) {
-  function handleChange(event) {
+  function handleChange(event: any) {
     event.target.value = event.target.checked ? true : '';
     props.handleChange(event);
   }

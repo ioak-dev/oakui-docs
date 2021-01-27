@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { BUTTON_CLICK_EVENT } from 'lit-element-starter-ts/dist/types/ButtonEventTypes';
+import { BUTTON_CLICK_EVENT } from 'oakui/dist/types/ButtonEventTypes';
 
 interface Props {
   handleClick?: any;
@@ -34,12 +34,12 @@ const OakButton = (props: Props) => {
 
   const elementRef = useRef();
 
-  const handleClick = (event) => {
+  const handleClick = (event: any) => {
     console.log('**click');
     props.handleClick(event);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     console.log('**submit');
     props.handleClick(event);
   };

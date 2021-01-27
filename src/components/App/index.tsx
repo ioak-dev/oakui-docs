@@ -4,9 +4,9 @@ import store from '../../store';
 import './style.scss';
 import './metric.scss';
 import Content from './Content';
-import 'lit-element-starter-ts';
+import 'oakui';
 
-const App = (props) => {
+const App = (props: any) => {
   return (
     <Provider store={store}>
       <Content {...props} />

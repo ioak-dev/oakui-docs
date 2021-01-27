@@ -4,7 +4,7 @@ import {
   INPUT_INPUT_EVENT,
   INPUT_SUBMIT_EVENT,
   FILE_SELECTED_EVENT,
-} from 'lit-element-starter-ts/dist/types/InputEventTypes';
+} from 'oakui/dist/types/InputEventTypes';
 
 interface Props {
   name: string;
@@ -23,14 +23,14 @@ interface Props {
 const OakSelect = (props: Props) => {
   const elementRef = useRef();
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     if (props.handleChange) {
       const { detail } = event;
       props.handleChange(detail);
     }
   };
 
-  const handleInput = (event) => {
+  const handleInput = (event: any) => {
     if (props.handleInput) {
       const { detail } = event;
       props.handleInput(detail);

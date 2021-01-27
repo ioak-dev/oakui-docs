@@ -50,7 +50,7 @@ const OakTab = (props: Props) => {
               className={`oak-tab--header--button tab typography-6 ${
                 activeTab === item.slotName ? 'active' : 'inactive'
               }`}
-              onClick={(event) => setActiveTab(item.slotName)}
+              onClick={(event: any) => setActiveTab(item.slotName)}
             >
               {/* <div className="icon"> */}
               <i

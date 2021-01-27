@@ -45,7 +45,7 @@ const OneAuth = (props: Props) => {
     );
   };
 
-  const handleSearchCriteria = (event) => {
+  const handleSearchCriteria = (event: any) => {
     setSearchCriteria({
       ...searchCriteria,
       [event.target.name]: event.target.value,

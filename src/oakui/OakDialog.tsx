@@ -47,7 +47,7 @@ const OakDialog = (props: Props) => {
     return () => document.removeEventListener('keydown', escFunction, false);
   }, [visible]);
 
-  const escFunction = (event) => {
+  const escFunction = (event: any) => {
     if (event.keyCode === 27) {
       if (props.visible) {
         props.toggleVisibility();

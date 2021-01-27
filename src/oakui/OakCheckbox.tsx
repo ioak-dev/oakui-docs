@@ -12,7 +12,7 @@ interface Props {
   disabled?: boolean;
 }
 function OakCheckbox(props: Props) {
-  function handleChange(event) {
+  function handleChange(event: any) {
     props.handleChange(event);
   }
 

@@ -81,14 +81,14 @@ const OakTable = (props: Props) => {
   //   pageChanged();
   // }, [paginationPref]);
 
-  const handleGridChange = (event) => {
+  const handleGridChange = (event: any) => {
     setDatagrid({
       ...datagrid,
       [event.target.name]: event.target.checked ? 1 : 0,
     });
   };
 
-  const handleSearchPrefChange = (event) => {
+  const handleSearchPrefChange = (event: any) => {
     setSearchPref({
       ...searchPref,
       [event.currentTarget.name]: event.currentTarget.value,

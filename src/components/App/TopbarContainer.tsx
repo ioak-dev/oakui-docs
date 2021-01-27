@@ -14,7 +14,7 @@ const TopbarContainer = (props: Props) => {
   const [space, setSpace] = useState('');
 
   useEffect(() => {
-    receiveMessage().subscribe((event) => {
+    receiveMessage().subscribe((event: any) => {
       if (event.name === 'spaceChange') {
         setSpace(event.data);
       }

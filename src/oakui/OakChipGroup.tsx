@@ -38,7 +38,7 @@ const OakChipGroup = (props: Props) => {
     setSearchOn(true);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setSearchOn(true);
     setCriteria({ [event.target.name]: event.target.value });
     updateSearchResults(event.target.value);
@@ -91,7 +91,7 @@ const OakChipGroup = (props: Props) => {
         </div>
         <form
           method="GET"
-          onSubmit={(event) => handleSubmit(event, criteria[id])}
+          onSubmit={(event: any) => handleSubmit(event, criteria[id])}
           noValidate
         >
           <OakText

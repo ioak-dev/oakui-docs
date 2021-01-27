@@ -20,7 +20,7 @@ interface Props {
 
 const TablePagination = (props: Props) => {
   const [showChooseColumns, setShowChooseColumns] = useState(false);
-  const search = (event) => {
+  const search = (event: any) => {
     event.preventDefault();
     props.doSearch();
   };

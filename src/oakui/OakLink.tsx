@@ -44,7 +44,7 @@ const OakLink = (props: Props) => {
     return style;
   };
 
-  const action = (event) => {
+  const action = (event: any) => {
     event.preventDefault();
     props.action();
   };
