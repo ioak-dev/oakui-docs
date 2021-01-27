@@ -19,10 +19,10 @@ const OakChartDoughnut = (props: Props) => {
   const profile = useSelector((state) => state.profile);
 
   useEffect(() => {
-    renderChart(findStepSize(props.datasets, props.type, props.stacked));
+    renderChart();
   }, [props.datasets]);
 
-  const renderChart = (stepSize) => {
+  const renderChart = () => {
     new Chart(document.getElementById(refId), {
       type: 'doughnut',
       data: { datasets: props.datasets, labels: props.categoryLabels },

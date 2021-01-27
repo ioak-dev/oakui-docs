@@ -28,26 +28,26 @@ interface Props {
 const OakInput = (props: Props) => {
   const elementRef = useRef();
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     if (props.handleChange) {
       const { detail } = event;
       props.handleChange(detail);
     }
   };
 
-  const handleInput = (event) => {
+  const handleInput = (event: any) => {
     if (props.handleInput) {
       const { detail } = event;
       props.handleInput(detail);
     }
   };
 
-  const handleFileSelection = (event) => {
+  const handleFileSelection = (event: any) => {
     handleInput(event);
     handleChange(event);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: { detail: any }) => {
     if (props.handleSubmit) {
       const { detail } = event;
       props.handleSubmit(detail);
