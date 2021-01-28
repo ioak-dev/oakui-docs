@@ -9,6 +9,9 @@ declare global {
       'oak-select': any;
       'oak-modal': any;
       'oak-container': any;
+      'oak-form-actions-container': any;
+      'oak-popover': any;
+      'oak-select-modern': any;
     }
   }
 }

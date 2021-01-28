@@ -11,6 +11,7 @@ import ExpandIcon from './ExpandIcon';
 import Logo from '../Logo';
 import ChangeAsset from './ChangeAsset';
 import Header from '../Sidebar/Header';
+import OakPopover from '../../oakui/OakPopover';
 
 interface Props {
   space: string;
@@ -52,6 +53,7 @@ const Topbar = (props: Props) => {
       </div>
       <div className="topbar--right">
         <RightNav cookies={props.cookies} />
+        <OakPopover>pqrd</OakPopover>
       </div>
     </div>
   );

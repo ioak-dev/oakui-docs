@@ -1,112 +1,122 @@
 import { KeyboardArrowDown } from '@material-ui/icons';
-import React, { useState } from 'react';
+import {
+  INPUT_CHANGE_EVENT,
+  INPUT_INPUT_EVENT,
+  INPUT_SUBMIT_EVENT,
+} from 'oakui/dist/types/InputEventTypes';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles/oak-select.scss';
 
 interface Props {
-  id: string;
+  name: string;
   label?: string;
-  handleChange: Function;
-  error?: boolean;
-  data: any;
-  elements?: string[];
-  objects?: Array<any>;
-  first?: string;
-  firstAction?: string;
-  variant?: 'outline' | 'no-outline' | 'block' | 'normal';
-  theme?: 'primary' | 'secondary' | 'tertiary' | 'default';
-  width?: 'width-25' | 'width-50' | 'width-75' | 'width-100';
+  handleChange?: Function;
+  handleInput?: Function;
+  handleSubmit?: Function;
+  value: string;
+  options?: string[];
 }
 
 const OakSelectStyled = (props: Props) => {
-  const [show, setShow] = useState(false);
+  const elementRef = useRef();
 
-  const changeSelection = (e, newValue) => {
-    e.target.name = props.id;
-    e.target.value = newValue;
-    props.handleChange(e);
-    setShow(!show);
+  const handleChange = (event: any) => {
+    if (props.handleChange) {
+      const { detail } = event;
+      props.handleChange(detail);
+    }
   };
 
-  const getStyle = () => {
-    let style = props.theme ? props.theme : '';
-    style += props.variant ? ` ${props.variant}` : '';
-    style += props.width ? ` ${props.width}` : '';
-
-    return style;
+  const handleInput = (event: any) => {
+    if (props.handleInput) {
+      const { detail } = event;
+      props.handleInput(detail);
+    }
   };
 
-  let dropdownList: Array<any> = [];
+  const handleSubmit = (event: { detail: any }) => {
+    if (props.handleSubmit) {
+      const { detail } = event;
+      props.handleSubmit(detail);
+    }
+  };
 
-  if (props.elements) {
-    dropdownList = props.elements.map((item) => (
-      <div
-        className="option"
-        key={item}
-        onClick={(e) => changeSelection(e, item)}
-      >
-        {item}
-      </div>
-    ));
-  } else if (props.objects) {
-    dropdownList = props.objects.map((item) => (
-      <div
-        className="option"
-        key={item.key}
-        onClick={(e) => changeSelection(e, item.key)}
-      >
-        {item.value}
-      </div>
-    ));
-  }
+  useEffect(() => {
+    (elementRef.current as any)!.options = [
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+      'test',
+      'one',
+      'two',
+      'lorem ipsum',
+    ];
+  }, []);
+
+  useEffect(() => {
+    // attachListener('change', handleChange);
+    // attachListener('onSubmit', handleSubmit);
+    (elementRef as any).current.addEventListener(
+      INPUT_CHANGE_EVENT,
+      handleChange
+    );
+    (elementRef as any).current.addEventListener(
+      INPUT_INPUT_EVENT,
+      handleInput
+    );
+    (elementRef as any).current.addEventListener(
+      INPUT_SUBMIT_EVENT,
+      handleSubmit
+    );
+
+    return () => {
+      (elementRef as any).current.removeEventListener(
+        INPUT_CHANGE_EVENT,
+        handleChange
+      );
+      (elementRef as any).current.removeEventListener(
+        INPUT_INPUT_EVENT,
+        handleInput
+      );
+      (elementRef as any).current.removeEventListener(
+        INPUT_SUBMIT_EVENT,
+        handleSubmit
+      );
+    };
+  });
 
   return (
-    <>
-      <div className={`oak-select ${getStyle()}`}>
-        {props.label && <label htmlFor={props.id}>{props.label}</label>}
-        <div
-          className="select-button"
-          id={props.id}
-          onClick={() => setShow(!show)}
-        >
-          {props.elements && <div>{props.data[props.id]}</div>}
-          {props.objects && (
-            <div>
-              {props.objects.find(
-                (element) => element.key === props.data[props.id]
-              ) &&
-                props.objects?.find(
-                  (element) => element.key === props.data[props.id]
-                ).value}
-            </div>
-          )}
-          {/* {this.props.objects && <div>{this.props.objects[0].value}</div>} */}
-          <div>
-            <KeyboardArrowDown />
-          </div>
-        </div>
-        <div className={show ? 'dropdown show' : 'dropdown hide'}>
-          <div className="dropdown-content">
-            {props.first && (
-              <div
-                className="option"
-                onClick={(e) => changeSelection(e, props.first)}
-              >
-                {props.first}
-              </div>
-            )}
-            {props.firstAction && (
-              <div
-                className="option"
-                onClick={(e) => changeSelection(e, props.firstAction)}
-              >
-                {props.firstAction}
-              </div>
-            )}
-            {dropdownList}
-          </div>
-        </div>
-      </div>
-    </>
+    <oak-select-modern
+      ref={elementRef}
+      value={props.value}
+      label="label modern"
+      name={props.name}
+    />
   );
 };
 

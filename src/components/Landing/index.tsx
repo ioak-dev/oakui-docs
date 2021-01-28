@@ -4,7 +4,7 @@ import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
 import ListAssets from './ListAssets';
 import GettingStartedAsset from './GettingStartedAsset';
-import OakFooter from '../../oakui/OakFooter';
+import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakPage from '../../oakui/OakPage';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Landing = (props: Props) => {
-  const authorization = useSelector((state) => state.authorization);
+  const authorization = useSelector((state: any) => state.authorization);
 
   const goToLogin = () => {
     window.location.href = `${process.env.REACT_APP_ONEAUTH_URL}/#/appspace/${process.env.REACT_APP_ONEAUTH_APPSPACE_ID}/login?type=signin&appId=${process.env.REACT_APP_ONEAUTH_APP_ID}`;
@@ -29,11 +29,11 @@ const Landing = (props: Props) => {
           </>
         )}
         {!authorization.isAuth && (
-          <OakFooter align="center">
+          <OakFormActionsContainer align="center">
             <OakButton theme="primary" variant="appear" handleClick={goToLogin}>
               Login
             </OakButton>
-          </OakFooter>
+          </OakFormActionsContainer>
         )}
       </div>
     </OakPage>

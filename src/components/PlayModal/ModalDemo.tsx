@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import OakButton from '../../oakui/wc/OakButton';
-import OakFooter from '../../oakui/OakFooter';
+import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakModal from '../../oakui/wc/OakModal';
 import './ModalDemo.scss';
 import OakForm from '../../oakui/wc/OakForm';
 import OakInput from '../../oakui/wc/OakInput';
+import OakSelectStyled from '../../oakui/OakSelectStyled';
 
 const ModalDemo = () => {
   const [state, setState] = useState({
     collegeName: '',
     city: '',
     price: 0,
+    country: '',
   });
   const [visible, setVisible] = useState(false);
   const submitForm = (event: any) => {
@@ -62,28 +64,31 @@ const ModalDemo = () => {
                 formGroupName="modal-test"
                 type="number"
               />
+              <OakSelectStyled label="select" name="city" value={state.city} />
             </OakForm>
           </div>
           <div slot="footer">
-            <OakButton
-              theme="primary"
-              variant="regular"
-              type="submit"
-              formGroupName="modal-test"
-            >
-              Submit
-            </OakButton>
-            <OakButton
-              handleClick={() => setVisible(false)}
-              theme="default"
-              variant="regular"
-            >
-              Close
-            </OakButton>
+            <OakFormActionsContainer align="right">
+              <OakButton
+                theme="primary"
+                variant="regular"
+                type="submit"
+                formGroupName="modal-test"
+              >
+                Submit
+              </OakButton>
+              <OakButton
+                handleClick={() => setVisible(false)}
+                theme="default"
+                variant="regular"
+              >
+                Close
+              </OakButton>
+            </OakFormActionsContainer>
           </div>
         </OakModal>
       </div>
-      <OakFooter align="left">
+      <OakFormActionsContainer align="left">
         <OakButton
           handleClick={() => setVisible(true)}
           theme="primary"
@@ -91,7 +96,7 @@ const ModalDemo = () => {
         >
           Open modal
         </OakButton>
-      </OakFooter>
+      </OakFormActionsContainer>
     </>
   );
 };

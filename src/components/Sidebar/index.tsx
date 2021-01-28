@@ -14,6 +14,7 @@ import { receiveMessage, sendMessage } from '../../events/MessageService';
 
 import Header from './Header';
 import NavElements from './NavElements';
+import OakPopover from '../../oakui/OakPopover';
 
 const Sidebar = () => {
   const [space, setSpace] = useState('');
@@ -37,7 +38,9 @@ const Sidebar = () => {
         <Header />
       </div>
       <div className="sidebar--nav desktop-only">
+        <OakPopover>side</OakPopover>
         <NavElements space={space} />
+        <OakPopover>side</OakPopover>
       </div>
       <div className="sidebar--nav mobile-only">
         <NavElements space={space} closeAfterRouteChange />

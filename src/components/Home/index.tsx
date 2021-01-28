@@ -7,6 +7,8 @@ import OakButton from '../../oakui/wc/OakButton';
 import OakInput from '../../oakui/wc/OakInput';
 import OakForm from '../../oakui/wc/OakForm';
 import OakSelect from '../../oakui/wc/OakSelect';
+import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
+import OakSelectStyled from '../../oakui/OakSelectStyled';
 
 interface Props {
   match: any;
@@ -20,6 +22,7 @@ const Home = (props: Props) => {
     email: '',
     fileexample: '',
     category: '',
+    country: '',
   });
 
   const submit = (event: any) => {
@@ -33,11 +36,11 @@ const Home = (props: Props) => {
     console.log('787'.match(/^[0-9]+$/));
   }, []);
 
-  const handleChange = (detail) => {
+  const handleChange = (detail: any) => {
     setState({ ...state, [detail.name]: detail.value });
   };
 
-  const validateEmail = (_, __, value): string[] => {
+  const validateEmail = (_, __, value: any): string[] => {
     const outcome: string[] = [];
     if (!value.toString().includes('@')) {
       outcome.push('Not a valid email');
@@ -52,6 +55,16 @@ const Home = (props: Props) => {
       <OakHeading title="Welcome home" />
       {/* <form method="GET" onSubmit={submit} noValidate> */}
       <OakForm formGroupName="home-form" handleSubmit={submit}>
+        <OakSelectStyled
+          name="country"
+          value={state.country}
+          handleChange={handleChange}
+        />
+        <OakSelectStyled
+          name="country"
+          value={state.country}
+          handleChange={handleChange}
+        />
         <OakSelect
           label="Category"
           name="category"
@@ -80,7 +93,6 @@ const Home = (props: Props) => {
           formGroupName="home-form"
           regexp={/^[a-z]*$/}
           minLength={2}
-          maxLength={5}
           tooltip="Your personal information will be protected"
         />
         <OakInput
@@ -104,24 +116,26 @@ const Home = (props: Props) => {
           minLength={5}
           validatorFunction={validateEmail}
         />
-        <OakButton
-          theme="primary"
-          variant="appear"
-          handleClick={submit}
-          type="submit"
-          formGroupName="home-form"
-        >
-          Submit button
-        </OakButton>
-        <OakButton
-          theme="primary"
-          variant="appear"
-          handleClick={submit}
-          type="button"
-          formGroupName="home-form"
-        >
-          Normal button
-        </OakButton>
+        <OakFormActionsContainer>
+          <OakButton
+            theme="primary"
+            variant="appear"
+            handleClick={submit}
+            type="submit"
+            formGroupName="home-form"
+          >
+            Submit button
+          </OakButton>
+          <OakButton
+            theme="primary"
+            variant="appear"
+            handleClick={submit}
+            type="button"
+            formGroupName="home-form"
+          >
+            Normal button
+          </OakButton>
+        </OakFormActionsContainer>
       </OakForm>
       {/* </form> */}
     </OakCard>
