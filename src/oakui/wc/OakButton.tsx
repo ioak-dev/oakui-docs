@@ -52,11 +52,14 @@ const OakButton = (props: Props) => {
     (elementRef as any).current.addEventListener('onSubmit', handleSubmit);
 
     return () => {
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         BUTTON_CLICK_EVENT,
         handleClick
       );
-      (elementRef as any).current.removeEventListener('onSubmit', handleSubmit);
+      (elementRef as any).current?.removeEventListener(
+        'onSubmit',
+        handleSubmit
+      );
     };
   });
 

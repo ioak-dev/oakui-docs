@@ -24,7 +24,7 @@ const OakModal = (props: Props) => {
     );
 
     return () => {
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         ModalEventTypes.CLOSE_MODAL,
         props.handleClose
       );

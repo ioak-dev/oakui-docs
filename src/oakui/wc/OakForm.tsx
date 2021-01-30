@@ -29,7 +29,7 @@ const OakForm = (props: Props) => {
     );
 
     return () => {
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         FORM_SUBMIT_EVENT,
         handleSubmit
       );

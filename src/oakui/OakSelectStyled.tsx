@@ -10,6 +10,7 @@ import './styles/oak-select.scss';
 interface Props {
   name: string;
   label?: string;
+  placeholder?: string;
   handleChange?: Function;
   handleInput?: Function;
   handleSubmit?: Function;
@@ -76,7 +77,7 @@ const OakSelectStyled = (props: Props) => {
       'two',
       'lorem ipsum',
     ];
-  }, []);
+  }, [props.options]);
 
   useEffect(() => {
     // attachListener('change', handleChange);
@@ -113,9 +114,10 @@ const OakSelectStyled = (props: Props) => {
   return (
     <oak-select-modern
       ref={elementRef}
-      value={props.value}
-      label="label modern"
       name={props.name}
+      label={props.label}
+      placeholder={props.placeholder}
+      value={props.value}
     />
   );
 };

@@ -75,19 +75,19 @@ const OakInput = (props: Props) => {
     );
 
     return () => {
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         INPUT_CHANGE_EVENT,
         handleChange
       );
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         INPUT_INPUT_EVENT,
         handleInput
       );
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         INPUT_SUBMIT_EVENT,
         handleSubmit
       );
-      (elementRef as any).current.removeEventListener(
+      (elementRef as any).current?.removeEventListener(
         FILE_SELECTED_EVENT,
         handleFileSelection
       );

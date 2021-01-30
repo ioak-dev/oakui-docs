@@ -65,6 +65,39 @@ const ModalDemo = () => {
                 type="number"
               />
               <OakSelectStyled label="select" name="city" value={state.city} />
+              <OakInput
+                label="City"
+                name="city"
+                value={state.city}
+                placeholder="City placeholder"
+                handleChange={handleChange}
+                formGroupName="modal-test"
+                regexp={/^[a-z]*$/}
+                minLength={2}
+                maxLength={5}
+                tooltip="City tooltip"
+              />
+              <OakInput
+                label="College name"
+                name="collegeName"
+                value={state.collegeName}
+                placeholder="Your college name"
+                handleChange={handleChange}
+                formGroupName="modal-test"
+                type="text"
+                minLength={2}
+                maxLength={10}
+              />
+              <OakInput
+                label="Price"
+                name="price"
+                value={state.price}
+                placeholder="Price amount"
+                handleChange={handleChange}
+                formGroupName="modal-test"
+                type="number"
+              />
+              <OakSelectStyled label="select" name="city" value={state.city} />
             </OakForm>
           </div>
           <div slot="footer">

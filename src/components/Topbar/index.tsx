@@ -12,6 +12,7 @@ import Logo from '../Logo';
 import ChangeAsset from './ChangeAsset';
 import Header from '../Sidebar/Header';
 import OakPopover from '../../oakui/OakPopover';
+import OakSelectStyled from '../../oakui/OakSelectStyled';
 
 interface Props {
   space: string;
@@ -53,7 +54,7 @@ const Topbar = (props: Props) => {
       </div>
       <div className="topbar--right">
         <RightNav cookies={props.cookies} />
-        <OakPopover>pqrd</OakPopover>
+        <OakSelectStyled name="test" value="one" />
       </div>
     </div>
   );
