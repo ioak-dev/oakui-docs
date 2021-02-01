@@ -11,6 +11,7 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
+  formGroupName?: string;
   handleChange?: Function;
   handleInput?: Function;
   handleSubmit?: Function;
@@ -118,6 +119,7 @@ const OakSelectStyled = (props: Props) => {
       label={props.label}
       placeholder={props.placeholder}
       value={props.value}
+      formGroupName={props.formGroupName}
     />
   );
 };

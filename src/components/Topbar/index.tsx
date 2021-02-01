@@ -5,14 +5,10 @@ import { getProfile, setProfile } from '../../actions/ProfileActions';
 
 import './style.scss';
 
-import Links from '../Navigation/Links';
 import RightNav from './RightNav';
 import ExpandIcon from './ExpandIcon';
 import Logo from '../Logo';
 import ChangeAsset from './ChangeAsset';
-import Header from '../Sidebar/Header';
-import OakPopover from '../../oakui/OakPopover';
-import OakSelectStyled from '../../oakui/OakSelectStyled';
 
 interface Props {
   space: string;
@@ -54,7 +50,6 @@ const Topbar = (props: Props) => {
       </div>
       <div className="topbar--right">
         <RightNav cookies={props.cookies} />
-        <OakSelectStyled name="test" value="one" />
       </div>
     </div>
   );

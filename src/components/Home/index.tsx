@@ -51,15 +51,15 @@ const Home = (props: Props) => {
   };
 
   return (
-    <OakCard>
+    <>
       <OakHeading title="Welcome home" />
-      {/* <form method="GET" onSubmit={submit} noValidate> */}
       <OakForm formGroupName="home-form" handleSubmit={submit}>
         <OakSelectStyled
           name="country"
           value={state.country}
           placeholder="Choose country"
           label="Country"
+          formGroupName="home-form"
           handleChange={handleChange}
         />
         <OakSelect
@@ -134,8 +134,7 @@ const Home = (props: Props) => {
           </OakButton>
         </OakFormActionsContainer>
       </OakForm>
-      {/* </form> */}
-    </OakCard>
+    </>
   );
 };
 
