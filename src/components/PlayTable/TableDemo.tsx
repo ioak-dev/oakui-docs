@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import OakCard from '../../oakui/OakCard';
+import OakCard from '../../oakui/wc/OakCard';
 import OakTable from '../../oakui/OakTable';
 import './TableDemo.scss';
 

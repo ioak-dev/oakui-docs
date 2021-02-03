@@ -1,7 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import OakHeading from '../../oakui/OakHeading';
-import OakCard from '../../oakui/OakCard';
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
 import OakInput from '../../oakui/wc/OakInput';
@@ -9,6 +8,7 @@ import OakForm from '../../oakui/wc/OakForm';
 import OakSelect from '../../oakui/wc/OakSelect';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakSelectStyled from '../../oakui/OakSelectStyled';
+import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
   match: any;
@@ -29,6 +29,19 @@ const Home = (props: Props) => {
     // event.preventDefault();
     console.log(event);
     console.log(state);
+  };
+
+  const reset = (event: any) => {
+    // event.preventDefault();
+    console.log(event);
+    setState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      fileexample: '',
+      category: '',
+      country: '',
+    });
   };
 
   useEffect(() => {
@@ -53,7 +66,27 @@ const Home = (props: Props) => {
   return (
     <>
       <OakHeading title="Welcome home" />
-      <OakForm formGroupName="home-form" handleSubmit={submit}>
+      <OakTypography variant="h1">heading one</OakTypography>
+      <OakTypography variant="h2">heading two</OakTypography>
+      <OakTypography variant="h3">heading three</OakTypography>
+      <OakTypography variant="h4">heading four</OakTypography>
+      <OakTypography variant="h5">heading five</OakTypography>
+      <OakTypography variant="h6">heading six</OakTypography>
+      <OakTypography variant="body1">Body one</OakTypography>
+      <OakTypography variant="body2">Body two</OakTypography>
+      <OakTypography variant="caption">Caption</OakTypography>
+      <OakTypography variant="subtitle1">Subtitle one</OakTypography>
+      <OakTypography variant="subtitle2">Subtitle two</OakTypography>
+      <OakTypography variant="overline">Overline</OakTypography>
+      <OakTypography>Default</OakTypography>
+      <OakTypography variant="inherit" paragraph>
+        Inherit
+      </OakTypography>
+      <OakForm
+        formGroupName="home-form"
+        handleSubmit={submit}
+        handleReset={reset}
+      >
         <OakSelectStyled
           name="country"
           value={state.country}
@@ -113,18 +146,33 @@ const Home = (props: Props) => {
           minLength={5}
           validatorFunction={validateEmail}
         />
+        <OakSelectStyled
+          name="country"
+          value={state.country}
+          placeholder="Choose country"
+          label="Country"
+          formGroupName="home-form"
+          handleChange={handleChange}
+        />
         <OakFormActionsContainer>
           <OakButton
             theme="primary"
             variant="appear"
-            handleClick={submit}
             type="submit"
             formGroupName="home-form"
           >
             Submit button
           </OakButton>
           <OakButton
-            theme="primary"
+            theme="default"
+            variant="appear"
+            type="reset"
+            formGroupName="home-form"
+          >
+            Reset button
+          </OakButton>
+          <OakButton
+            theme="default"
             variant="appear"
             handleClick={submit}
             type="button"

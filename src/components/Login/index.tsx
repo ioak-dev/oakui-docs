@@ -4,7 +4,7 @@ import './style.scss';
 import LoginMethod from './LoginMethod';
 import OakHeading from '../../oakui/OakHeading';
 import OakPage from '../../oakui/OakPage';
-import OakCard from '../../oakui/OakCard';
+import OakCard from '../../oakui/wc/OakCard';
 import oaBlack from '../../images/oneauth_black_small.svg';
 import oaWhite from '../../images/oneauth_white_small.svg';
 

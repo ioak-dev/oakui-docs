@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import OakHeading from '../../oakui/OakHeading';
-import OakCard from '../../oakui/OakCard';
+import OakCard from '../../oakui/wc/OakCard';
 import FileInput from './FileInput';
 import SelectInput from './SelectInput';
 import './style.scss';

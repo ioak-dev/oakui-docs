@@ -16,8 +16,10 @@ interface Props {
   handleInput?: any;
   tooltip?: string;
   multiple?: boolean;
+  disabled?: boolean;
   options?: any[];
   optionsAsKeyValue?: any[];
+  native?: boolean;
 }
 
 const OakSelect = (props: Props) => {
@@ -60,6 +62,18 @@ const OakSelect = (props: Props) => {
   });
 
   useEffect(() => {
+    (elementRef.current as any)!.multiple = props.multiple;
+  }, [props.multiple]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.disabled = props.disabled;
+  }, [props.disabled]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.native = props.native;
+  }, [props.native]);
+
+  useEffect(() => {
     (elementRef.current as any)!.options = props.options;
   }, [props.options]);
 
@@ -70,11 +84,11 @@ const OakSelect = (props: Props) => {
   return (
     <oak-select
       ref={elementRef}
+      formGroupName={props.formGroupName}
       label={props.label}
       name={props.name}
       value={props.value}
       placeholder={props.placeholder}
-      formGroupName={props.formGroupName}
       tooltip={props.tooltip}
       multiple={props.multiple}
     />

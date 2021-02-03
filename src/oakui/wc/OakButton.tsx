@@ -25,7 +25,7 @@ interface Props {
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf' | 'icon';
   align?: 'left' | 'right' | 'center';
   children?: ReactNode;
-  type?: 'button' | 'submit' | 'link';
+  type?: 'button' | 'submit' | 'reset';
   formGroupName?: string;
 }
 

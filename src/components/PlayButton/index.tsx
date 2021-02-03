@@ -1,6 +1,6 @@
 import React from 'react';
 import OakHeading from '../../oakui/OakHeading';
-import OakCard from '../../oakui/OakCard';
+import OakCard from '../../oakui/wc/OakCard';
 import ButtonDemo from './ButtonDemo';
 import './style.scss';
 

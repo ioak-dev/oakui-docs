@@ -6,6 +6,7 @@ import './ModalDemo.scss';
 import OakForm from '../../oakui/wc/OakForm';
 import OakInput from '../../oakui/wc/OakInput';
 import OakSelectStyled from '../../oakui/OakSelectStyled';
+import OakSelect from '../../oakui/wc/OakSelect';
 
 const ModalDemo = () => {
   const [state, setState] = useState({
@@ -18,9 +19,9 @@ const ModalDemo = () => {
   const submitForm = (event: any) => {
     console.log(event, state);
   };
-  const handleChange = (event: any) => {
-    console.log(event);
-    setState({ ...state, [event.name]: event.value });
+
+  const handleChange = (detail: any) => {
+    setState({ ...state, [detail.name]: detail.value });
   };
   return (
     <>
@@ -64,7 +65,64 @@ const ModalDemo = () => {
                 formGroupName="modal-test"
                 type="number"
               />
-              <OakSelectStyled label="select" name="city" value={state.city} />
+              <OakSelect
+                label="select"
+                name="city"
+                formGroupName="modal-test"
+                value={state.city}
+                handleChange={handleChange}
+                options={['wert', 'lorem']}
+              />
+              <OakSelect
+                label="select"
+                name="city"
+                formGroupName="modal-test"
+                value={state.city}
+                handleChange={handleChange}
+                options={['wert', 'lorem']}
+                native
+              />
+              <OakSelect
+                label="select"
+                name="city"
+                formGroupName="modal-test"
+                value={state.city}
+                handleChange={handleChange}
+                options={[
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                ]}
+              />
               <OakInput
                 label="City"
                 name="city"
@@ -97,7 +155,6 @@ const ModalDemo = () => {
                 formGroupName="modal-test"
                 type="number"
               />
-              <OakSelectStyled label="select" name="city" value={state.city} />
             </OakForm>
           </div>
           <div slot="footer">

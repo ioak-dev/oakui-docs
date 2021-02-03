@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OakCard from '../../oakui/OakCard';
+import OakCard from '../../oakui/wc/OakCard';
 import './SelectInput.scss';
 import OakSelectPlain from '../../oakui/OakSelectPlain';
 import OakSelect from '../../oakui/wc/OakSelect';
@@ -18,7 +18,7 @@ const SelectInput = () => {
   };
 
   return (
-    <OakCard title="Select input">
+    <OakCard heading="Select input">
       <OakSelect
         value={state.testField}
         name="testField"

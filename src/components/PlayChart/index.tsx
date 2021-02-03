@@ -1,7 +1,7 @@
 import React from 'react';
 import OakContainer from '../../oakui/wc/OakContainer';
 import OakHeading from '../../oakui/OakHeading';
-import OakCard from '../../oakui/OakCard';
+import OakCard from '../../oakui/wc/OakCard';
 import ChartDemo from './ChartDemo';
 import './style.scss';
 
