@@ -5,7 +5,6 @@ import OakModal from '../../oakui/wc/OakModal';
 import './ModalDemo.scss';
 import OakForm from '../../oakui/wc/OakForm';
 import OakInput from '../../oakui/wc/OakInput';
-import OakSelectStyled from '../../oakui/OakSelectStyled';
 import OakSelect from '../../oakui/wc/OakSelect';
 
 const ModalDemo = () => {

@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import './style.scss';
 import LoginMethod from './LoginMethod';
-import OakHeading from '../../oakui/OakHeading';
 import OakPage from '../../oakui/OakPage';
 import OakCard from '../../oakui/wc/OakCard';
-import oaBlack from '../../images/oneauth_black_small.svg';
-import oaWhite from '../../images/oneauth_white_small.svg';
+import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
   history: any;
@@ -51,10 +49,10 @@ const Login = (props: Props) => {
   return (
     <OakPage>
       <OakCard>
-        <OakHeading
-          title="Sign in"
-          subtitle="Choose the preferred authentication method to continue"
-        />
+        <OakTypography variant="h2">Sign in</OakTypography>
+        <OakTypography variant="subtitle1">
+          Choose the preferred authentication method to continue
+        </OakTypography>
         <div className="view-asset-item">
           <div className="space-top-3 infinite-reserve-signin">
             <div className="login-home">

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { formatDate } from '../components/Lib/DateUtils';
-import OakSelectPlain from './OakSelectPlain';
 import OakText from './OakText';
 import './styles/TableCell.scss';
+import OakSelect from './wc/OakSelect';
 
 interface Props {
   row: any;
@@ -62,12 +62,12 @@ const TableCell = (props: Props) => {
         />
       )}
       {props.header.dtype === 'input_select' && (
-        <OakSelectPlain
-          data={props.row}
+        <OakSelect
+          value={props.row[props.columnKey]}
           handleChange={handleChange}
-          id={props.columnKey}
-          objects={props.header.elements}
-          elements={['fr', 'gr', 'lorem ipsum dolor sit', 'dolor']}
+          name={props.columnKey}
+          optionsAsKeyValue={props.header.elements}
+          options={['fr', 'gr', 'lorem ipsum dolor sit', 'dolor']}
         />
       )}
       {![

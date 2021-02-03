@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import OakCard from '../../oakui/wc/OakCard';
 import './SelectInput.scss';
-import OakSelectPlain from '../../oakui/OakSelectPlain';
 import OakSelect from '../../oakui/wc/OakSelect';
 
 const SelectInput = () => {
@@ -68,12 +67,12 @@ const SelectInput = () => {
           'dsas sdafds af ds f dsaf',
         ]}
       />
-      <OakSelectPlain
-        data={state}
-        id="testField"
+      <OakSelect
+        value={state.testField}
+        name="testField"
         handleChange={handleChange}
         label="Test label"
-        elements={[
+        options={[
           'one',
           'two',
           'three',

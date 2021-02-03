@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import OakHeading from '../../oakui/OakHeading';
 import OakCard from '../../oakui/wc/OakCard';
 import FileInput from './FileInput';
-import SelectInput from './SelectInput';
 import './style.scss';
 import OakInput from '../../oakui/wc/OakInput';
+import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
   match: any;
@@ -31,7 +30,7 @@ const PlayFormElements = (props: Props) => {
   return (
     <>
       <OakCard>
-        <OakHeading title="Form Elements" />
+        <OakTypography variant="h2">Form Elements</OakTypography>
       </OakCard>
       <OakInput
         label="First name"

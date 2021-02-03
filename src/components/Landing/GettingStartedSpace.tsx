@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
-import OakHeading from '../../oakui/OakHeading';
+import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
   history: any;
@@ -14,7 +14,7 @@ const GettingStartedSpace = (props: Props) => {
   return (
     <div className="getting-started">
       <div>
-        <OakHeading title="Getting Started" />
+        <OakTypography variant="h2">Getting Started</OakTypography>
         <div className="getting-started--steps space-top-2">
           <div className="typography-7">Create Space</div>
           <div className="typography-4">

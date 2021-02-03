@@ -1,13 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import OakHeading from '../../oakui/OakHeading';
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
 import OakInput from '../../oakui/wc/OakInput';
 import OakForm from '../../oakui/wc/OakForm';
 import OakSelect from '../../oakui/wc/OakSelect';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
-import OakSelectStyled from '../../oakui/OakSelectStyled';
 import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
@@ -65,7 +63,7 @@ const Home = (props: Props) => {
 
   return (
     <>
-      <OakHeading title="Welcome home" />
+      <OakTypography variant="h2">Home</OakTypography>
       <OakTypography variant="h1">heading one</OakTypography>
       <OakTypography variant="h2">heading two</OakTypography>
       <OakTypography variant="h3">heading three</OakTypography>
@@ -87,7 +85,7 @@ const Home = (props: Props) => {
         handleSubmit={submit}
         handleReset={reset}
       >
-        <OakSelectStyled
+        <OakSelect
           name="country"
           value={state.country}
           placeholder="Choose country"
@@ -146,7 +144,7 @@ const Home = (props: Props) => {
           minLength={5}
           validatorFunction={validateEmail}
         />
-        <OakSelectStyled
+        <OakSelect
           name="country"
           value={state.country}
           placeholder="Choose country"

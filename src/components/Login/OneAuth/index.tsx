@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import OakButton from '../../../oakui/wc/OakButton';
 import OakText from '../../../oakui/OakText';
 import { isEmptyOrSpaces, isEmptyAttributes } from '../../Utils';
-import OakHeading from '../../../oakui/OakHeading';
 import OakPage from '../../../oakui/OakPage';
 import OakCard from '../../../oakui/wc/OakCard';
 import { fetchSpace } from '../../Auth/AuthService';
 import SpaceItem from './SpaceItem';
 import './style.scss';
+import OakTypography from '../../../oakui/wc/OakTypography';
 
 interface Props {
   history: any;
@@ -79,23 +79,13 @@ const OneAuth = (props: Props) => {
       <OakCard>
         <div className="view-space-item">
           <div className="page-header">
-            <OakHeading
-              title="Login via Oneauth"
-              subtitle="You will be redirected to oneauth for signing in to your space"
-              links={getHeadingLinks()}
-              linkSize="large"
-            />
-            {/* <div className="action-header position-right">
-              {props.history.length > 2 && (
-                <OakButton
-                  action={() => cancelCreation()}
-                  theme="default"
-                  variant="appear"
-                >
-                  <i className="material-icons">close</i>Back
-                </OakButton>
-              )}
-            </div> */}
+            <OakTypography variant="h2">
+              {/* links={getHeadingLinks()} */}
+              Login via Oneauth
+            </OakTypography>
+            <OakTypography variant="subtitle1">
+              You will be redirected to oneauth for signing in to your space
+            </OakTypography>
           </div>
           <OakText
             label="Type company name to filter"

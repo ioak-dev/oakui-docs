@@ -1,9 +1,7 @@
 import React from 'react';
-import OakHeading from '../../oakui/OakHeading';
-import OakCard from '../../oakui/wc/OakCard';
+import OakTypography from '../../oakui/wc/OakTypography';
 import './style.scss';
 import TableDemo from './TableDemo';
-import OakContainer from '../../oakui/wc/OakContainer';
 
 interface Props {
   match: any;
@@ -19,7 +17,7 @@ const PlayTable = (props: Props) => {
     //   <div className="auth-token">{authorization.token}</div>
     // </div>
     <>
-      <OakHeading title="Table" />
+      <OakTypography variant="h2">Table</OakTypography>
       <div className="play-table--list">
         <div className="play-table--list--item">
           <TableDemo />

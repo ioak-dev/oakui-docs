@@ -1,5 +1,4 @@
 import React from 'react';
-import OakHeading from '../../oakui/OakHeading';
 import OakCard from '../../oakui/wc/OakCard';
 import OakSpinner from '../../oakui/OakSpinner';
 import './SpinnerDemo.scss';

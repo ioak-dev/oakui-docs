@@ -1,9 +1,9 @@
 import React from 'react';
-import OakHeading from '../../oakui/OakHeading';
 import OakCard from '../../oakui/wc/OakCard';
 import OakSpinner from '../../oakui/OakSpinner';
 import SpinnerDemo from './SpinnerDemo';
 import './style.scss';
+import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
   match: any;
@@ -21,10 +21,10 @@ const PlaySpinner = (props: Props) => {
     <>
       {/* <OakSpinner style="bouncing-dots" /> */}
       <OakCard>
-        <OakHeading
-          title="Oak UI Playground"
-          subtitle="Demo on how the newly created OAK UI components work"
-        />
+        <OakTypography variant="h2">Oak UI Playground</OakTypography>
+        <OakTypography variant="subtitle1">
+          Demo on how the newly created OAK UI components work
+        </OakTypography>
       </OakCard>
       <SpinnerDemo />
     </>

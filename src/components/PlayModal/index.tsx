@@ -1,6 +1,5 @@
 import React from 'react';
-import OakHeading from '../../oakui/OakHeading';
-import OakCard from '../../oakui/wc/OakCard';
+import OakTypography from '../../oakui/wc/OakTypography';
 import ModalDemo from './ModalDemo';
 import './style.scss';
 
@@ -12,7 +11,7 @@ interface Props {
 const PlayModal = (props: Props) => {
   return (
     <>
-      <OakHeading title="Modal dialog" />
+      <OakTypography variant="h2">Modal dialog</OakTypography>
       <div className="">
         Deserunt enim neque ut incidunt quisquam tenetur quis repudiandae
         facere. Incidunt repudiandae quos debitis ipsam magnam eveniet quas

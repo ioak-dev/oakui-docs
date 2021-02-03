@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
-import OakHeading from '../../oakui/OakHeading';
 import OakText from '../../oakui/OakText';
 import { newMessageId, sendMessage } from '../../events/MessageService';
 import createAsset from './service';
 import { fetchAllAssets } from '../../actions/AssetActions';
 import OakForm from '../../oakui/wc/OakForm';
+import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
   history: any;
@@ -71,7 +71,7 @@ const GettingStartedAsset = (props: Props) => {
       )}
       {showCreate && (
         <>
-          <OakHeading title="Setup new asset" />
+          <OakTypography variant="h2">Setup new asset</OakTypography>
           <OakForm handleSubmit={save} formGroupName="create-asset-form">
             <OakText
               data={state}

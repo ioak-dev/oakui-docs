@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import OakTypography from '../../oakui/wc/OakTypography';
 import OakContainer from '../../oakui/wc/OakContainer';
-import OakSubheading from '../../oakui/OakSubheading';
 import './ButtonDemo.scss';
 import ButtonDemoContrast from './ButtonDemoContrast';
 import ButtonDemoIcon from './ButtonDemoIcon';
@@ -14,92 +14,114 @@ const ButtonDemo = () => {
     <OakContainer paddingHorizontal={4} paddingVertical={2} rounded>
       <div className="button-demo">
         <div>
-          <OakSubheading
-            title="Size demonstration"
-            subtitle="You can vary button dimension using size attribute"
-          />
+          <OakTypography variant="h3">Size demonstration</OakTypography>
+          <OakTypography variant="subtitle1">
+            You can vary button dimension using size attribute
+          </OakTypography>
           <ButtonDemoSize />
         </div>
 
         <div>
-          <OakSubheading
-            title="Shape demonstration"
-            subtitle="You can vary button shapes using shape attribute"
-          />
+          <OakTypography variant="h3">Shape demonstration</OakTypography>
+          <OakTypography variant="subtitle1">
+            You can vary button shapes using shape attribute
+          </OakTypography>
           <ButtonDemoShape />
         </div>
         <div>
-          <OakSubheading
-            title="Theme demonstration"
-            subtitle="You can vary color themes using theme attribute"
-          />
+          <OakTypography variant="h3">Theme demonstration</OakTypography>
+          <OakTypography variant="subtitle1">
+            You can vary color themes using theme attribute
+          </OakTypography>
           <ButtonDemoTheme />
         </div>
         <div>
-          <OakSubheading
-            title="Variant demonstration"
-            subtitle="You can choose among available button style dynamism / hover changes using variant attribute"
-          />
+          <OakTypography variant="h3">Variant demonstration</OakTypography>
+          <OakTypography variant="subtitle1">
+            You can choose among available button style dynamism / hover changes
+            using variant attribute
+          </OakTypography>
           <ButtonDemoVariant />
         </div>
         <div>
-          <OakSubheading
-            title="Primary color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for primary color scheme"
-          />
+          <OakTypography variant="h3">
+            Primary color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for primary color
+            scheme
+          </OakTypography>
           <ButtonDemoContrast theme="primary" />
         </div>
         <div>
-          <OakSubheading
-            title="Secondary color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for secondary color scheme"
-          />
+          <OakTypography variant="h3">
+            Secondary color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for secondary color
+            scheme
+          </OakTypography>
           <ButtonDemoContrast theme="secondary" />
         </div>
         <div>
-          <OakSubheading
-            title="Tertiary color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for tertiary color scheme"
-          />
+          <OakTypography variant="h3">
+            Tertiary color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for tertiary color
+            scheme
+          </OakTypography>
           <ButtonDemoContrast theme="tertiary" />
         </div>
         <div>
-          <OakSubheading
-            title="Default color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for default color scheme"
-          />
+          <OakTypography variant="h3">
+            Default color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for default color
+            scheme
+          </OakTypography>
           <ButtonDemoContrast theme="default" />
         </div>
         <div>
-          <OakSubheading
-            title="Info color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for info color scheme"
-          />
+          <OakTypography variant="h3">
+            Info color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for info color scheme
+          </OakTypography>
           <ButtonDemoContrast theme="info" />
         </div>
         <div>
-          <OakSubheading
-            title="Danger color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for danger color scheme"
-          />
+          <OakTypography variant="h3">
+            Danger color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for danger color scheme
+          </OakTypography>
           <ButtonDemoContrast theme="danger" />
         </div>
         <div>
-          <OakSubheading
-            title="Warning color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for warning color scheme"
-          />
+          <OakTypography variant="h3">
+            Warning color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for warning color
+            scheme
+          </OakTypography>
           <ButtonDemoContrast theme="warning" />
         </div>
         <div>
-          <OakSubheading
-            title="Success color scheme contrast testing"
-            subtitle="Test contrast levels on dark and light modes for success color scheme"
-          />
-          <ButtonDemoContrast theme="success" />
+          <OakTypography variant="h3">
+            Success color scheme contrast testing
+          </OakTypography>
+          <OakTypography variant="subtitle1">
+            Test contrast levels on dark and light modes for success color
+            scheme
+          </OakTypography>
         </div>
         <div>
-          <OakSubheading title="Icon demo" subtitle="TBD" />
+          <OakTypography variant="h3">Icon demo</OakTypography>
           <ButtonDemoIcon />
         </div>
       </div>
