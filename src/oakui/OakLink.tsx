@@ -1,63 +1,76 @@
-import React, { ReactNode } from 'react';
-import { useSelector } from 'react-redux';
-import './styles/oak-link.scss';
+import React, { ReactNode, useEffect, useRef } from 'react';
+import { LINK_CLICK_EVENT } from 'oakui/dist/types/LinkEventTypes';
 
 interface Props {
-  icon?: string; // points to "mat" material icon
-  fa?: string;
-  svg?: string;
-  action?: any;
+  handleClick?: any;
+  href?: string;
+  children: any;
+  align?: 'inherit' | 'left' | 'center' | 'right' | 'justify';
+  display?: 'initial' | 'block' | 'inline';
   variant?:
-    | 'block'
-    | 'outline'
-    | 'appear'
-    | 'disappear'
-    | 'regular'
-    | 'disabled'
-    | 'drama';
-  theme?: 'primary' | 'secondary' | 'tertiary' | 'default';
-  align?: 'left' | 'right' | 'center';
-  small?: boolean;
-  invert?: boolean;
-  children?: ReactNode;
-  type?: 'button' | 'submit';
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'body1'
+    | 'body2'
+    | 'caption'
+    | 'overline'
+    | 'inherit';
+  color?:
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'primary-text'
+    | 'secondary-text'
+    | 'tertiary-text'
+    | 'default'
+    | 'danger'
+    | 'warning'
+    | 'success'
+    | 'danger-text'
+    | 'warning-text'
+    | 'success-text'
+    | 'info';
+  underline?: 'none' | 'hover' | 'always';
   disabled?: boolean;
 }
 
 const OakLink = (props: Props) => {
-  const profile = useSelector((state) => state.profile);
-  const getStyle = () => {
-    let style = props.theme ? props.theme : '';
-    style += profile?.theme?.includes('theme_light') ? ' light' : '';
-    style += props.variant ? ` ${props.variant}` : '';
+  const elementRef = useRef();
 
-    if (!props.children) {
-      style += ' icon';
-    }
-
-    style += props.invert ? ' invert' : '';
-
-    style += props.small ? ' small' : '';
-
-    style += props.align ? ` align-${props.align}` : '';
-
-    return style;
+  const handleClick = (event: any) => {
+    props.handleClick(event);
   };
 
-  const action = (event: any) => {
-    event.preventDefault();
-    props.action();
-  };
+  useEffect(() => {
+    (elementRef as any).current.addEventListener(LINK_CLICK_EVENT, handleClick);
+
+    return () => {
+      (elementRef as any).current?.removeEventListener(
+        LINK_CLICK_EVENT,
+        handleClick
+      );
+    };
+  });
 
   return (
-    // eslint-disable-next-line react/button-has-type
-    <a href="" className={`oak-link ${getStyle()}`} onClick={action}>
-      <div className="link-label-container">
-        {props.children && (
-          <div className="link-label-container--text">{props.children}</div>
-        )}
-      </div>
-    </a>
+    <oak-link
+      href={props.href}
+      align={props.align}
+      display={props.display}
+      variant={props.variant}
+      color={props.color}
+      underline={props.underline}
+      ref={elementRef}
+    >
+      {props.children}
+    </oak-link>
   );
 };
 

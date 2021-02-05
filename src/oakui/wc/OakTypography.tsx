@@ -21,6 +21,22 @@ interface Props {
     | 'caption'
     | 'overline'
     | 'inherit';
+  color?:
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'primary-text'
+    | 'secondary-text'
+    | 'tertiary-text'
+    | 'default'
+    | 'danger'
+    | 'warning'
+    | 'success'
+    | 'danger-text'
+    | 'warning-text'
+    | 'success-text'
+    | 'info';
 }
 
 const OakTypography = (props: Props) => {
@@ -42,6 +58,7 @@ const OakTypography = (props: Props) => {
       align={props.align}
       display={props.display}
       variant={props.variant}
+      color={props.color}
       ref={elementRef}
     >
       {props.children}

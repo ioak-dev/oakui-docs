@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { FaceTwoTone } from '@material-ui/icons';
 
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
@@ -7,6 +8,7 @@ import OakForm from '../../oakui/wc/OakForm';
 import OakSelect from '../../oakui/wc/OakSelect';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakTypography from '../../oakui/wc/OakTypography';
+import OakLink from '../../oakui/OakLink';
 
 interface Props {
   match: any;
@@ -51,6 +53,10 @@ const Home = (props: Props) => {
     setState({ ...state, [detail.name]: detail.value });
   };
 
+  const clickLink = (detail: any) => {
+    console.log(detail);
+  };
+
   const validateEmail = (_, __, value: any): string[] => {
     const outcome: string[] = [];
     if (!value.toString().includes('@')) {
@@ -80,6 +86,30 @@ const Home = (props: Props) => {
       <OakTypography variant="inherit" paragraph>
         Inherit
       </OakTypography>
+      <OakLink
+        href="https://google.com"
+        variant="body1"
+        color="secondary"
+        underline="hover"
+      >
+        Heading two based link
+        <FaceTwoTone />
+        Heading two based link
+      </OakLink>
+      <OakLink href="https://google.com" variant="body1" color="primary">
+        body hyperlink
+      </OakLink>
+      <OakLink variant="body1" color="primary" handleClick={clickLink}>
+        not a hyperlink
+      </OakLink>
+      <OakLink
+        variant="body1"
+        color="secondary"
+        underline="always"
+        handleClick={clickLink}
+      >
+        not a hyperlink
+      </OakLink>
       <OakForm
         formGroupName="home-form"
         handleSubmit={submit}

@@ -3,17 +3,17 @@ import * as React from 'react';
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'oak-typography': any;
-      'oak-input': any;
-      'oak-button': any;
-      'oak-form': any;
-      'oak-select': any;
-      'oak-modal': any;
       'oak-container': any;
       'oak-card': any;
+      'oak-typography': any;
+      'oak-form': any;
       'oak-form-actions-container': any;
+      'oak-input': any;
+      'oak-select': any;
       'oak-popover': any;
-      'oak-select-modern': any;
+      'oak-button': any;
+      'oak-link': any;
+      'oak-modal': any;
     }
   }
 }
