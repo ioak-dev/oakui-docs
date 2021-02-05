@@ -15,6 +15,7 @@ import PlayModal from '../PlayModal';
 import PlayChart from '../PlayChart';
 import PlayTable from '../PlayTable';
 import PlayFormElements from '../PlayFormElements';
+import ColorPaletteGenerator from '../ColorPaletteGenerator';
 
 interface Props {
   cookies: any;
@@ -57,6 +58,17 @@ const RouterView = (props: Props) => {
         exact
         render={(propsLocal) => (
           <OakRoute {...propsLocal} {...props} component={Landing} />
+        )}
+      />
+      <Route
+        path="/palette"
+        exact
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={ColorPaletteGenerator}
+          />
         )}
       />
       <Route

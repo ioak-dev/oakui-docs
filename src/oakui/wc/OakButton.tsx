@@ -11,7 +11,9 @@ interface Props {
     | 'disappear'
     | 'regular'
     | 'disabled'
-    | 'drama';
+    | 'drama'
+    | 'semi-transparent-1'
+    | 'semi-transparent-2';
   theme?:
     | 'primary'
     | 'secondary'
@@ -21,6 +23,7 @@ interface Props {
     | 'warning'
     | 'success'
     | 'info';
+  semitransparent?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf' | 'icon';
   align?: 'left' | 'right' | 'center';
@@ -43,6 +46,10 @@ const OakButton = (props: Props) => {
     console.log('**submit');
     props.handleClick(event);
   };
+
+  useEffect(() => {
+    (elementRef.current as any)!.semitransparent = props.semitransparent;
+  }, [props.semitransparent]);
 
   useEffect(() => {
     (elementRef as any).current.addEventListener(

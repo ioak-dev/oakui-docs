@@ -49,9 +49,9 @@ const Init = () => {
 
   useEffect(() => {
     if (profile.theme === 'theme_light') {
-      document.body.style.backgroundColor = 'var(--color-light-bg-1)';
+      document.body.style.backgroundColor = 'var(--color-global-light)';
     } else {
-      document.body.style.backgroundColor = 'var(--color-dark-bg-1)';
+      document.body.style.backgroundColor = 'var(--color-global-dark)';
     }
   }, [profile.theme]);
 

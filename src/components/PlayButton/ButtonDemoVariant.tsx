@@ -3,7 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import OakButton from '../../oakui/wc/OakButton';
 import ButtonContainer from './ButtonContainer';
 
-const ButtonDemoVariant = () => {
+interface Props {
+  semitransparent?: boolean;
+}
+const ButtonDemoVariant = (props: Props) => {
   const dummyAction = () => {
     console.log('button clicked');
   };
@@ -15,6 +18,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="appear"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Appear
       </OakButton>
@@ -23,6 +27,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="disappear"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Disappear
       </OakButton>
@@ -31,6 +36,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="regular"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Regular
       </OakButton>
@@ -39,6 +45,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="drama"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Drama
       </OakButton>
@@ -47,6 +54,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="block"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Block
       </OakButton>
@@ -55,6 +63,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="outline"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Outline
       </OakButton>
@@ -63,6 +72,7 @@ const ButtonDemoVariant = () => {
         theme="primary"
         variant="disabled"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Disabled
       </OakButton>

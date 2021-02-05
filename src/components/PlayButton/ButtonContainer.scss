@@ -1,8 +1,8 @@
 .button-container {
   .button-container--wrapper {
     @media (min-width: 768px) {
-      display: grid;
-      grid-auto-flow: column;
+      display: flex;
+      flex-wrap: wrap;
       &.left {
         justify-content: left;
       }

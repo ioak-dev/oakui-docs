@@ -46,12 +46,14 @@
   padding: 50px 20px;
 }
 
-.list-assets, .list-spaces {
+.list-assets,
+.list-spaces {
   display: grid;
   padding: 20px 20px;
   align-content: center;
   grid-template-rows: auto auto;
-  .list-assets--content, .list-spaces--content {
+  .list-assets--content,
+  .list-spaces--content {
     display: grid;
     grid-auto-flow: row;
     row-gap: 20px;
@@ -63,17 +65,19 @@
   }
 }
 
-.asset-list-item, .space-list-item {
+.asset-list-item,
+.space-list-item {
   // background-color: ;
   padding: 20px 40px;
   // box-shadow: ;
-  .asset-list-item--link, .space-list-item--link {
+  .asset-list-item--link,
+  .space-list-item--link {
     display: flex;
   }
   border-left: 6px solid transparent;
 
   &:hover {
     cursor: pointer;
-    border-left: 6px solid var(--color-primary-1);
+    border-left: 6px solid var(--color-primary);
   }
 }

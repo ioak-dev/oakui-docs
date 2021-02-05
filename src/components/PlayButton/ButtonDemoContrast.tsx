@@ -14,6 +14,7 @@ interface Props {
     | 'danger'
     | 'warning'
     | 'success';
+  semitransparent?: boolean;
 }
 
 const ButtonDemoContrast = (props: Props) => {
@@ -28,6 +29,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="appear"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Appear
       </OakButton>
@@ -36,6 +38,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="disappear"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Disappear
       </OakButton>
@@ -44,6 +47,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="regular"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Regular
       </OakButton>
@@ -52,6 +56,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="drama"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Drama
       </OakButton>
@@ -60,6 +65,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="block"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Block
       </OakButton>
@@ -68,6 +74,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="outline"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Outline
       </OakButton>
@@ -76,6 +83,7 @@ const ButtonDemoContrast = (props: Props) => {
         theme={props.theme}
         variant="disabled"
         shape="rectangle"
+        semitransparent={props.semitransparent}
       >
         Disabled
       </OakButton>

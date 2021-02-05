@@ -10,7 +10,6 @@
 @import './custom/outline.scss';
 @import './custom/topbar.scss';
 @import './custom/sidebar.scss';
-@import './custom/grey-shades.scss';
 @import './custom/form-element.scss';
 
 body {
@@ -28,7 +27,7 @@ body.oak-dialog-open {
 .App {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: var(--global-color-fg);
+  color: var(--color-i1);
 }
 
 code {
@@ -40,7 +39,7 @@ code {
   .section-close {
     // margin: auto;
     margin-top: 20px;
-    background-color: var(--global-color-fg);
+    background-color: var(--color-i1);
     height: 1px;
     width: 80%;
     border-radius: 4px;
@@ -76,7 +75,7 @@ code {
   .hyperlink-container {
     cursor: pointer;
     &:hover {
-      color: var(--color-primary-1);
+      color: var(--color-primary);
     }
   }
 
@@ -89,7 +88,7 @@ code {
   .hyperlink {
     cursor: pointer;
     user-select: none;
-    color: var(--color-primary-1);
+    color: var(--color-primary);
     &:hover {
       text-decoration: underline;
     }
@@ -98,7 +97,7 @@ code {
   .hyperlink-drama {
     cursor: pointer;
     &:hover {
-      color: var(--color-primary-1);
+      color: var(--color-primary);
     }
   }
 

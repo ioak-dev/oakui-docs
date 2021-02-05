@@ -145,21 +145,21 @@
   }
 
   .ql-snow .ql-stroke {
-    stroke: var(--global-color-fg);
+    stroke: var(--color-i1);
   }
   .ql-snow .ql-fill,
   .ql-snow .ql-stroke.ql-fill {
-    fill: var(--global-color-fg);
+    fill: var(--color-i1);
   }
   .ql-picker-label {
-    color: var(--global-color-fg);
+    color: var(--color-i1);
     &:hover {
       color: green;
     }
   }
   .ql-strike.ql-active {
-    // border: 1px solid var(--global-color-fg);
-    background-color: var(--global-color-fg);
-    color: var(--global-color-fg);
+    // border: 1px solid var(--color-i1);
+    background-color: var(--color-i1);
+    color: var(--color-i1);
   }
 }

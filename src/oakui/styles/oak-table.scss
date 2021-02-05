@@ -2,11 +2,12 @@
   --row-height: 54px;
   --table-cell-padding: 16px;
   border-radius: var(--global-border-radius);
-  background-color: var(--surface-color-bg);
+  background-color: var(--color-surface);
   box-shadow: var(--oak-bs-elevation1);
   padding: 0 0px;
 
-  .oak-table--nav-top, .oak-table--nav-bottom {
+  .oak-table--nav-top,
+  .oak-table--nav-bottom {
     height: var(--row-height);
     padding: 0 16px;
   }

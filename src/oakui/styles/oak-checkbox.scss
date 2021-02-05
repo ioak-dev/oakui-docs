@@ -12,15 +12,15 @@
   }
 
   &.primary {
-    --ocb-theme-bg: var(--color-primary-1);
+    --ocb-theme-bg: var(--color-primary);
   }
 
   &.secondary {
-    --ocb-theme-bg: var(--color-secondary-1);
+    --ocb-theme-bg: var(--color-secondary);
   }
 
   &.tertiary {
-    --ocb-theme-bg: var(--color-tertiary-1);
+    --ocb-theme-bg: var(--color-tertiary);
   }
 
   &.default {
@@ -90,7 +90,7 @@
     /*Unhide on the checked state*/
     .checkbox input[type='checkbox']:checked + label::after {
       content: '';
-      color: var(--global-color-fg);
+      color: var(--color-i1);
     }
 
     /*Adding focus styles on the outer-box of the fake checkbox*/

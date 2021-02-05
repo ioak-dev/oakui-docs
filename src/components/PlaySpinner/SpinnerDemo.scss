@@ -1,16 +1,16 @@
 .spinner-demo {
-    display: grid;
-    
-    @media (min-width: 767px) {
-        grid-template-columns: 1fr 1fr;
-    }
+  display: grid;
 
-    @media (max-width: 768px) {
-        grid-auto-flow: row;
-    }
+  @media (min-width: 767px) {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .spinner-demo--section {
-        min-height: 300px;
-        color: var(--global-color-fg);
-    }
+  @media (max-width: 768px) {
+    grid-auto-flow: row;
+  }
+
+  .spinner-demo--section {
+    min-height: 300px;
+    color: var(--color-i1);
+  }
 }
