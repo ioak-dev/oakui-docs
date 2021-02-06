@@ -4,6 +4,9 @@ import { LINK_CLICK_EVENT } from 'oakui/dist/types/LinkEventTypes';
 interface Props {
   handleClick?: any;
   href?: string;
+  block?: boolean;
+  blockSize?: 'xsmall' | 'small' | 'medium' | 'large';
+  blockShape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf' | 'icon';
   children: any;
   align?: 'inherit' | 'left' | 'center' | 'right' | 'justify';
   display?: 'initial' | 'block' | 'inline';
@@ -59,6 +62,10 @@ const OakLink = (props: Props) => {
     };
   });
 
+  useEffect(() => {
+    (elementRef.current as any)!.showModal = props.block;
+  }, [props.block]);
+
   return (
     <oak-link
       href={props.href}
@@ -67,6 +74,9 @@ const OakLink = (props: Props) => {
       variant={props.variant}
       color={props.color}
       underline={props.underline}
+      block={props.block}
+      blockSize={props.blockSize}
+      blockShape={props.blockShape}
       ref={elementRef}
     >
       {props.children}

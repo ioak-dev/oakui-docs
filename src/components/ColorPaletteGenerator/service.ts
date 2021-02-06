@@ -50,6 +50,13 @@ export const computePalette = (
   }
   output = output.concat(
     getColorPair(
+      `--color-${themeName}-transparent`,
+      tinycolor(base).setAlpha(0.1),
+      tinycolor(base)
+    )
+  );
+  output = output.concat(
+    getColorPair(
       `--color-${themeName}-semitransparent1`,
       tinycolor(base).setAlpha(0.2),
       tinycolor(base)

@@ -99,8 +99,26 @@ const Home = (props: Props) => {
       <OakLink href="https://google.com" variant="body1" color="primary">
         body hyperlink
       </OakLink>
-      <OakLink variant="body1" color="primary" handleClick={clickLink}>
-        not a hyperlink
+      <OakLink
+        variant="body1"
+        color="secondary"
+        handleClick={clickLink}
+        block
+        blockSize="small"
+        blockShape="rectangle"
+      >
+        Not a Hyperlink
+      </OakLink>
+      <OakLink
+        href="a"
+        variant="body1"
+        color="secondary-text"
+        handleClick={clickLink}
+        block
+        blockSize="small"
+        blockShape="rectangle"
+      >
+        Hyperlink
       </OakLink>
       <OakLink
         variant="body1"
