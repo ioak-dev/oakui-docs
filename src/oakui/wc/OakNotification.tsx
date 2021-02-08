@@ -1,9 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
 
 interface Props {
-  heading?: string;
-  headerVariant?: 'subtle' | 'apparent';
-  children: any;
+  indicator?:
+    | 'circle'
+    | 'circle-dotted'
+    | 'circle-outline'
+    | 'ellipse'
+    | 'ellipse-dotted'
+    | 'ellipse-outline'
+    | 'fill'
+    | 'none';
   elevation?:
     | 0
     | 1
@@ -31,33 +37,36 @@ interface Props {
     | 23
     | 24;
   rounded?: boolean;
-  variant?: 'outlined';
-  fillType?: 'fill' | 'none';
-  paddingHorizontal?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  outlined?: boolean;
+  fillType?:
+    | 'none'
+    | 'fill'
+    | 'semitransparent1'
+    | 'semitransparent2'
+    | 'transparent';
   paddingVertical?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 }
 
-const OakCard = (props: Props) => {
+const OakNotification = (props: Props) => {
   const elementRef = useRef();
+
+  useEffect(() => {
+    (elementRef.current as any)!.outlined = props.outlined;
+  }, [props.outlined]);
 
   useEffect(() => {
     (elementRef.current as any)!.rounded = props.rounded;
   }, [props.rounded]);
 
   return (
-    <oak-card
+    <oak-notification
       ref={elementRef}
       elevation={props.elevation}
-      variant={props.variant}
       fillType={props.fillType}
-      paddingHorizontal={props.paddingHorizontal}
       paddingVertical={props.paddingVertical}
-      heading={props.heading}
-      headerVariant={props.headerVariant}
-    >
-      {props.children}
-    </oak-card>
+      indicator={props.indicator}
+    />
   );
 };
 
-export default OakCard;
+export default OakNotification;

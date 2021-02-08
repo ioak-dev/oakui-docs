@@ -15,6 +15,7 @@ import TopbarContainer from './TopbarContainer';
 import SidebarContainer from './SidebarContainer';
 import BodyContainer from './BodyContainer';
 import { receiveMessage } from '../../events/MessageService';
+import OakNotification from '../../oakui/wc/OakNotification';
 
 interface Props {
   cookies: any;
@@ -49,7 +50,13 @@ const Content = (props: Props) => {
     >
       <HashRouter>
         <Init />
-        <Notification />
+        {/* <Notification /> */}
+        <OakNotification
+          indicator="circle"
+          // outlined
+          rounded
+          // paddingVertical={10}
+        />
         <TopbarContainer cookies={props.cookies} />
         <SidebarContainer />
         <BodyContainer {...props} />

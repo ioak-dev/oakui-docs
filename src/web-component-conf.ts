@@ -14,6 +14,7 @@ declare global {
       'oak-button': any;
       'oak-link': any;
       'oak-modal': any;
+      'oak-notification': any;
     }
   }
 }

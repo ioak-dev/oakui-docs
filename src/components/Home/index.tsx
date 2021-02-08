@@ -1,5 +1,9 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FaceTwoTone } from '@material-ui/icons';
+import {
+  addNotification,
+  removeNotification,
+} from 'oakui/dist/NotificationStore';
 
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
@@ -9,6 +13,7 @@ import OakSelect from '../../oakui/wc/OakSelect';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakTypography from '../../oakui/wc/OakTypography';
 import OakLink from '../../oakui/OakLink';
+import { newId } from '../../events/MessageService';
 
 interface Props {
   match: any;
@@ -27,8 +32,13 @@ const Home = (props: Props) => {
 
   const submit = (event: any) => {
     // event.preventDefault();
-    console.log(event);
     console.log(state);
+    const id = newId();
+    addNotification({
+      id,
+      description: state.firstName || 'lorem ipsum',
+      type: state.email,
+    });
   };
 
   const reset = (event: any) => {
