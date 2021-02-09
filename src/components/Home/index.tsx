@@ -36,7 +36,8 @@ const Home = (props: Props) => {
     const id = newId();
     addNotification({
       id,
-      description: state.firstName || 'lorem ipsum',
+      heading: state.category || 'lorem ipsum',
+      description: state.firstName || 'lorem ipsum dolor sit',
       type: state.email,
     });
   };
@@ -158,7 +159,7 @@ const Home = (props: Props) => {
           placeholder="Choose a category"
           handleChange={handleChange}
           formGroupName="home-form"
-          options={['category one', 'lorem ipsum']}
+          options={['category one', 'category two', 'sadgasd sagd sga']}
         />
         <OakInput
           label="File upload"

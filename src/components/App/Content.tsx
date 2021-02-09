@@ -52,10 +52,12 @@ const Content = (props: Props) => {
         <Init />
         {/* <Notification /> */}
         <OakNotification
-          indicator="circle"
-          // outlined
+          indicator="fill"
+          outlined
           rounded
           // paddingVertical={10}
+          elevation={5}
+          displayCount={5}
         />
         <TopbarContainer cookies={props.cookies} />
         <SidebarContainer />
