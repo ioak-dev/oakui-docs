@@ -90,7 +90,7 @@
     /*Unhide on the checked state*/
     .checkbox input[type='checkbox']:checked + label::after {
       content: '';
-      color: var(--color-i1);
+      color: var(--color-1);
     }
 
     /*Adding focus styles on the outer-box of the fake checkbox*/

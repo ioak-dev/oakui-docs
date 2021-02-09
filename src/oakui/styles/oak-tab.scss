@@ -9,9 +9,9 @@
     a,
     button {
       border: 1px solid transparent;
-      color: var(--color-i1);
+      color: var(--color-1);
       &:focus {
-        border: 1px solid var(--color-i1);
+        border: 1px solid var(--color-1);
       }
       &:hover {
         color: var(--color-forerground-1);
@@ -90,11 +90,11 @@
         }
         &.active {
           border-bottom: 4px solid var(--color-primary);
-          color: var(--color-i1);
+          color: var(--color-1);
         }
         &:hover,
         &:focus {
-          color: var(--color-i1);
+          color: var(--color-1);
         }
         .material-icons {
           padding: 0 10px 0 0;

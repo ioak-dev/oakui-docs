@@ -3,7 +3,7 @@
     font-size: 13px;
   }
   &.bubble {
-    border-bottom: 1px solid var(--color-i1);
+    border-bottom: 1px solid var(--color-1);
   }
 
   .text-field-error {
@@ -51,36 +51,36 @@
 
   .ql-toolbar.ql-snow {
     border: none;
-    color: var(--color-i1);
+    color: var(--color-1);
     padding: 0px;
     display: flex;
     justify-content: center;
   }
   .ql-container.ql-snow {
     border: none;
-    border-bottom: 1px solid var(--color-i1);
+    border-bottom: 1px solid var(--color-1);
   }
   .ql-editor {
     padding: 10px 0;
     font-size: 16px;
   }
   .ql-snow .ql-stroke {
-    stroke: var(--color-i1);
+    stroke: var(--color-1);
   }
   .ql-snow .ql-fill,
   .ql-snow .ql-stroke.ql-fill {
-    fill: var(--color-i1);
+    fill: var(--color-1);
   }
   .ql-picker-label {
-    color: var(--color-i1);
+    color: var(--color-1);
     &:hover {
       color: green;
     }
   }
   .ql-strike.ql-active {
-    // border: 1px solid var(--color-i1);
-    background-color: var(--color-i1);
-    color: var(--color-i1);
+    // border: 1px solid var(--color-1);
+    background-color: var(--color-1);
+    color: var(--color-1);
   }
 
   h1 {
@@ -104,7 +104,7 @@
 
   .ql-snow .ql-picker.ql-expanded .ql-picker-options {
     // background-color: ;
-    color: var(--color-i1);
+    color: var(--color-1);
     .ql-picker-item {
       &:hover {
         color: var(--color-primary) !important;
@@ -136,20 +136,20 @@
       &:hover {
         // background-color: var(--color-background-2) !important;
       }
-      color: var(--color-i1) !important;
+      color: var(--color-1) !important;
       .ql-fill {
-        fill: var(--color-i1) !important;
+        fill: var(--color-1) !important;
       }
       .ql-stroke {
-        stroke: var(--color-i1) !important;
+        stroke: var(--color-1) !important;
       }
     }
     &:hover {
       .ql-fill {
-        fill: var(--color-i1) !important;
+        fill: var(--color-1) !important;
       }
       .ql-stroke {
-        stroke: var(--color-i1) !important;
+        stroke: var(--color-1) !important;
       }
     }
   }

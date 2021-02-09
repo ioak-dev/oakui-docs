@@ -66,6 +66,11 @@ const ColorPaletteGenerator = (props: Props) => {
       computePalette(state.mode === 'Dark', 'info', state.info)
     );
     _colorThemes = _colorThemes.concat(
+      state.mode === 'Dark'
+        ? computePalette(false, 'invert', 'fcfcfc')
+        : computePalette(true, 'invert', '0c0c0c')
+    );
+    _colorThemes = _colorThemes.concat(
       computePalette(state.mode === 'Dark', 'danger', state.danger)
     );
     _colorThemes = _colorThemes.concat(

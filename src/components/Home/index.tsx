@@ -123,7 +123,7 @@ const Home = (props: Props) => {
       <OakLink
         href="a"
         variant="body1"
-        color="secondary-text"
+        color="invert"
         handleClick={clickLink}
         block
         blockSize="small"

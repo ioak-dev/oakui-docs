@@ -26,16 +26,11 @@ interface Props {
     | 'primary'
     | 'secondary'
     | 'tertiary'
-    | 'primary-text'
-    | 'secondary-text'
-    | 'tertiary-text'
     | 'default'
     | 'danger'
     | 'warning'
     | 'success'
-    | 'danger-text'
-    | 'warning-text'
-    | 'success-text'
+    | 'invert'
     | 'info';
 }
 

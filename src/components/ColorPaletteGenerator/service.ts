@@ -104,15 +104,15 @@ export const getGreyShades = (
         value: '#2b3858',
       },
       {
-        key: '--color-i1',
+        key: '--color-1',
         value: '#ffffff',
       },
       {
-        key: '--color-i2',
+        key: '--color-2',
         value: '#ffffff',
       },
       {
-        key: '--color-i3',
+        key: '--color-3',
         value: '#ffffff',
       },
     ];
@@ -131,15 +131,15 @@ export const getGreyShades = (
       value: '#ffffff',
     },
     {
-      key: '--color-i1',
+      key: '--color-1',
       value: '#202225',
     },
     {
-      key: '--color-i2',
+      key: '--color-2',
       value: '#202225',
     },
     {
-      key: '--color-i3',
+      key: '--color-3',
       value: '#202225',
     },
   ];
