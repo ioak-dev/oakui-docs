@@ -70,6 +70,8 @@ const ModalDemo = () => {
                 formGroupName="modal-test"
                 value={state.city}
                 handleChange={handleChange}
+                shape="leaf"
+                size="large"
                 options={['wert', 'lorem']}
               />
               <OakSelect
@@ -80,6 +82,8 @@ const ModalDemo = () => {
                 handleChange={handleChange}
                 options={['wert', 'lorem']}
                 native
+                size="xsmall"
+                shape="rounded"
               />
               <OakSelect
                 label="select"

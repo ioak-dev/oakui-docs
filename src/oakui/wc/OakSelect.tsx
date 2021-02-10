@@ -20,6 +20,8 @@ interface Props {
   options?: any[];
   optionsAsKeyValue?: any[];
   native?: boolean;
+  size?: 'xsmall' | 'small' | 'medium' | 'large';
+  shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
 }
 
 const OakSelect = (props: Props) => {
@@ -91,6 +93,8 @@ const OakSelect = (props: Props) => {
       placeholder={props.placeholder}
       tooltip={props.tooltip}
       multiple={props.multiple}
+      size={props.size}
+      shape={props.shape}
     />
   );
 };

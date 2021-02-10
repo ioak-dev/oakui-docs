@@ -2,6 +2,7 @@ import React from 'react';
 import OakTypography from '../../oakui/wc/OakTypography';
 import './style.scss';
 import TableDemo from './TableDemo';
+import TableDemoNew from './TableDemoNew';
 
 interface Props {
   match: any;
@@ -20,10 +21,7 @@ const PlayTable = (props: Props) => {
       <OakTypography variant="h2">Table</OakTypography>
       <div className="play-table--list">
         <div className="play-table--list--item">
-          <TableDemo />
-        </div>
-        <div className="play-table--list--item">
-          <TableDemo />
+          <TableDemoNew />
         </div>
       </div>
     </>

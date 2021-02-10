@@ -12,6 +12,8 @@ interface Props {
     elements?: any;
   }[];
   data: any;
+
+  // not used yet
   onChangePage?: any;
   totalRows?: number;
   navPlacement?: 'top' | 'bottom';
@@ -233,53 +235,6 @@ const OakTable = (props: Props) => {
           sortAsc={paginationPref.sortAsc}
           sortBy={paginationPref.sortField}
         />
-        {/* <table>
-              <thead>
-                <tr>
-                  {props.header &&
-                    props.header.map(item => (
-                      <>
-                        {datagrid[item.key] !== 0 && (
-                          <th key={item.key}>
-                            <div
-                              className="table-container--label"
-                              onClick={() => sort(item.key)}
-                            >
-                              {item.label}
-                              {paginationPref.sortField === item.key &&
-                                paginationPref.sortAsc && <KeyboardArrowUp />}
-                              {paginationPref.sortField === item.key &&
-                                !paginationPref.sortAsc && (
-                                  <KeyboardArrowDown />
-                                )}
-                            </div>
-                          </th>
-                        )}
-                      </>
-                    ))}
-                  {props.actionColumn && (
-                    <th>
-                      <div className="label">{props.actionColumn.label}</div>
-                    </th>
-                  )}
-                </tr>
-              </thead>
-              <tbody>
-                {view &&
-                  view.map(row => (
-                    <tr key={(key += 1)}>
-                      {props.actionColumn && (
-                        <td>
-                          <TableCellAction
-                            actions={props.actionColumn.actions}
-                            row={row}
-                          />
-                        </td>
-                      )}
-                    </tr>
-                  ))}
-              </tbody>
-            </table> */}
         {!props.showAll &&
           ((props.navPlacement && props.navPlacement === 'bottom') ||
             !props.navPlacement) && (

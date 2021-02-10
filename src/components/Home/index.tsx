@@ -159,6 +159,8 @@ const Home = (props: Props) => {
           placeholder="Choose a category"
           handleChange={handleChange}
           formGroupName="home-form"
+          size="xsmall"
+          shape="sharp"
           options={['category one', 'category two', 'sadgasd sagd sga']}
         />
         <OakInput
@@ -170,6 +172,8 @@ const Home = (props: Props) => {
           handleChange={handleChange}
           multiple
           formGroupName="home-form"
+          size="xsmall"
+          shape="rounded"
         />
         <OakInput
           label="First name"

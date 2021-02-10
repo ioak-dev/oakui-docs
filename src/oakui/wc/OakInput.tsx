@@ -24,6 +24,8 @@ interface Props {
   tooltip?: string;
   type?: 'text' | 'number' | 'password' | 'date' | 'file';
   multiple?: boolean;
+  size?: 'xsmall' | 'small' | 'medium' | 'large';
+  shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
 }
 const OakInput = (props: Props) => {
   const elementRef = useRef();
@@ -120,6 +122,8 @@ const OakInput = (props: Props) => {
       tooltip={props.tooltip}
       type={props.type}
       multiple={props.multiple}
+      size={props.size}
+      shape={props.shape}
     />
   );
 };
