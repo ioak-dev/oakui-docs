@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './TableDemo.scss';
 import OakTableNew from '../../oakui/wc/OakTableNew';
+import OakButton from '../../oakui/wc/OakButton';
+import { newId } from '../../events/MessageService';
 
 const TableDemoNew = () => {
   const authorization = useSelector((state) => state.authorization);
@@ -213,7 +215,41 @@ const TableDemoNew = () => {
     console.log(pageNo, rowsPerPage, sortField, sortAsc, searchText);
   };
 
-  return <OakTableNew header={header} data={data} />;
+  const addData = () => {
+    setData([
+      ...data,
+      {
+        id: newId(),
+        category: 'fr',
+        description: newId(),
+        comment: 'laudantium aliquid',
+        comment2: 'Voluptatem optio',
+        comment3: 'Voluptatem optio',
+        comment4: 'ducimus temporibus',
+        comment5: 'Voluptatem optio',
+        comment6: 'Voluptatem optio',
+        comment7: 'ducimus temporibus',
+        amount: 100,
+      },
+    ]);
+  };
+  const updateData = () => {
+    const dataL = [...data];
+    dataL[0].id = newId();
+    setData(dataL);
+  };
+
+  return (
+    <>
+      <OakTableNew header={header} data={data} />
+      <OakButton theme="primary" variant="regular" handleClick={addData}>
+        Add
+      </OakButton>
+      <OakButton theme="primary" variant="regular" handleClick={updateData}>
+        Update
+      </OakButton>
+    </>
+  );
 };
 
 export default TableDemoNew;

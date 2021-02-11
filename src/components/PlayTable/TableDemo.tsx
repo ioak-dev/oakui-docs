@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import OakCard from '../../oakui/wc/OakCard';
 import OakTable from '../../oakui/OakTable';
 import './TableDemo.scss';
+import OakButton from 'src/oakui/wc/OakButton';
+import { newId } from 'src/events/MessageService';
 
 const TableDemo = () => {
   const authorization = useSelector((state) => state.authorization);
@@ -214,14 +216,38 @@ const TableDemo = () => {
     console.log(pageNo, rowsPerPage, sortField, sortAsc, searchText);
   };
 
+  const addData = () => {
+    setData([
+      ...data,
+      {
+        id: newId(),
+        category: 'fr',
+        description: newId(),
+        comment: 'laudantium aliquid',
+        comment2: 'Voluptatem optio',
+        comment3: 'Voluptatem optio',
+        comment4: 'ducimus temporibus',
+        comment5: 'Voluptatem optio',
+        comment6: 'Voluptatem optio',
+        comment7: 'ducimus temporibus',
+        amount: 100,
+      },
+    ]);
+  };
+
   return (
-    <OakTable
-      header={header}
-      data={data}
-      navPlacement="top"
-      handleCellDataChange={handleCellDataChange}
-      actionColumn={actionColumn}
-    />
+    <>
+      <OakTable
+        header={header}
+        data={data}
+        navPlacement="top"
+        handleCellDataChange={handleCellDataChange}
+        actionColumn={actionColumn}
+      />
+      <OakButton theme="primary" variant="regular" handleClick={addData}>
+        Add
+      </OakButton>
+    </>
   );
 };
 

@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 
 interface Props {
   header: {
-    key: string;
+    name: string;
     label: string;
     dtype?: string; // 'text' | 'date' | 'number';
     elements?: any;
   }[];
   data: any;
+  serverSidePagination?: boolean;
 
   // not used yet
   onChangePage?: any;
@@ -38,6 +39,11 @@ const OakTableNew = (props: Props) => {
   useEffect(() => {
     (elementRef.current as any)!.data = props.data;
   }, [props.data]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.serverSidePagination =
+      props.serverSidePagination;
+  }, [props.serverSidePagination]);
 
   return <oak-table ref={elementRef} />;
 };
