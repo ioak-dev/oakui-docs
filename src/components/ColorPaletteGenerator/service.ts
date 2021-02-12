@@ -2,7 +2,8 @@
 
 const tinycolor = require('tinycolor2');
 
-const DARKEN_LIGHTEN_BY = 8;
+const DARK_LIGHT_BY = 4;
+const DARKER_LIGHTER_BY = 8;
 const LIGHT = '#fcfcfc';
 const DARK = '#0f0f0f';
 
@@ -20,14 +21,28 @@ export const computePalette = (
       output = output.concat(
         getColorPair(
           `--color-${themeName}-darker`,
-          tinycolor(base).lighten(DARKEN_LIGHTEN_BY),
+          tinycolor(base).lighten(DARKER_LIGHTER_BY),
           tinycolor(base)
         )
       );
       output = output.concat(
         getColorPair(
           `--color-${themeName}-lighter`,
-          tinycolor(base).darken(DARKEN_LIGHTEN_BY),
+          tinycolor(base).darken(DARKER_LIGHTER_BY),
+          tinycolor(base)
+        )
+      );
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-dark`,
+          tinycolor(base).lighten(DARK_LIGHT_BY),
+          tinycolor(base)
+        )
+      );
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-light`,
+          tinycolor(base).darken(DARK_LIGHT_BY),
           tinycolor(base)
         )
       );
@@ -35,14 +50,28 @@ export const computePalette = (
       output = output.concat(
         getColorPair(
           `--color-${themeName}-darker`,
-          tinycolor(base).darken(DARKEN_LIGHTEN_BY),
+          tinycolor(base).darken(DARKER_LIGHTER_BY),
           tinycolor(base)
         )
       );
       output = output.concat(
         getColorPair(
           `--color-${themeName}-lighter`,
-          tinycolor(base).lighten(DARKEN_LIGHTEN_BY),
+          tinycolor(base).lighten(DARKER_LIGHTER_BY),
+          tinycolor(base)
+        )
+      );
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-dark`,
+          tinycolor(base).darken(DARK_LIGHT_BY),
+          tinycolor(base)
+        )
+      );
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-light`,
+          tinycolor(base).lighten(DARK_LIGHT_BY),
           tinycolor(base)
         )
       );
@@ -92,18 +121,6 @@ export const getGreyShades = (
   if (isDarkMode) {
     return [
       {
-        key: '--color-global',
-        value: '#141b2d',
-      },
-      {
-        key: '--color-container',
-        value: '#1f2940',
-      },
-      {
-        key: '--color-surface',
-        value: '#2b3858',
-      },
-      {
         key: '--color-1',
         value: '#ffffff',
       },
@@ -118,18 +135,6 @@ export const getGreyShades = (
     ];
   }
   return [
-    {
-      key: '--color-global',
-      value: '#fbfcfd',
-    },
-    {
-      key: '--color-container',
-      value: '#f7f8f9',
-    },
-    {
-      key: '--color-surface',
-      value: '#ffffff',
-    },
     {
       key: '--color-1',
       value: '#202225',

@@ -15,8 +15,26 @@ interface Props {
   history: any;
 }
 
+const darkModeVariants = {
+  global: '141b2d',
+  container: '1f2940',
+  surface: '2b3858',
+  float: '36466D',
+};
+
+const lightModeVariants = {
+  global: 'fbfcfd',
+  container: 'f7f8f9',
+  surface: 'fdfdfd',
+  float: 'ffffff',
+};
+
 const ColorPaletteGenerator = (props: Props) => {
   const [state, setState] = useState({
+    global: '141b2d',
+    container: '1f2940',
+    surface: '2b3858',
+    float: '36466D',
     primary: '4b8ca6',
     secondary: 'd9ae5f',
     tertiary: '3abead',
@@ -51,6 +69,18 @@ const ColorPaletteGenerator = (props: Props) => {
   const computeColorThemes = () => {
     let _colorThemes: { key: string; value: string }[] = [];
     _colorThemes = _colorThemes.concat(
+      computePalette(state.mode === 'Dark', 'global', state.global)
+    );
+    _colorThemes = _colorThemes.concat(
+      computePalette(state.mode === 'Dark', 'container', state.container)
+    );
+    _colorThemes = _colorThemes.concat(
+      computePalette(state.mode === 'Dark', 'surface', state.surface)
+    );
+    _colorThemes = _colorThemes.concat(
+      computePalette(state.mode === 'Dark', 'float', state.float)
+    );
+    _colorThemes = _colorThemes.concat(
       computePalette(state.mode === 'Dark', 'primary', state.primary)
     );
     _colorThemes = _colorThemes.concat(
@@ -83,7 +113,15 @@ const ColorPaletteGenerator = (props: Props) => {
   };
 
   const handleChange = (detail: any) => {
-    setState({ ...state, [detail.name]: detail.value });
+    if (detail.name === 'mode') {
+      setState({
+        ...state,
+        ...(detail.value === 'Dark' ? darkModeVariants : lightModeVariants),
+        [detail.name]: detail.value,
+      });
+    } else {
+      setState({ ...state, [detail.name]: detail.value });
+    }
   };
 
   return (

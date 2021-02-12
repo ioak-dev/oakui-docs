@@ -241,7 +241,40 @@ const TableDemoNew = () => {
 
   return (
     <>
-      <OakTableNew header={header} data={data} />
+      <OakTableNew
+        header={header}
+        data={data}
+        rounded
+        fill="container"
+        formElementSize="xsmall"
+        navPlacement="top"
+      />
+      <br />
+      <OakTableNew
+        header={header}
+        data={data}
+        rounded
+        fill="container"
+        formElementShape="leaf"
+        formElementSize="large"
+        dense
+        navPlacement="top"
+      />
+      <br />
+      <OakTableNew
+        header={header}
+        data={data}
+        rounded
+        fill="surface"
+        navPlacement="top"
+      />
+      <OakTableNew
+        header={header}
+        data={data}
+        rounded
+        fill="float"
+        navPlacement="top"
+      />
       <OakButton theme="primary" variant="regular" handleClick={addData}>
         Add
       </OakButton>

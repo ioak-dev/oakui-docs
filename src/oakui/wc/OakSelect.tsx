@@ -22,6 +22,8 @@ interface Props {
   native?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
+  fill?: 'container' | 'surface' | 'float' | 'none';
+  gutterBottom?: boolean;
 }
 
 const OakSelect = (props: Props) => {
@@ -76,6 +78,10 @@ const OakSelect = (props: Props) => {
   }, [props.native]);
 
   useEffect(() => {
+    (elementRef.current as any)!.gutterBottom = props.gutterBottom;
+  }, [props.gutterBottom]);
+
+  useEffect(() => {
     (elementRef.current as any)!.options = props.options;
   }, [props.options]);
 
@@ -95,6 +101,7 @@ const OakSelect = (props: Props) => {
       multiple={props.multiple}
       size={props.size}
       shape={props.shape}
+      fill={props.fill}
     />
   );
 };

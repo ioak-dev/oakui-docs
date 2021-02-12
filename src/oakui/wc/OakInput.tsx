@@ -26,6 +26,8 @@ interface Props {
   multiple?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
+  fill?: 'container' | 'surface' | 'float' | 'none';
+  gutterBottom?: boolean;
 }
 const OakInput = (props: Props) => {
   const elementRef = useRef();
@@ -105,6 +107,10 @@ const OakInput = (props: Props) => {
   }, [props.value]);
 
   useEffect(() => {
+    (elementRef.current as any)!.gutterBottom = props.gutterBottom;
+  }, [props.gutterBottom]);
+
+  useEffect(() => {
     (elementRef.current as any)!.validatorFunction = props.validatorFunction;
   }, [props.validatorFunction]);
 
@@ -124,6 +130,7 @@ const OakInput = (props: Props) => {
       multiple={props.multiple}
       size={props.size}
       shape={props.shape}
+      fill={props.fill}
     />
   );
 };

@@ -159,8 +159,9 @@ const Home = (props: Props) => {
           placeholder="Choose a category"
           handleChange={handleChange}
           formGroupName="home-form"
-          size="xsmall"
-          shape="sharp"
+          size="small"
+          shape="leaf"
+          fill="float"
           options={['category one', 'category two', 'sadgasd sagd sga']}
         />
         <OakInput
@@ -172,8 +173,9 @@ const Home = (props: Props) => {
           handleChange={handleChange}
           multiple
           formGroupName="home-form"
-          size="xsmall"
-          shape="rounded"
+          size="medium"
+          shape="leaf"
+          fill="float"
         />
         <OakInput
           label="First name"
@@ -183,6 +185,7 @@ const Home = (props: Props) => {
           handleChange={handleChange}
           formGroupName="home-form"
           regexp={/^[a-z]*$/}
+          fill="container"
           minLength={2}
           tooltip="Your personal information will be protected"
         />
@@ -194,6 +197,7 @@ const Home = (props: Props) => {
           handleChange={handleChange}
           formGroupName="home-form"
           type="number"
+          fill="surface"
           min={2}
           max={10}
         />
@@ -204,6 +208,7 @@ const Home = (props: Props) => {
           placeholder="Your Email"
           handleChange={handleChange}
           formGroupName="home-form"
+          fill="float"
           minLength={5}
           validatorFunction={validateEmail}
         />
