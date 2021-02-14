@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { TABLE_DATA_CHANGE_EVENT } from 'oakui/dist/types/TableEventTypes';
+import {
+  TABLE_DATA_CHANGE_EVENT,
+  TABLE_PAGINATE_EVENT,
+} from 'oakui/dist/types/TableEventTypes';
+import { getStyleClass } from 'oakui/dist/styles/OakTableStyles';
+import { TableHeader } from 'oakui/dist/types/TableHeaderType';
+import { PaginatePref } from 'oakui/dist/types/PaginatePrefType';
 
 interface Props {
-  header: {
-    name: string;
-    label: string;
-    dtype?: string; // 'text' | 'date' | 'number';
-    elements?: any;
-  }[];
+  children: any;
+  header: TableHeader[];
   data: any;
-  serverSidePagination?: boolean;
+  totalRows?: number;
   elevation?:
     | 0
     | 1
@@ -43,24 +45,14 @@ interface Props {
   formElementSize?: 'xsmall' | 'small' | 'medium' | 'large';
   formElementShape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
   navPlacement?: 'top' | 'bottom' | 'none';
+  paginatePref: PaginatePref;
   handleDataChange?: any;
 
   // not used yet
   showAll?: boolean;
-  actionColumn?: {
-    label: string;
-    actions: {
-      label: string;
-      icon?: string;
-      actionHandler: any;
-      actionName: any;
-      theme?: string;
-      variant?: string;
-    }[];
-  };
 }
 
-const OakTableNew = (props: Props) => {
+const OakTable = (props: Props) => {
   const elementRef = useRef();
 
   useEffect(() => {
@@ -80,9 +72,9 @@ const OakTableNew = (props: Props) => {
   }, [props.data]);
 
   useEffect(() => {
-    (elementRef.current as any)!.serverSidePagination =
-      props.serverSidePagination;
-  }, [props.serverSidePagination]);
+    console.log(props.paginatePref);
+    (elementRef.current as any)!.paginatePref = props.paginatePref;
+  }, [props.paginatePref]);
 
   useEffect(() => {
     // attachListener('change', handleChange);
@@ -91,10 +83,18 @@ const OakTableNew = (props: Props) => {
       TABLE_DATA_CHANGE_EVENT,
       handleChange
     );
+    (elementRef as any).current.addEventListener(
+      TABLE_PAGINATE_EVENT,
+      handleChange
+    );
 
     return () => {
       (elementRef as any).current?.removeEventListener(
         TABLE_DATA_CHANGE_EVENT,
+        handleChange
+      );
+      (elementRef as any).current?.removeEventListener(
+        TABLE_PAGINATE_EVENT,
         handleChange
       );
     };
@@ -114,9 +114,14 @@ const OakTableNew = (props: Props) => {
       formElementSize={props.formElementSize}
       formElementShape={props.formElementShape}
       navPlacement={props.navPlacement}
+      totalRows={props.totalRows}
       ref={elementRef}
-    />
+    >
+      <div className={getStyleClass({ dense: props.dense, fill: props.fill })}>
+        {props.children}
+      </div>
+    </oak-table>
   );
 };
 
-export default OakTableNew;
+export default OakTable;

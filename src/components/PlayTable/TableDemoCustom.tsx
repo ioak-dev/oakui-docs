@@ -1,69 +1,57 @@
-import React, { useState } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { PaginatePref } from 'oakui/dist/types/PaginatePrefType';
+import { SortDirection, SortPref } from 'oakui/dist/types/SortPrefType';
+import {
+  TableCellDatatype,
+  TableHeader,
+} from 'oakui/dist/types/TableHeaderType';
+import { getPage } from 'oakui/dist/services/OakTableService';
 import './TableDemo.scss';
-import OakTableNew from '../../oakui/wc/OakTableNew';
 import OakButton from '../../oakui/wc/OakButton';
 import { newId } from '../../events/MessageService';
+import OakTable from '../../oakui/wc/OakTable';
+import OakInput from '../../oakui/wc/OakInput';
+import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 
-const TableDemoNew = () => {
+const TableDemoCustom = () => {
   const authorization = useSelector((state) => state.authorization);
-  const header = [
+  const header: TableHeader[] = [
     {
       name: 'category',
-      label: 'Category',
-      dtype: 'input_select',
-      elements: [
-        { key: 'gr', value: 'Grocery' },
-        { key: 'me', value: 'Meat' },
-        { key: 'fr', value: 'Fruits' },
-      ],
+      datatype: TableCellDatatype.text,
     },
     {
       name: 'amount',
-      label: 'Amount',
-      dtype: 'input_number',
+      datatype: TableCellDatatype.number,
     },
     {
       name: 'description',
-      label: 'Description',
-      dtype: 'input',
+      datatype: TableCellDatatype.text,
     },
     {
       name: 'comment',
-      label: 'Comment',
-      dtype: 'text',
+      datatype: TableCellDatatype.text,
     },
     {
       name: 'comment2',
-      label: 'Comment',
-      dtype: 'input_text',
+      datatype: TableCellDatatype.text,
     },
-    // {
-    //   key: 'comment3',
-    //   label: 'Comment',
-    //   dtype: 'text',
-    // },
-    // {
-    //   key: 'comment4',
-    //   label: 'Comment',
-    //   dtype: 'text',
-    // },
-    // {
-    //   key: 'comment5',
-    //   label: 'Comment',
-    //   dtype: 'text',
-    // },
-    // {
-    //   key: 'comment6',
-    //   label: 'Comment',
-    //   dtype: 'text',
-    // },
-    // {
-    //   key: 'comment7',
-    //   label: 'Comment',
-    //   dtype: 'text',
-    // },
   ];
+
+  const [paginatePref, setPaginatePref] = useState<PaginatePref>({
+    pageNo: 1,
+    rowsPerPage: 5,
+    searchText: '',
+  });
+
+  const [sortPref, setSortPref] = useState<SortPref>({
+    sortBy: '',
+    sortDirection: SortDirection.ascending,
+  });
+  const [view, setView] = useState<any[]>([]);
+  const [totalRows, setTotalRows] = useState(0);
 
   const [data, setData] = useState([
     {
@@ -172,49 +160,6 @@ const TableDemoNew = () => {
     },
   ]);
 
-  const handleDeleteRow = (actionName, row) => {
-    console.log(actionName, row);
-  };
-
-  const actionColumn = {
-    label: '',
-    actions: [
-      {
-        label: 'Delete',
-        icon: 'delete',
-        actionHandler: handleDeleteRow,
-        actionName: 'delete',
-      },
-      {
-        label: 'Edit',
-        theme: 'secondary',
-        variant: 'regular',
-        actionHandler: handleDeleteRow,
-        actionName: 'edit',
-      },
-    ],
-  };
-
-  const handleCellDataChange = (row, column, value) => {
-    console.log(row, column, value);
-    const dataToUpdate = [...data];
-    const matchData = dataToUpdate.find((item) => item.id === row.id);
-    if (matchData) {
-      matchData[column] = value;
-    }
-    setData(dataToUpdate);
-  };
-
-  const onChangePage = (
-    pageNo,
-    rowsPerPage,
-    sortField,
-    sortAsc,
-    searchText
-  ) => {
-    console.log(pageNo, rowsPerPage, sortField, sortAsc, searchText);
-  };
-
   const addData = () => {
     setData([
       ...data,
@@ -239,41 +184,83 @@ const TableDemoNew = () => {
     setData(dataL);
   };
 
+  const handleDataChange = (event: any) => {
+    const { totalRows, filteredResults } = getPage(data, header, event.detail);
+    setView(filteredResults);
+    setTotalRows(totalRows);
+    setPaginatePref({ ...paginatePref, ...event.detail });
+  };
+
+  useEffect(() => {
+    const { totalRows, filteredResults } = getPage(data, header, paginatePref);
+    setView(filteredResults);
+    setTotalRows(totalRows);
+  }, [data, paginatePref]);
+
   return (
     <>
-      <OakTableNew
+      <OakTable
         header={header}
-        data={data}
-        rounded
-        fill="container"
+        data={view}
+        paginatePref={paginatePref}
+        fill="surface"
         formElementSize="xsmall"
         navPlacement="top"
-      />
+        totalRows={totalRows}
+        handleDataChange={handleDataChange}
+      >
+        <table>
+          <thead>
+            <tr>
+              {header?.map((item) => (
+                <th key={item.name}>
+                  <span>{item.name}</span>
+                </th>
+              ))}
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {view?.map((row: any, index: number) => (
+              <tr key={index}>
+                {header.map((item: TableHeader) => (
+                  <td key={item.name}>
+                    {item.datatype === TableCellDatatype.text && row[item.name]}
+                    {item.datatype !== TableCellDatatype.text && (
+                      <OakInput
+                        name={item.name}
+                        value={row[item.name]}
+                        size="xsmall"
+                      />
+                    )}
+                  </td>
+                ))}
+                <td>
+                  <OakFormActionsContainer>
+                    <OakButton
+                      theme="primary"
+                      variant="appear"
+                      size="xsmall"
+                      semitransparent
+                    >
+                      Edit
+                    </OakButton>
+                    <OakButton
+                      theme="danger"
+                      variant="appear"
+                      size="xsmall"
+                      semitransparent
+                    >
+                      Delete
+                    </OakButton>
+                  </OakFormActionsContainer>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </OakTable>
       <br />
-      <OakTableNew
-        header={header}
-        data={data}
-        rounded
-        fill="container"
-        formElementShape="leaf"
-        dense
-        navPlacement="top"
-      />
-      <br />
-      <OakTableNew
-        header={header}
-        data={data}
-        rounded
-        fill="surface"
-        navPlacement="top"
-      />
-      <OakTableNew
-        header={header}
-        data={data}
-        rounded
-        fill="float"
-        navPlacement="top"
-      />
       <OakButton theme="primary" variant="regular" handleClick={addData}>
         Add
       </OakButton>
@@ -284,4 +271,4 @@ const TableDemoNew = () => {
   );
 };
 
-export default TableDemoNew;
+export default TableDemoCustom;

@@ -17,6 +17,7 @@ declare global {
       'oak-notification': any;
       'oak-paginate': any;
       'oak-table': any;
+      'oak-table-custom': any;
     }
   }
 }
