@@ -10,6 +10,8 @@ declare global {
       'oak-form-actions-container': any;
       'oak-input': any;
       'oak-select': any;
+      'oak-menu': any;
+      'oak-menu-item': any;
       'oak-popover': any;
       'oak-button': any;
       'oak-link': any;
@@ -17,7 +19,7 @@ declare global {
       'oak-notification': any;
       'oak-paginate': any;
       'oak-table': any;
-      'oak-table-custom': any;
+      'oak-tab': any;
     }
   }
 }

@@ -16,6 +16,7 @@ import PlayChart from '../PlayChart';
 import PlayTable from '../PlayTable';
 import PlayFormElements from '../PlayFormElements';
 import ColorPaletteGenerator from '../ColorPaletteGenerator';
+import PlayTab from '../PlayTab';
 
 interface Props {
   cookies: any;
@@ -78,6 +79,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={Home}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-tab"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayTab}
             middleware={['readAuthentication']}
           />
         )}

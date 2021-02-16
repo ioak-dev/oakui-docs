@@ -14,6 +14,8 @@ import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakTypography from '../../oakui/wc/OakTypography';
 import OakLink from '../../oakui/OakLink';
 import { newId } from '../../events/MessageService';
+import OakMenu from '../../oakui/wc/OakMenu';
+import OakMenuItem from '../../oakui/wc/OakMenuItem';
 
 interface Props {
   match: any;
@@ -68,6 +70,10 @@ const Home = (props: Props) => {
     console.log(detail);
   };
 
+  const handleMenuClick = (event: any) => {
+    console.log(event);
+  };
+
   const validateEmail = (_, __, value: any): string[] => {
     const outcome: string[] = [];
     if (!value.toString().includes('@')) {
@@ -97,6 +103,10 @@ const Home = (props: Props) => {
       <OakTypography variant="inherit" paragraph>
         Inherit
       </OakTypography>
+      <OakMenu>
+        <OakMenuItem handleClick={handleMenuClick}>one two three</OakMenuItem>
+        <OakMenuItem handleClick={handleMenuClick}>lorem ipsum</OakMenuItem>
+      </OakMenu>
       <OakLink
         href="https://google.com"
         variant="body1"
@@ -107,6 +117,12 @@ const Home = (props: Props) => {
         <FaceTwoTone />
         Heading two based link
       </OakLink>
+      <div className="inline-row">
+        asdsdasdsadsadasdsad
+        <OakMenu>
+          <OakMenuItem handleClick={handleMenuClick}>Test</OakMenuItem>
+        </OakMenu>
+      </div>
       <OakLink href="https://google.com" variant="body1" color="primary">
         body hyperlink
       </OakLink>
