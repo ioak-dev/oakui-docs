@@ -2,17 +2,32 @@ import React, { useState, useEffect, ReactElement, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import { TAB_CHANGE_EVENT } from 'oakui/dist/types/TabEventTypes';
+import { AccessAlarm } from '@material-ui/icons';
 
 interface Props {
-  slots: string[];
+  tabs: string[];
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'default'
+    | 'danger'
+    | 'warning'
+    | 'success'
+    | 'invert'
+    | 'info';
+  variant?: 'underline' | 'accent' | 'fill' | 'text';
+  rounded?: boolean;
+  fill?: boolean;
+  nobaseline?: boolean;
   children: any;
   handleChange: any;
 }
 
-const OakTabNew = (props: Props) => {
+const OakTab = (props: Props) => {
   const location = useLocation();
   const elementRef = useRef();
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   // useEffect(() => {
   //   initializeViews();
@@ -30,7 +45,7 @@ const OakTabNew = (props: Props) => {
   // };
 
   const handleTabChange = (event: any) => {
-    setActiveTab(event.detail.value);
+    setActiveTabIndex(event.detail.value);
     props.handleChange(event);
   };
 
@@ -49,12 +64,31 @@ const OakTabNew = (props: Props) => {
   });
 
   useEffect(() => {
-    (elementRef.current as any)!.slots = props.slots;
-  }, [props.slots]);
+    (elementRef.current as any)!.tabs = props.tabs;
+  }, [props.tabs]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.fill = props.fill;
+  }, [props.fill]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.rounded = props.rounded;
+  }, [props.rounded]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.nobaseline = props.nobaseline;
+  }, [props.nobaseline]);
 
   return (
-    <oak-tab ref={elementRef} activeTab={activeTab}>
-      <div slot="tab1">Lorem Ipsum one</div>
+    <oak-tab
+      ref={elementRef}
+      activeTabIndex={activeTabIndex}
+      color={props.color}
+      variant={props.variant}
+    >
+      <div slot="0">
+        <AccessAlarm />
+      </div>
       <div slot="tab2">Lorem Ipsum two</div>
       <div slot="tab3">Lorem Ipsum three</div>
       <div slot="tab4">Lorem Ipsum four</div>
@@ -71,4 +105,4 @@ const OakTabNew = (props: Props) => {
   );
 };
 
-export default OakTabNew;
+export default OakTab;

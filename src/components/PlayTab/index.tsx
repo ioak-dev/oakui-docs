@@ -1,10 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import './style.scss';
-import OakTabNew from '../../oakui/wc/OakTabNew';
+import OakTab from '../../oakui/wc/OakTab';
 import OakTypography from '../../oakui/wc/OakTypography';
 import OakContainer from '../../oakui/wc/OakContainer';
 import OakCard from '../../oakui/wc/OakCard';
+import OakSelect from '../../oakui/wc/OakSelect';
 
 interface Props {
   match: any;
@@ -12,16 +13,21 @@ interface Props {
 }
 
 const PlayTab = (props: Props) => {
-  const [state, setState] = useState({ activeTab: 'tab1' });
+  const [state, setState] = useState<any>({
+    activeTab: 0,
+    color: 'primary',
+    variant: 'underline',
+    fill: 'false',
+    rounded: 'false',
+    nobaseline: 'false',
+  });
 
   const handleChange = (detail: any) => {
     setState({ ...state, [detail.name]: detail.value });
   };
 
   const handleTabChange = (event: any) => {
-    setState({
-      activeTab: event.detail.value,
-    });
+    setState({ ...state, activeTab: event.detail.value });
   };
 
   return (
@@ -30,24 +36,81 @@ const PlayTab = (props: Props) => {
         Tab component
       </OakTypography>
       <OakCard>
-        <OakTabNew
+        <OakSelect
+          label="Color"
+          value={state.color}
+          options={[
+            'primary',
+            'secondary',
+            'tertiary',
+            'default',
+            'danger',
+            'warning',
+            'success',
+            'invert',
+            'info',
+          ]}
+          name="color"
+          gutterBottom
+          handleChange={handleChange}
+        />
+        <OakSelect
+          label="Variant"
+          value={state.variant}
+          options={['underline', 'accent', 'fill', 'text']}
+          name="variant"
+          handleChange={handleChange}
+          gutterBottom
+        />
+        <OakSelect
+          label="Fill"
+          value={state.fill}
+          options={['true', 'false']}
+          name="fill"
+          gutterBottom
+          handleChange={handleChange}
+        />
+        <OakSelect
+          label="Rounded"
+          value={state.rounded}
+          options={['true', 'false']}
+          name="rounded"
+          gutterBottom
+          handleChange={handleChange}
+        />
+        <OakSelect
+          label="Nobaseline"
+          value={state.nobaseline}
+          options={['true', 'false']}
+          name="nobaseline"
+          gutterBottom
+          handleChange={handleChange}
+        />
+      </OakCard>
+      <OakCard>
+        <OakTab
+          color={state.color}
+          variant={state.variant}
           handleChange={handleTabChange}
-          slots={[
-            'tab1',
-            'tab2',
-            'tab3',
-            'tab4',
-            'tab5',
-            'tab6',
-            'tab7',
-            'tab8',
-            'tab9',
-            'tab10',
-            'tab11',
-            'tab12',
+          fill={state.fill === 'true'}
+          rounded={state.rounded === 'true'}
+          nobaseline={state.nobaseline === 'true'}
+          tabs={[
+            'Porro quia',
+            'Autem soluta assumenda',
+            'Ad sapiente provident',
+            'ut maiores pariatur',
+            'molestiae numquam',
+            'Architecto necessitatibus',
+            'quisquam totam',
+            'delectus culpa',
+            'laborum animi',
+            'occaecati facilis',
+            'voluptatum laborum',
+            'unde repellat est',
           ]}
         >
-          {state.activeTab === 'tab1' && (
+          {state.activeTab === 0 && (
             <OakContainer paddingHorizontal={2} paddingVertical={5}>
               <OakTypography variant="h3" color="secondary" gutterBottom>
                 Dignissimos exercitationem
@@ -63,7 +126,7 @@ const PlayTab = (props: Props) => {
               officiis sed harum voluptas
             </OakContainer>
           )}
-          {state.activeTab === 'tab2' && (
+          {state.activeTab === 1 && (
             <OakContainer paddingHorizontal={2} paddingVertical={5}>
               <OakTypography variant="h4" color="danger" gutterBottom>
                 Autem soluta assumenda culpa beatae repellendus
@@ -82,7 +145,7 @@ const PlayTab = (props: Props) => {
               placeat vitae repellendus fugit ipsum enim quidem officia fugit
             </OakContainer>
           )}
-          {state.activeTab === 'tab3' && (
+          {state.activeTab === 2 && (
             <OakContainer paddingHorizontal={2} paddingVertical={5}>
               <OakTypography variant="h2" color="success" gutterBottom>
                 Ad sapiente provident esse repellat
@@ -106,7 +169,7 @@ const PlayTab = (props: Props) => {
               neque eaque ipsa
             </OakContainer>
           )}
-        </OakTabNew>
+        </OakTab>
       </OakCard>
     </>
   );
