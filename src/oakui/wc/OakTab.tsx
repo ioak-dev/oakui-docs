@@ -16,7 +16,7 @@ interface Props {
     | 'success'
     | 'invert'
     | 'info';
-  variant?: 'underline' | 'accent' | 'fill' | 'text';
+  variant?: 'underline' | 'accent' | 'fill' | 'text' | 'pills';
   rounded?: boolean;
   fill?: boolean;
   nobaseline?: boolean;

@@ -17,6 +17,7 @@ import PlayTable from '../PlayTable';
 import PlayFormElements from '../PlayFormElements';
 import ColorPaletteGenerator from '../ColorPaletteGenerator';
 import PlayTab from '../PlayTab';
+import PlayCheckbox from '../PlayCheckbox';
 
 interface Props {
   cookies: any;
@@ -90,6 +91,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayTab}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-checkbox"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayCheckbox}
             middleware={['readAuthentication']}
           />
         )}

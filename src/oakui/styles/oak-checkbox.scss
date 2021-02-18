@@ -61,12 +61,12 @@
       width: 20px;
 
       border: 1.5px solid;
-      left: 0px;
+      left: 0;
 
       /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
        *to vertically center it.
        */
-      top: 3px;
+      top: 0;
     }
 
     /*Checkmark of the fake checkbox*/
@@ -79,7 +79,7 @@
       transform: rotate(-45deg);
 
       left: 6px;
-      top: 9px;
+      top: 6px;
     }
 
     /*Hide the checkmark by default*/

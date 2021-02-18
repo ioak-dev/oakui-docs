@@ -57,7 +57,7 @@ const PlayTab = (props: Props) => {
         <OakSelect
           label="Variant"
           value={state.variant}
-          options={['underline', 'accent', 'fill', 'text']}
+          options={['underline', 'accent', 'fill', 'text', 'pills']}
           name="variant"
           handleChange={handleChange}
           gutterBottom

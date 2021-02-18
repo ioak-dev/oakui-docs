@@ -10,6 +10,8 @@ declare global {
       'oak-form-actions-container': any;
       'oak-input': any;
       'oak-select': any;
+      'oak-checkbox': any;
+      'oak-checkbox-item': any;
       'oak-menu': any;
       'oak-menu-item': any;
       'oak-popover': any;
