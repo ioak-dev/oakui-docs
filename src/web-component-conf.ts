@@ -11,7 +11,7 @@ declare global {
       'oak-input': any;
       'oak-select': any;
       'oak-checkbox': any;
-      'oak-checkbox-item': any;
+      'oak-checkbox-group': any;
       'oak-menu': any;
       'oak-menu-item': any;
       'oak-popover': any;

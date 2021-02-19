@@ -7,29 +7,27 @@ import { useLocation } from 'react-router';
 
 interface Props {
   name: string;
-  value: boolean;
-  color?:
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'default'
-    | 'danger'
-    | 'warning'
-    | 'success'
-    | 'invert'
-    | 'info';
-  handleChange: any;
+  label?: string;
+  tooltip?: string;
   children: any;
+  checkboxGroupName: string;
+  formGroupName?: string;
+  gutterBottom?: boolean;
+  handleChange?: any;
+  min?: number;
+  max?: number;
+  validatorFunction?: Function;
 }
 
-const OakCheckboxNew = (props: Props) => {
+const OakCheckboxGroup = (props: Props) => {
   const location = useLocation();
   const elementRef = useRef();
 
   const handleChange = (event: any) => {
-    console.log(event.detail.value);
-    const { detail } = event;
-    props.handleChange(detail);
+    if (props.handleChange) {
+      const { detail } = event;
+      props.handleChange(detail);
+    }
   };
 
   useEffect(() => {
@@ -54,14 +52,27 @@ const OakCheckboxNew = (props: Props) => {
   });
 
   useEffect(() => {
-    (elementRef.current as any)!.value = props.value;
-  }, [props.value]);
+    (elementRef.current as any)!.gutterBottom = props.gutterBottom;
+  }, [props.gutterBottom]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.validatorFunction = props.validatorFunction;
+  }, [props.validatorFunction]);
 
   return (
-    <oak-checkbox-item ref={elementRef} name={props.name} color={props.color}>
+    <oak-checkbox-group
+      ref={elementRef}
+      name={props.name}
+      label={props.label}
+      tooltip={props.tooltip}
+      formGroupName={props.formGroupName}
+      checkboxGroupName={props.checkboxGroupName}
+      min={props.min}
+      max={props.max}
+    >
       {props.children}
-    </oak-checkbox-item>
+    </oak-checkbox-group>
   );
 };
 
-export default OakCheckboxNew;
+export default OakCheckboxGroup;
