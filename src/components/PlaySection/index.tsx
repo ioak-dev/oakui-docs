@@ -1,16 +1,8 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { OakSectionStyleProps } from 'oakui/dist/styles/OakSectionStyles';
 import './style.scss';
 import OakTab from '../../oakui/wc/OakTab';
-import OakTypography from '../../oakui/wc/OakTypography';
 import OakSection from '../../oakui/wc/OakSection';
-import OakSelect from '../../oakui/wc/OakSelect';
-import OakCheckbox from '../../oakui/wc/OakCheckbox';
-import OakButton from '../../oakui/wc/OakButton';
-import OakCheckboxGroup from '../../oakui/wc/OakCheckboxGroup';
-import OakInput from '../../oakui/wc/OakInput';
-import OakForm from '../../oakui/wc/OakForm';
 import Overview from './overview';
 import Playground from './playground';
 

@@ -35,6 +35,11 @@ const NavElements = (props: Props) => {
         closeAfterRouteChange={props.closeAfterRouteChange}
       />
       <NavItem
+        to={`/${props.space}/play-drawer`}
+        label="Drawer"
+        closeAfterRouteChange={props.closeAfterRouteChange}
+      />
+      <NavItem
         to={`/${props.space}/play-section`}
         label="Section"
         closeAfterRouteChange={props.closeAfterRouteChange}
