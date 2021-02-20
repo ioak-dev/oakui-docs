@@ -2,9 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   INPUT_CHANGE_EVENT,
   INPUT_INPUT_EVENT,
-  INPUT_SUBMIT_EVENT,
-  FILE_SELECTED_EVENT,
-} from 'oakui/dist/types/InputEventTypes';
+} from 'oakui/dist/event/OakInputEvent';
 
 interface Props {
   name: string;

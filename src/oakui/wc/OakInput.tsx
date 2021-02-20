@@ -4,7 +4,7 @@ import {
   INPUT_INPUT_EVENT,
   INPUT_SUBMIT_EVENT,
   FILE_SELECTED_EVENT,
-} from 'oakui/dist/types/InputEventTypes';
+} from 'oakui/dist/event/OakInputEvent';
 
 interface Props {
   name: string;

@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect, useRef } from 'react';
-import { LINK_CLICK_EVENT } from 'oakui/dist/types/LinkEventTypes';
-import { notify } from 'oakui/index';
+import { LINK_CLICK_EVENT } from 'oakui/dist/event/OakLinkEvent';
 
 interface Props {
   handleClick?: any;

@@ -1,7 +1,7 @@
 import {
   INPUT_CHANGE_EVENT,
   INPUT_INPUT_EVENT,
-} from 'oakui/dist/types/InputEventTypes';
+} from 'oakui/dist/event/OakInputEvent';
 import React, { useState, useEffect, ReactElement, useRef } from 'react';
 import { useLocation } from 'react-router';
 

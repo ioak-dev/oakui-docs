@@ -1,15 +1,15 @@
 import {
-  getStyleClass,
-  OakSectionStyleProps,
-} from 'oakui/dist/styles/OakSectionStyles';
+  compose,
+  OakSectionProps,
+} from 'oakui/dist/style-composer/OakSectionComposer';
 import React, { useState, useEffect, useRef } from 'react';
 
-interface Props extends OakSectionStyleProps {
+interface Props extends OakSectionProps {
   children: any;
 }
 
 const OakSection = (props: Props) => {
-  return <div className={getStyleClass(props)}>{props.children}</div>;
+  return <div className={compose(props)}>{props.children}</div>;
 };
 
 export default OakSection;

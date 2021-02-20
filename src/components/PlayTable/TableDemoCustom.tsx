@@ -7,7 +7,7 @@ import {
   TableCellDatatype,
   TableHeader,
 } from 'oakui/dist/types/TableHeaderType';
-import { getPage } from 'oakui/dist/services/OakTableService';
+import { getPage } from 'oakui/dist/service/OakTableService';
 import './TableDemo.scss';
 import OakButton from '../../oakui/wc/OakButton';
 import { newId } from '../../events/MessageService';

@@ -3,7 +3,7 @@ import {
   TABLE_DATA_CHANGE_EVENT,
   TABLE_PAGINATE_EVENT,
 } from 'oakui/dist/types/TableEventTypes';
-import { getStyleClass } from 'oakui/dist/styles/OakTableStyles';
+import { compose } from 'oakui/dist/style-composer/OakTableComposer';
 import { TableHeader } from 'oakui/dist/types/TableHeaderType';
 import { PaginatePref } from 'oakui/dist/types/PaginatePrefType';
 
@@ -117,7 +117,7 @@ const OakTable = (props: Props) => {
       totalRows={props.totalRows}
       ref={elementRef}
     >
-      <div className={getStyleClass({ dense: props.dense, fill: props.fill })}>
+      <div className={compose({ dense: props.dense, fill: props.fill })}>
         {props.children}
       </div>
     </oak-table>

@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { BUTTON_CLICK_EVENT } from 'oakui/dist/types/ButtonEventTypes';
+import { BUTTON_CLICK_EVENT } from 'oakui/dist/event/OakButtonEvent';
 
 interface Props {
   handleClick?: any;

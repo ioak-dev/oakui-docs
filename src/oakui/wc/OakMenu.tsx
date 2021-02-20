@@ -1,7 +1,6 @@
 import React, { useState, useEffect, ReactElement, useRef } from 'react';
 import { useLocation } from 'react-router';
-import { getStyleClass } from 'oakui/dist/styles/OakMenuStyles';
-import OakButton from './OakButton';
+import { compose } from 'oakui/dist/style-composer/OakMenuComposer';
 
 interface Props {
   children: any;
@@ -17,7 +16,7 @@ const OakMenu = (props: Props) => {
       <button type="button" slot="menu-trigger">
         menu
       </button>
-      <div slot="menu-popup" className={getStyleClass({})}>
+      <div slot="menu-popup" className={compose({})}>
         {props.children}
       </div>
     </oak-menu>
