@@ -1,13 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import './style.scss';
-import OakTab from '../../oakui/wc/OakTab';
-import OakTypography from '../../oakui/wc/OakTypography';
 import OakSection from '../../oakui/wc/OakSection';
 import OakSelect from '../../oakui/wc/OakSelect';
-import OakCheckbox from '../../oakui/wc/OakCheckbox';
+import OakRadio from '../../oakui/wc/OakRadio';
 import OakButton from '../../oakui/wc/OakButton';
-import OakCheckboxGroup from '../../oakui/wc/OakCheckboxGroup';
+import OakRadioGroup from '../../oakui/wc/OakRadioGroup';
 import OakInput from '../../oakui/wc/OakInput';
 import OakForm from '../../oakui/wc/OakForm';
 
@@ -16,7 +14,7 @@ interface Props {
   history: any;
 }
 
-const PlayCheckbox = (props: Props) => {
+const PlayRadio = (props: Props) => {
   const [state, setState] = useState<any>({
     color: 'primary',
     size: 'small',
@@ -24,21 +22,15 @@ const PlayCheckbox = (props: Props) => {
     max: 0,
   });
 
-  const [checked, setChecked] = useState({
-    text: '',
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false,
-  });
+  const [radioValue, setRadioValue] = useState('one');
 
   const handleChange = (detail: any) => {
     setState({ ...state, [detail.name]: detail.value });
   };
 
   const handleCheckedChange = (detail: any) => {
-    setChecked({ ...checked, [detail.name]: detail.value });
+    console.log(detail);
+    setRadioValue(detail.value);
   };
 
   const handleSubmit = (event: any) => {
@@ -54,7 +46,7 @@ const PlayCheckbox = (props: Props) => {
 
   return (
     <>
-      <OakSection color="primary" paddingHorizontal={5} paddingVertical={5}>
+      <OakSection>
         <OakSelect
           label="Color"
           value={state.color}
@@ -98,79 +90,73 @@ const PlayCheckbox = (props: Props) => {
       </OakSection>
       <OakSection>
         <OakForm
-          formGroupName="play-checkbox-form-group"
+          formGroupName="play-radio-form-group"
           handleSubmit={handleSubmit}
         >
-          <OakCheckboxGroup
+          <OakRadioGroup
             label="Checkbox test"
             tooltip="lorem ipsum dolor sit"
-            formGroupName="play-checkbox-form-group"
-            checkboxGroupName="play-checkbox-group"
+            formGroupName="play-radio-form-group"
+            radioGroupName="play-radio-group"
             name="checkboxGroupElement"
-            min={state.min}
-            max={state.max}
+            value={radioValue}
             handleChange={handleCheckedChange}
             gutterBottom
             validatorFunction={validatorFunction}
           >
             <div className="align-checkbox">
-              <OakCheckbox
+              <OakRadio
                 name="one"
-                checkboxGroupName="play-checkbox-group"
-                value={checked.one}
+                radioGroupName="play-radio-group"
                 color={state.color}
                 size={state.size}
                 // handleChange={handleCheckedChange}
               >
                 derat opusim
-              </OakCheckbox>
-              <OakCheckbox
+              </OakRadio>
+              <OakRadio
                 name="two"
-                checkboxGroupName="play-checkbox-group"
-                value={checked.two}
+                radioGroupName="play-radio-group"
                 color={state.color}
                 size={state.size}
                 // handleChange={handleCheckedChange}
               >
                 Dolor sit
-              </OakCheckbox>
-              <OakCheckbox
+              </OakRadio>
+              <OakRadio
                 name="three"
-                checkboxGroupName="play-checkbox-group"
-                value={checked.three}
+                radioGroupName="play-radio-group"
                 color={state.color}
                 size={state.size}
                 // handleChange={handleCheckedChange}
               >
                 Lorem ipsum
-              </OakCheckbox>
-              <OakCheckbox
+              </OakRadio>
+              <OakRadio
                 name="four"
-                checkboxGroupName="play-checkbox-group"
-                value={checked.four}
+                radioGroupName="play-radio-group"
                 color={state.color}
                 size={state.size}
                 // handleChange={handleCheckedChange}
               >
                 Provident aliquam iusto ipsam
-              </OakCheckbox>
-              <OakCheckbox
+              </OakRadio>
+              <OakRadio
                 name="five"
-                checkboxGroupName="play-checkbox-group"
-                value={checked.five}
+                radioGroupName="play-radio-group"
                 color={state.color}
                 size={state.size}
                 // handleChange={handleCheckedChange}
               >
                 Quaerat similique accusantium
-              </OakCheckbox>
+              </OakRadio>
             </div>
-          </OakCheckboxGroup>
+          </OakRadioGroup>
           <OakButton
             theme="primary"
             variant="appear"
             type="submit"
-            formGroupName="play-checkbox-form-group"
+            formGroupName="play-radio-form-group"
           >
             Submit
           </OakButton>
@@ -180,4 +166,4 @@ const PlayCheckbox = (props: Props) => {
   );
 };
 
-export default PlayCheckbox;
+export default PlayRadio;

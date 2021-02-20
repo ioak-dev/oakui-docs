@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './style.scss';
 import LoginMethod from './LoginMethod';
 import OakPage from '../../oakui/OakPage';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import OakTypography from '../../oakui/wc/OakTypography';
 
 interface Props {
@@ -48,7 +48,7 @@ const Login = (props: Props) => {
 
   return (
     <OakPage>
-      <OakCard>
+      <OakSection>
         <OakTypography variant="h2">Sign in</OakTypography>
         <OakTypography variant="subtitle1">
           Choose the preferred authentication method to continue
@@ -74,7 +74,7 @@ const Login = (props: Props) => {
             </div>
           </div>
         </div>
-      </OakCard>
+      </OakSection>
     </OakPage>
   );
 };

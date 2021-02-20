@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import OakInputFile from '../../oakui/OakInputFile';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import OakTable from '../../oakui/OakTable';
 import './FileInput.scss';
 import packetBlack from '../../images/oneauth_white_small.svg';
@@ -16,7 +16,7 @@ const FileInput = () => {
   };
 
   return (
-    <OakCard heading="File input">
+    <OakSection heading="File input">
       <OakInputFile
         data={state}
         id="testFiles"
@@ -43,7 +43,7 @@ const FileInput = () => {
           alt="file upload"
         />
       </OakInputFile>
-    </OakCard>
+    </OakSection>
   );
 };
 

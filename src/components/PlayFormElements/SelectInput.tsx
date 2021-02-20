@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import './SelectInput.scss';
 import OakSelect from '../../oakui/wc/OakSelect';
 
@@ -17,7 +17,7 @@ const SelectInput = () => {
   };
 
   return (
-    <OakCard heading="Select input">
+    <OakSection heading="Select input">
       <OakSelect
         value={state.testField}
         name="testField"
@@ -116,7 +116,7 @@ const SelectInput = () => {
           'dsas sdafds af ds f dsaf',
         ]}
       />
-    </OakCard>
+    </OakSection>
   );
 };
 

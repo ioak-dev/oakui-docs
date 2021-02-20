@@ -4,7 +4,7 @@ import OakButton from '../../../oakui/wc/OakButton';
 import OakText from '../../../oakui/OakText';
 import { isEmptyOrSpaces, isEmptyAttributes } from '../../Utils';
 import OakPage from '../../../oakui/OakPage';
-import OakCard from '../../../oakui/wc/OakCard';
+import OakSection from '../../../oakui/wc/OakSection';
 import { fetchSpace } from '../../Auth/AuthService';
 import SpaceItem from './SpaceItem';
 import './style.scss';
@@ -76,7 +76,7 @@ const OneAuth = (props: Props) => {
 
   return (
     <OakPage>
-      <OakCard>
+      <OakSection>
         <div className="view-space-item">
           <div className="page-header">
             <OakTypography variant="h2">
@@ -105,7 +105,7 @@ const OneAuth = (props: Props) => {
             </div>
           </div>
         </div>
-      </OakCard>
+      </OakSection>
     </OakPage>
   );
 };

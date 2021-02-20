@@ -1,5 +1,5 @@
 import React from 'react';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import OakSpinner from '../../oakui/OakSpinner';
 import SpinnerDemo from './SpinnerDemo';
 import './style.scss';
@@ -20,12 +20,12 @@ const PlaySpinner = (props: Props) => {
     // </div>
     <>
       {/* <OakSpinner style="bouncing-dots" /> */}
-      <OakCard>
+      <OakSection fillColor="container" outlineColor="none">
         <OakTypography variant="h2">Oak UI Playground</OakTypography>
         <OakTypography variant="subtitle1">
           Demo on how the newly created OAK UI components work
         </OakTypography>
-      </OakCard>
+      </OakSection>
       <SpinnerDemo />
     </>
   );

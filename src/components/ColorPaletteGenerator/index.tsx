@@ -7,7 +7,7 @@ import OakForm from '../../oakui/wc/OakForm';
 import OakSelect from '../../oakui/wc/OakSelect';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakTypography from '../../oakui/wc/OakTypography';
-import OakContainer from '../../oakui/wc/OakContainer';
+import OakSection from '../../oakui/wc/OakSection';
 import { computePalette, getGreyShades } from './service';
 
 interface Props {
@@ -224,7 +224,7 @@ const ColorPaletteGenerator = (props: Props) => {
       <OakTypography variant="caption">
         Copy below variables into your theme.css file
       </OakTypography>
-      <OakContainer
+      <OakSection
         fillType="none"
         variant="outlined"
         paddingHorizontal={4}
@@ -250,7 +250,7 @@ const ColorPaletteGenerator = (props: Props) => {
             </div>
           </div>
         </OakTypography>
-      </OakContainer>
+      </OakSection>
     </>
   );
 };

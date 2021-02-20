@@ -3,8 +3,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import './style.scss';
 import OakTab from '../../oakui/wc/OakTab';
 import OakTypography from '../../oakui/wc/OakTypography';
-import OakContainer from '../../oakui/wc/OakContainer';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import OakSelect from '../../oakui/wc/OakSelect';
 
 interface Props {
@@ -26,8 +25,8 @@ const PlayTab = (props: Props) => {
     setState({ ...state, [detail.name]: detail.value });
   };
 
-  const handleTabChange = (event: any) => {
-    setState({ ...state, activeTab: event.detail.value });
+  const handleTabChange = (detail: any) => {
+    setState({ ...state, activeTab: detail.value });
   };
 
   return (
@@ -35,7 +34,7 @@ const PlayTab = (props: Props) => {
       <OakTypography gutterBottom variant="h4">
         Tab component
       </OakTypography>
-      <OakCard>
+      <OakSection>
         <OakSelect
           label="Color"
           value={state.color}
@@ -86,8 +85,8 @@ const PlayTab = (props: Props) => {
           gutterBottom
           handleChange={handleChange}
         />
-      </OakCard>
-      <OakCard>
+      </OakSection>
+      <OakSection>
         <OakTab
           color={state.color}
           variant={state.variant}
@@ -111,7 +110,7 @@ const PlayTab = (props: Props) => {
           ]}
         >
           {state.activeTab === 0 && (
-            <OakContainer paddingHorizontal={2} paddingVertical={5}>
+            <OakSection paddingHorizontal={2} paddingVertical={5}>
               <OakTypography variant="h3" color="secondary" gutterBottom>
                 Dignissimos exercitationem
               </OakTypography>
@@ -124,10 +123,10 @@ const PlayTab = (props: Props) => {
               laboriosam occaecati facilis molestiae enim quia hic. Totam ex
               ipsam modi voluptate tempora exercitationem officia quaerat
               officiis sed harum voluptas
-            </OakContainer>
+            </OakSection>
           )}
           {state.activeTab === 1 && (
-            <OakContainer paddingHorizontal={2} paddingVertical={5}>
+            <OakSection paddingHorizontal={2} paddingVertical={5}>
               <OakTypography variant="h4" color="danger" gutterBottom>
                 Autem soluta assumenda culpa beatae repellendus
               </OakTypography>
@@ -143,10 +142,10 @@ const PlayTab = (props: Props) => {
               voluptatibus porro totam at occaecati perferendis voluptas
               corporis nostrum. Eaque nihil itaque ratione laboriosam non
               placeat vitae repellendus fugit ipsum enim quidem officia fugit
-            </OakContainer>
+            </OakSection>
           )}
           {state.activeTab === 2 && (
-            <OakContainer paddingHorizontal={2} paddingVertical={5}>
+            <OakSection paddingHorizontal={2} paddingVertical={5}>
               <OakTypography variant="h2" color="success" gutterBottom>
                 Ad sapiente provident esse repellat
               </OakTypography>
@@ -167,10 +166,10 @@ const PlayTab = (props: Props) => {
               recusandae necessitatibus eum quo quaerat. Voluptatibus cupiditate
               architecto temporibus quaerat provident corporis minus sapiente
               neque eaque ipsa
-            </OakContainer>
+            </OakSection>
           )}
         </OakTab>
-      </OakCard>
+      </OakSection>
     </>
   );
 };

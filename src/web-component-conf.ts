@@ -3,8 +3,7 @@ import * as React from 'react';
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'oak-container': any;
-      'oak-card': any;
+      'oak-section': any;
       'oak-typography': any;
       'oak-form': any;
       'oak-form-actions-container': any;
@@ -12,6 +11,8 @@ declare global {
       'oak-select': any;
       'oak-checkbox': any;
       'oak-checkbox-group': any;
+      'oak-radio': any;
+      'oak-radio-group': any;
       'oak-menu': any;
       'oak-menu-item': any;
       'oak-popover': any;

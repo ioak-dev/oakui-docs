@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import OakCard from '../../oakui/wc/OakCard';
-import OakTable from '../../oakui/OakTable';
+import OakSection from '../../oakui/wc/OakSection';
+import OakTable from '../../oakui/wc/OakTable';
 import './TableDemo.scss';
 import OakButton from 'src/oakui/wc/OakButton';
 import { newId } from 'src/events/MessageService';

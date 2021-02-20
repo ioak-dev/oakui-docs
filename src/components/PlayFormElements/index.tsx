@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import FileInput from './FileInput';
 import './style.scss';
 import OakInput from '../../oakui/wc/OakInput';
@@ -29,9 +29,9 @@ const PlayFormElements = (props: Props) => {
 
   return (
     <>
-      <OakCard>
+      <OakSection>
         <OakTypography variant="h2">Form Elements</OakTypography>
-      </OakCard>
+      </OakSection>
       <OakInput
         label="First name"
         name="firstName"

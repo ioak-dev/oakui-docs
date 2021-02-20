@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import OakTypography from '../../oakui/wc/OakTypography';
-import OakContainer from '../../oakui/wc/OakContainer';
+import OakSection from '../../oakui/wc/OakSection';
 import './ButtonDemo.scss';
 import ButtonDemoContrast from './ButtonDemoContrast';
 import ButtonDemoIcon from './ButtonDemoIcon';
@@ -11,7 +11,7 @@ import ButtonDemoVariant from './ButtonDemoVariant';
 
 const ButtonDemo = () => {
   return (
-    <OakContainer paddingHorizontal={4} paddingVertical={2} rounded>
+    <OakSection paddingHorizontal={4} paddingVertical={2} rounded>
       <div className="button-demo">
         <div>
           <OakTypography variant="h5">Size demonstration</OakTypography>
@@ -204,7 +204,7 @@ const ButtonDemo = () => {
           <ButtonDemoIcon />
         </div>
       </div>
-    </OakContainer>
+    </OakSection>
   );
 };
 

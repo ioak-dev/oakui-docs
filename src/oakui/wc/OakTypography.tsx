@@ -32,6 +32,17 @@ interface Props {
     | 'success'
     | 'invert'
     | 'info';
+  highlightColor?:
+    | 'none'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'default'
+    | 'danger'
+    | 'warning'
+    | 'success'
+    | 'invert'
+    | 'info';
 }
 
 const OakTypography = (props: Props) => {
@@ -54,6 +65,7 @@ const OakTypography = (props: Props) => {
       display={props.display}
       variant={props.variant}
       color={props.color}
+      highlightColor={props.highlightColor}
       ref={elementRef}
     >
       {props.children}

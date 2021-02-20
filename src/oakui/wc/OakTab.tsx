@@ -46,7 +46,7 @@ const OakTab = (props: Props) => {
 
   const handleTabChange = (event: any) => {
     setActiveTabIndex(event.detail.value);
-    props.handleChange(event);
+    props.handleChange(event.detail);
   };
 
   useEffect(() => {
@@ -86,20 +86,6 @@ const OakTab = (props: Props) => {
       color={props.color}
       variant={props.variant}
     >
-      <div slot="0">
-        <AccessAlarm />
-      </div>
-      <div slot="tab2">Lorem Ipsum two</div>
-      <div slot="tab3">Lorem Ipsum three</div>
-      <div slot="tab4">Lorem Ipsum four</div>
-      <div slot="tab5">Lorem Ipsum five</div>
-      <div slot="tab6">Lorem Ipsum six</div>
-      <div slot="tab7">Lorem Ipsum seven</div>
-      <div slot="tab8">Lorem Ipsum eight</div>
-      <div slot="tab9">Lorem Ipsum nine</div>
-      <div slot="tab10">Lorem Ipsum ten</div>
-      <div slot="tab11">Lorem Ipsum eleven</div>
-      <div slot="tab12">Lorem Ipsum twelve</div>
       <div slot="content">{props.children}</div>
     </oak-tab>
   );

@@ -18,6 +18,8 @@ import PlayFormElements from '../PlayFormElements';
 import ColorPaletteGenerator from '../ColorPaletteGenerator';
 import PlayTab from '../PlayTab';
 import PlayCheckbox from '../PlayCheckbox';
+import PlayRadio from '../PlayRadio';
+import PlaySection from '../PlaySection';
 
 interface Props {
   cookies: any;
@@ -96,12 +98,34 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
+        path="/:space/play-section"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlaySection}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
         path="/:space/play-checkbox"
         render={(propsLocal) => (
           <OakRoute
             {...propsLocal}
             {...props}
             component={PlayCheckbox}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-radio"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayRadio}
             middleware={['readAuthentication']}
           />
         )}

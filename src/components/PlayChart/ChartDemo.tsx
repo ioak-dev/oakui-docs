@@ -4,7 +4,7 @@ import { receiveMessage } from '../../events/MessageService';
 import OakChartBar from '../../oakui/OakChartBar';
 import OakChartDoughnut from '../../oakui/OakChartDoughnut';
 import OakChartLine from '../../oakui/OakChartLine';
-import OakCard from '../../oakui/wc/OakCard';
+import OakSection from '../../oakui/wc/OakSection';
 import OakTable from '../../oakui/OakTable';
 import './ChartDemo.scss';
 
@@ -115,7 +115,7 @@ const ChartDemo = () => {
       <div className="chart-demo-container" id="chart-demo-container">
         <div>
           {show && (
-            <OakCard
+            <OakSection
               heading="Doughnut chart - concentric"
               headerVariant="apparent"
             >
@@ -125,91 +125,91 @@ const ChartDemo = () => {
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
                 stacked
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Doughnut chart">
+            <OakSection heading="Doughnut chart">
               <OakChartDoughnut
                 datasets={[doughnutData[1]]}
                 type="doughnut"
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
                 stacked
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Piechart">
+            <OakSection heading="Piechart">
               <OakChartDoughnut
                 datasets={[doughnutData[1]]}
                 type="pie"
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
                 stacked
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Bar chart, by category - stacked">
+            <OakSection heading="Bar chart, by category - stacked">
               <OakChartBar
                 datasets={data}
                 type="category"
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
                 stacked
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Bar chart, by category">
+            <OakSection heading="Bar chart, by category">
               <OakChartBar
                 datasets={data}
                 type="category"
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Line chart, by category - stacked">
+            <OakSection heading="Line chart, by category - stacked">
               <OakChartLine
                 datasets={data}
                 type="category"
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
                 stacked
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Line chart, by category">
+            <OakSection heading="Line chart, by category">
               <OakChartLine
                 datasets={data}
                 type="category"
                 categoryLabels={['Jan', 'Feb', 'March', 'April']}
               />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Linear line chart - stacked">
+            <OakSection heading="Linear line chart - stacked">
               <OakChartLine datasets={dataPoint} type="linear" stacked />
-            </OakCard>
+            </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakCard heading="Linear line chart">
+            <OakSection heading="Linear line chart">
               <OakChartLine datasets={dataPoint} type="linear" />
-            </OakCard>
+            </OakSection>
           )}
         </div>
       </div>
