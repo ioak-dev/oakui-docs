@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { HashRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Chart from 'chart.js';
 
 import './style.scss';
-import { HashRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { withCookies } from 'react-cookie';
 
 import Notification from '../Notification';
@@ -16,7 +16,7 @@ import SidebarContainer from './SidebarContainer';
 import BodyContainer from './BodyContainer';
 import { receiveMessage } from '../../events/MessageService';
 import OakNotification from '../../oakui/wc/OakNotification';
-import OakDrawer from '../../oakui/wc/OakDrawer';
+import OakAppLayout from '../../oakui/wc/OakAppLayout';
 
 interface Props {
   cookies: any;
@@ -60,15 +60,24 @@ const Content = (props: Props) => {
           elevation={5}
           displayCount={5}
         />
-        <TopbarContainer cookies={props.cookies} />
-        <OakDrawer isOpen={profile.sidebar}>
-          <div slot="drawer">
+
+        <OakAppLayout
+          stickyTopbar
+          leftDrawerOpen={profile.sidebar}
+          // rightDrawerOpen={profile.sidebar}
+          leftDrawerType="side"
+          // rightDrawerType="side"
+        >
+          <div slot="drawer-left">
             <SidebarContainer />
+          </div>
+          <div slot="topbar">
+            <TopbarContainer cookies={props.cookies} />
           </div>
           <div slot="content">
             <BodyContainer {...props} />
           </div>
-        </OakDrawer>
+        </OakAppLayout>
       </HashRouter>
     </div>
   );

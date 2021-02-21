@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { MenuOpen } from '@material-ui/icons';
 import './style.scss';
-import OakDrawer from '../../oakui/wc/OakDrawer';
+import OakAppLayout from '../../oakui/wc/OakAppLayout';
 import OakButton from '../../oakui/wc/OakButton';
 import OakSection from '../../oakui/wc/OakSection';
 import OakTypography from '../../oakui/wc/OakTypography';
@@ -50,7 +50,7 @@ const Playground = (props: Props) => {
           </OakRadio>
         </OakRadioGroup>
       </OakSection>
-      <OakDrawer isOpen={isOpen} position={state.position}>
+      <OakAppLayout leftDrawerOpen={isOpen}>
         <div slot="drawer">
           <div className="drawer-side">
             <OakSection fillColor="primary">
@@ -111,7 +111,7 @@ const Playground = (props: Props) => {
             </OakSection>
           </div>
         </div>
-      </OakDrawer>
+      </OakAppLayout>
     </div>
   );
 };

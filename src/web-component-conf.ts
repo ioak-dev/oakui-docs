@@ -23,7 +23,7 @@ declare global {
       'oak-paginate': any;
       'oak-table': any;
       'oak-tab': any;
-      'oak-drawer': any;
+      'oak-app-layout': any;
     }
   }
 }
