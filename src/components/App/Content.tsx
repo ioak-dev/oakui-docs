@@ -16,6 +16,7 @@ import SidebarContainer from './SidebarContainer';
 import BodyContainer from './BodyContainer';
 import { receiveMessage } from '../../events/MessageService';
 import OakNotification from '../../oakui/wc/OakNotification';
+import OakDrawer from '../../oakui/wc/OakDrawer';
 
 interface Props {
   cookies: any;
@@ -60,8 +61,14 @@ const Content = (props: Props) => {
           displayCount={5}
         />
         <TopbarContainer cookies={props.cookies} />
-        <SidebarContainer />
-        <BodyContainer {...props} />
+        <OakDrawer isOpen={profile.sidebar}>
+          <div slot="drawer">
+            <SidebarContainer />
+          </div>
+          <div slot="content">
+            <BodyContainer {...props} />
+          </div>
+        </OakDrawer>
       </HashRouter>
     </div>
   );

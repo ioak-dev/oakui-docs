@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 interface Props {
-  position?: 'left' | 'right' | 'top' | 'bottom';
+  position?: 'left' | 'right';
   isOpen: boolean;
   children: any;
 }
