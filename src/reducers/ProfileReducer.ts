@@ -6,6 +6,7 @@ const initialState = {
   textSize: 'textsize_medium',
   themeColor: 'themecolor1',
   sidebar: true,
+  rightSidebar: false,
   hideSidebarOnDesktop: false,
 };
 

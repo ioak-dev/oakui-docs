@@ -105,6 +105,56 @@ const NavElements = (props: Props) => {
           label="Modal"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
+        <NavItem
+          to={`/${props.space}/play-button`}
+          label="Button"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-form-elements`}
+          label="Form elements"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-table`}
+          label="Table"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-chart`}
+          label="Chart"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-spinner`}
+          label="Spinner"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-modal`}
+          label="Modal"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-table`}
+          label="Table"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-chart`}
+          label="Chart"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-spinner`}
+          label="Spinner"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-modal`}
+          label="Modal"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
       </NavGroup>
     </div>
   );

@@ -5,7 +5,11 @@ import { useSelector, connect, useDispatch } from 'react-redux';
 import { getProfile, setProfile } from '../../actions/ProfileActions';
 import './ExpandIcon.scss';
 
-const ExpandIcon = () => {
+interface Props {
+  controls: 'left' | 'right';
+}
+
+const ExpandIcon = (props: Props) => {
   const authorization = useSelector((state) => state.authorization);
 
   const profile = useSelector((state) => state.profile);
@@ -13,7 +17,18 @@ const ExpandIcon = () => {
   const dispatch = useDispatch();
 
   const toggleSidebar = () => {
-    dispatch(setProfile({ ...profile, sidebar: !profile.sidebar }));
+    switch (props.controls) {
+      case 'left':
+        dispatch(setProfile({ ...profile, sidebar: !profile.sidebar }));
+        break;
+      case 'right':
+        dispatch(
+          setProfile({ ...profile, rightSidebar: !profile.rightSidebar })
+        );
+        break;
+      default:
+        break;
+    }
   };
 
   return (

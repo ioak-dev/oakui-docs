@@ -17,6 +17,7 @@ import BodyContainer from './BodyContainer';
 import { receiveMessage } from '../../events/MessageService';
 import OakNotification from '../../oakui/wc/OakNotification';
 import OakAppLayout from '../../oakui/wc/OakAppLayout';
+import { setProfile } from '../../actions/ProfileActions';
 
 interface Props {
   cookies: any;
@@ -43,6 +44,19 @@ const Content = (props: Props) => {
       profile.theme === 'theme_dark' ? '#e0e0e0' : '#626262';
   }, [profile]);
 
+  const handleClose = (detail: any) => {
+    switch (detail.name) {
+      case 'left':
+        dispatch(setProfile({ ...profile, sidebar: !detail.value }));
+        break;
+      case 'right':
+        dispatch(setProfile({ ...profile, rightSidebar: !detail.value }));
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div
       className={`App ${profile.theme} ${profile.textSize} ${
@@ -62,13 +76,18 @@ const Content = (props: Props) => {
         />
 
         <OakAppLayout
-          stickyTopbar
           leftDrawerOpen={profile.sidebar}
-          // rightDrawerOpen={profile.sidebar}
+          rightDrawerOpen={profile.rightSidebar}
           leftDrawerType="side"
-          // rightDrawerType="side"
+          rightDrawerType="push"
+          topbarVariant="static"
+          handleClose={handleClose}
+          topbarColor="container"
         >
-          <div slot="drawer-left">
+          <div slot="drawer-left" className="drawer-left">
+            <SidebarContainer />
+          </div>
+          <div slot="drawer-right" className="drawer-right">
             <SidebarContainer />
           </div>
           <div slot="topbar">

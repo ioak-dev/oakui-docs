@@ -32,11 +32,9 @@ const Topbar = (props: Props) => {
   return (
     <div className="topbar">
       <div className="topbar--left">
-        {/* {authorization.isAuth && ( */}
         <div className={`${props.hideSidebarOnDesktop ? 'mobile-only' : ''}`}>
-          <ExpandIcon />
+          <ExpandIcon controls="left" />
         </div>
-        {/* )} */}
         {props.hideSidebarOnDesktop && (
           <div className="desktop-only">
             <Logo />
@@ -50,6 +48,9 @@ const Topbar = (props: Props) => {
       </div>
       <div className="topbar--right">
         <RightNav cookies={props.cookies} />
+        <div className={`${props.hideSidebarOnDesktop ? 'mobile-only' : ''}`}>
+          <ExpandIcon controls="right" />
+        </div>
       </div>
     </div>
   );
