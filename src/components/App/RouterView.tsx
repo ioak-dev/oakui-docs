@@ -21,6 +21,7 @@ import PlayCheckbox from '../PlayCheckbox';
 import PlayRadio from '../PlayRadio';
 import PlaySection from '../PlaySection';
 import PlayDrawer from '../PlayDrawer';
+import PlaySheet from '../PlaySheet';
 
 interface Props {
   cookies: any;
@@ -105,6 +106,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayTab}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-sheet"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlaySheet}
             middleware={['readAuthentication']}
           />
         )}

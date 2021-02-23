@@ -24,6 +24,7 @@ declare global {
       'oak-table': any;
       'oak-tab': any;
       'oak-app-layout': any;
+      'oak-sheet': any;
     }
   }
 }
