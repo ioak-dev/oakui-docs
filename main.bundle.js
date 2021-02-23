@@ -4868,7 +4868,7 @@
   .oak-sheet__sheet--position-bottom {
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .oak-sheet--show
     .oak-sheet__sheet--position-bottom.oak-sheet__sheet--size-vertical-one-third {
@@ -5013,7 +5013,7 @@
   .oak-sheet__sheet--position-left {
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .oak-sheet--show
     .oak-sheet__sheet--position-left.oak-sheet__sheet--size-horizontal-one-third {
@@ -5158,7 +5158,7 @@
   .oak-sheet__sheet--position-right {
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .oak-sheet--show
     .oak-sheet__sheet--position-right.oak-sheet__sheet--size-horizontal-one-third {
@@ -5303,7 +5303,7 @@
   .oak-sheet__sheet--position-top {
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .oak-sheet--show
