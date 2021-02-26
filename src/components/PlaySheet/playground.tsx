@@ -1,6 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { OakSectionStyleProps } from 'oakui/dist/styles/OakSectionStyles';
 import './style.scss';
 import OakTypography from '../../oakui/wc/OakTypography';
 import OakSection from '../../oakui/wc/OakSection';
@@ -17,7 +16,7 @@ interface Props {
 }
 
 const Playground = (props: Props) => {
-  const [state, setState] = useState<OakSectionStyleProps>({
+  const [state, setState] = useState<any>({
     position: 'bottom',
     fillColor: 'surface',
     sizeHorizontal: 'half',
