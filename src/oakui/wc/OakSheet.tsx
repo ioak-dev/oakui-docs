@@ -4,7 +4,20 @@ import OakSheetEvent from 'oakui/dist/event/OakSheetEvent';
 interface Props {
   isOpen: boolean;
   position?: 'left' | 'right' | 'middle' | 'top' | 'bottom';
-  fill?: 'global' | 'container' | 'surface' | 'float';
+  fillColor?:
+    | 'global'
+    | 'container'
+    | 'surface'
+    | 'float'
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'default'
+    | 'danger'
+    | 'warning'
+    | 'success'
+    | 'info'
+    | 'invert';
   sizeHorizontal?: 'one-third' | 'half' | 'two-third' | 'full' | 'auto';
   sizeVertical?: 'one-third' | 'half' | 'two-third' | 'full' | 'auto';
   outlined?: boolean;
@@ -74,7 +87,7 @@ const OakSheet = (props: Props) => {
     <oak-sheet
       ref={elementRef}
       elevation={props.elevation}
-      fill={props.fill}
+      fillColor={props.fillColor}
       sizeHorizontal={props.sizeHorizontal}
       sizeVertical={props.sizeVertical}
       paddingHorizontal={props.paddingHorizontal}

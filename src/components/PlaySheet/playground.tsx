@@ -19,7 +19,7 @@ interface Props {
 const Playground = (props: Props) => {
   const [state, setState] = useState<OakSectionStyleProps>({
     position: 'bottom',
-    fill: 'surface',
+    fillColor: 'surface',
     sizeHorizontal: 'half',
     sizeVertical: 'half',
     elevation: 0,
@@ -75,10 +75,24 @@ const Playground = (props: Props) => {
           handleChange={handleChange}
         />
         <OakSelect
-          label="fill"
-          value={state.fill}
-          options={['global', 'container', 'surface', 'float']}
-          name="fill"
+          label="fillColor"
+          value={state.fillColor}
+          options={[
+            'global',
+            'container',
+            'surface',
+            'float',
+            'primary',
+            'secondary',
+            'tertiary',
+            'default',
+            'danger',
+            'warning',
+            'success',
+            'info',
+            'invert',
+          ]}
+          name="fillColor"
           gutterBottom
           handleChange={handleChange}
         />
@@ -145,7 +159,7 @@ const Playground = (props: Props) => {
         paddingVertical={state.paddingVertical}
         backdropIntensity={state.backdropIntensity}
         position={state.position}
-        fill={state.fill}
+        fillColor={state.fillColor}
         sizeHorizontal={state.sizeHorizontal}
         sizeVertical={state.sizeVertical}
         isOpen={isOpen}
