@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import OakButton from 'src/oakui/wc/OakButton';
+import { newId } from 'src/events/MessageService';
 import OakSection from '../../oakui/wc/OakSection';
 import OakTable from '../../oakui/wc/OakTable';
 import './TableDemo.scss';
-import OakButton from 'src/oakui/wc/OakButton';
-import { newId } from 'src/events/MessageService';
 
 const TableDemo = () => {
   const authorization = useSelector((state) => state.authorization);
