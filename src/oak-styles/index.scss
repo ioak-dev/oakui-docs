@@ -4,8 +4,8 @@
 @import './_internal/_box-shadow.scss';
 @import './_internal/_border.scss';
 @import './_internal/_padding.scss';
+@import '../../node_modules/oakui/dist/style/index.css';
 
-@import './custom/typography.scss';
 @import './custom/theme.scss';
 @import './custom/outline.scss';
 @import './custom/topbar.scss';
@@ -14,6 +14,7 @@
 @import './custom/table.scss';
 @import './custom/menu.scss';
 @import './custom/section.scss';
+@import './custom/typography.css';
 
 body {
   -webkit-font-smoothing: antialiased;

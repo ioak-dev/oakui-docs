@@ -16,6 +16,7 @@ import OakLink from '../../oakui/OakLink';
 import { newId } from '../../events/MessageService';
 import OakMenu from '../../oakui/wc/OakMenu';
 import OakMenuItem from '../../oakui/wc/OakMenuItem';
+import { compose as composeTypography } from 'oakui/dist/style-composer/OakTypographyComposer';
 
 interface Props {
   match: any;
@@ -87,6 +88,13 @@ const Home = (props: Props) => {
   return (
     <>
       <OakTypography variant="h2">Home</OakTypography>
+      <div
+        className={composeTypography({
+          variant: 'h1',
+        })}
+      >
+        custom styling
+      </div>
       <OakTypography variant="h1">heading one</OakTypography>
       <OakTypography variant="h2">heading two</OakTypography>
       <OakTypography variant="h3">heading three</OakTypography>

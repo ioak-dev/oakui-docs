@@ -72,7 +72,6 @@ const OakTable = (props: Props) => {
   }, [props.data]);
 
   useEffect(() => {
-    console.log(props.paginatePref);
     (elementRef.current as any)!.paginatePref = props.paginatePref;
   }, [props.paginatePref]);
 
