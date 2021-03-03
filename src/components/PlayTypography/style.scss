@@ -1,0 +1,10 @@
+.align-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}

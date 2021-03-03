@@ -9,10 +9,6 @@ import NavItem from './NavItem';
 interface Props {
   space: string;
   closeAfterRouteChange?: boolean;
-  //   history: any;
-  //   cookies: any;
-  //   location: any;
-  //   match: any;
 }
 
 const NavElements = (props: Props) => {
@@ -34,60 +30,42 @@ const NavElements = (props: Props) => {
         label="Generate Palette"
         closeAfterRouteChange={props.closeAfterRouteChange}
       />
-      <NavItem
-        to={`/${props.space}/play-sheet`}
-        label="Sheet"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-drawer`}
-        label="Drawer"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-section`}
-        label="Section"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-checkbox`}
-        label="Checkbox"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-radio`}
-        label="Radio"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-tab`}
-        label="Tab"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-button`}
-        label="Button"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
-      <NavItem
-        to={`/${props.space}/play-spinner`}
-        label="Spinner"
-        closeAfterRouteChange={props.closeAfterRouteChange}
-      />
       <NavGroup
         space={props.space}
         closeAfterRouteChange={props.closeAfterRouteChange}
-        label="UI Elements"
-        context="sidebar-group"
+        label="Inputs"
+        context="inputs-group"
       >
+        <NavItem
+          to={`/${props.space}/play-input`}
+          label="Input"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-checkbox`}
+          label="Checkbox"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-radio`}
+          label="Radio"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
         <NavItem
           to={`/${props.space}/play-button`}
           label="Button"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
+      </NavGroup>
+      <NavGroup
+        space={props.space}
+        closeAfterRouteChange={props.closeAfterRouteChange}
+        label="Data Display"
+        context="data-display-group"
+      >
         <NavItem
-          to={`/${props.space}/play-form-elements`}
-          label="Form elements"
+          to={`/${props.space}/play-typography`}
+          label="Typography"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
@@ -95,6 +73,52 @@ const NavElements = (props: Props) => {
           label="Table"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
+      </NavGroup>
+      <NavGroup
+        space={props.space}
+        closeAfterRouteChange={props.closeAfterRouteChange}
+        label="Surfaces"
+        context="surfaces-group"
+      >
+        <NavItem
+          to={`/${props.space}/play-sheet`}
+          label="Sheet"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-section`}
+          label="Section"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-modal`}
+          label="Modal"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+      </NavGroup>
+      <NavGroup
+        space={props.space}
+        closeAfterRouteChange={props.closeAfterRouteChange}
+        label="Navigation"
+        context="navigation-group"
+      >
+        <NavItem
+          to={`/${props.space}/play-drawer`}
+          label="App Drawer"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-tab`}
+          label="Tab"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+      </NavGroup>
+      <NavGroup
+        space={props.space}
+        closeAfterRouteChange={props.closeAfterRouteChange}
+        label="Non web components"
+        context="sidebar-group"
+      >
         <NavItem
           to={`/${props.space}/play-chart`}
           label="Chart"
@@ -103,11 +127,6 @@ const NavElements = (props: Props) => {
         <NavItem
           to={`/${props.space}/play-spinner`}
           label="Spinner"
-          closeAfterRouteChange={props.closeAfterRouteChange}
-        />
-        <NavItem
-          to={`/${props.space}/play-modal`}
-          label="Modal"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
       </NavGroup>

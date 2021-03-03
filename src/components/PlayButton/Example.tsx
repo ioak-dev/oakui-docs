@@ -9,9 +9,9 @@ import ButtonDemoSize from './ButtonDemoSize';
 import ButtonDemoTheme from './ButtonDemoTheme';
 import ButtonDemoVariant from './ButtonDemoVariant';
 
-const ButtonDemo = () => {
+const Example = () => {
   return (
-    <OakSection paddingHorizontal={4} paddingVertical={2} rounded>
+    <OakSection paddingHorizontal={4} paddingVertical={2} fillColor="none">
       <div className="button-demo">
         <div>
           <OakTypography variant="h5">Size demonstration</OakTypography>
@@ -208,4 +208,4 @@ const ButtonDemo = () => {
   );
 };
 
-export default ButtonDemo;
+export default Example;

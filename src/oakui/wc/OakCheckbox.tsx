@@ -21,6 +21,7 @@ interface Props {
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   handleChange?: any;
   children: any;
+  gutterBottom?: boolean;
   checkboxGroupName?: string;
 }
 
@@ -59,6 +60,10 @@ const OakCheckbox = (props: Props) => {
   useEffect(() => {
     (elementRef.current as any)!.value = props.value;
   }, [props.value]);
+
+  useEffect(() => {
+    (elementRef.current as any)!.gutterBottom = props.gutterBottom;
+  }, [props.gutterBottom]);
 
   return (
     <oak-checkbox

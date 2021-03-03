@@ -9,8 +9,6 @@ import { PaginatePref } from 'oakui/dist/types/PaginatePrefType';
 
 interface Props {
   children: any;
-  header: TableHeader[];
-  data: any;
   totalRows?: number;
   elevation?:
     | 0
@@ -41,12 +39,11 @@ interface Props {
   rounded?: boolean;
   dense?: boolean;
   variant?: 'outlined';
-  fill?: 'container' | 'surface' | 'float' | 'none';
+  fill?: 'global' | 'container' | 'surface' | 'float' | 'none';
   formElementSize?: 'xsmall' | 'small' | 'medium' | 'large';
   formElementShape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
   navPlacement?: 'top' | 'bottom' | 'none';
-  paginatePref: PaginatePref;
-  handleDataChange?: any;
+  paginatePref?: PaginatePref;
 
   // not used yet
   showAll?: boolean;
@@ -64,34 +61,16 @@ const OakTable = (props: Props) => {
   }, [props.dense]);
 
   useEffect(() => {
-    (elementRef.current as any)!.header = props.header;
-  }, [props.header]);
-
-  useEffect(() => {
-    (elementRef.current as any)!.data = props.data;
-  }, [props.data]);
-
-  useEffect(() => {
     (elementRef.current as any)!.paginatePref = props.paginatePref;
   }, [props.paginatePref]);
 
   useEffect(() => {
-    // attachListener('change', handleChange);
-    // attachListener('onSubmit', handleSubmit);
-    (elementRef as any).current.addEventListener(
-      TABLE_DATA_CHANGE_EVENT,
-      handleChange
-    );
     (elementRef as any).current.addEventListener(
       TABLE_PAGINATE_EVENT,
       handleChange
     );
 
     return () => {
-      (elementRef as any).current?.removeEventListener(
-        TABLE_DATA_CHANGE_EVENT,
-        handleChange
-      );
       (elementRef as any).current?.removeEventListener(
         TABLE_PAGINATE_EVENT,
         handleChange
@@ -116,7 +95,14 @@ const OakTable = (props: Props) => {
       totalRows={props.totalRows}
       ref={elementRef}
     >
-      <div className={compose({ dense: props.dense, fill: props.fill })}>
+      <div
+        className={compose({
+          dense: props.dense,
+          fill: props.fill,
+          elevation: props.elevation,
+          variant: props.variant,
+        })}
+      >
         {props.children}
       </div>
     </oak-table>

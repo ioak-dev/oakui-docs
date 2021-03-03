@@ -200,14 +200,11 @@ const TableDemoCustom = () => {
   return (
     <>
       <OakTable
-        header={header}
-        data={view}
         paginatePref={paginatePref}
         fill="surface"
         formElementSize="xsmall"
         navPlacement="top"
         totalRows={totalRows}
-        handleDataChange={handleDataChange}
       >
         <table>
           <thead>
@@ -261,12 +258,11 @@ const TableDemoCustom = () => {
         </table>
       </OakTable>
       <br />
-      <OakButton theme="primary" variant="regular" handleClick={addData}>
-        Add
-      </OakButton>
-      <OakButton theme="primary" variant="regular" handleClick={updateData}>
-        Update
-      </OakButton>
+      <OakFormActionsContainer align="left">
+        <OakButton theme="default" variant="regular" handleClick={addData}>
+          Add row
+        </OakButton>
+      </OakFormActionsContainer>
     </>
   );
 };

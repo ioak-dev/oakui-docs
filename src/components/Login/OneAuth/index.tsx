@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import OakButton from '../../../oakui/wc/OakButton';
-import OakText from '../../../oakui/OakText';
 import { isEmptyOrSpaces, isEmptyAttributes } from '../../Utils';
 import OakPage from '../../../oakui/OakPage';
 import OakSection from '../../../oakui/wc/OakSection';
@@ -87,12 +86,12 @@ const OneAuth = (props: Props) => {
               You will be redirected to oneauth for signing in to your space
             </OakTypography>
           </div>
-          <OakText
+          {/* <OakText
             label="Type company name to filter"
             handleChange={handleSearchCriteria}
             id="text"
             data={searchCriteria}
-          />
+          /> */}
           <div className="list-spaces">
             <div className="list-spaces--content">
               {view?.map((space) => (

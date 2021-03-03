@@ -4,18 +4,17 @@ import './style.scss';
 import OakTab from '../../oakui/wc/OakTab';
 import OakSection from '../../oakui/wc/OakSection';
 import Playground from './playground';
-import OakInputOverview from '../../assets/OakInputOverview.json';
-import OakInputApi from '../../assets/OakInputApi.json';
+import overviewContent from '../../assets/OakInputOverview.json';
+import apiContent from '../../assets/OakInputApi.json';
 import OverviewSection from '../OverviewSection';
 import ApiSection from '../ApiSection';
-import Example from './Example';
 
 interface Props {
   match: any;
   history: any;
 }
 
-const PlayButton = (props: Props) => {
+const PlayInput = (props: Props) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const changeTab = (detail: any) => {
@@ -28,15 +27,20 @@ const PlayButton = (props: Props) => {
       handleChange={changeTab}
     >
       <OakSection fillColor="none">
-        {activeTab === 0 && <OverviewSection data={OakInputOverview} />}
-        {activeTab === 2 && <ApiSection data={OakInputApi} />}
+        {activeTab === 0 && <OverviewSection data={overviewContent} />}
+        {activeTab === 2 && <ApiSection data={apiContent} />}
         {activeTab === 1 && (
           <Playground match={props.match} history={props.history} />
         )}
-        {activeTab === 3 && <Example />}
+        {activeTab === 3 && (
+          <OakSection fillColor="primary" elevation={6} rounded>
+            Voluptatem provident eveniet incidunt occaecati sed commodi a
+            accusamus repellat in occaecati debitis. Aperiam iusto
+          </OakSection>
+        )}
       </OakSection>
     </OakTab>
   );
 };
 
-export default PlayButton;
+export default PlayInput;

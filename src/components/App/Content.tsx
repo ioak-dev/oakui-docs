@@ -80,7 +80,8 @@ const Content = (props: Props) => {
           rightDrawerOpen={profile.rightSidebar}
           leftDrawerType="side"
           rightDrawerType="push"
-          topbarVariant="static"
+          topbarVariant="sticky"
+          topElevation={0}
           handleClose={handleClose}
           topbarColor="container"
         >
@@ -91,6 +92,9 @@ const Content = (props: Props) => {
             <SidebarContainer />
           </div>
           <div slot="topbar">
+            <TopbarContainer cookies={props.cookies} />
+          </div>
+          <div slot="toolbar">
             <TopbarContainer cookies={props.cookies} />
           </div>
           <div slot="content">

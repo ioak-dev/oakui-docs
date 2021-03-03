@@ -22,6 +22,8 @@ import PlayRadio from '../PlayRadio';
 import PlaySection from '../PlaySection';
 import PlayDrawer from '../PlayDrawer';
 import PlaySheet from '../PlaySheet';
+import PlayInput from '../PlayInput';
+import PlayTypography from '../PlayTypography';
 
 interface Props {
   cookies: any;
@@ -100,6 +102,17 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
+        path="/:space/play-typography"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayTypography}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
         path="/:space/play-tab"
         render={(propsLocal) => (
           <OakRoute
@@ -128,6 +141,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlaySection}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-input"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayInput}
             middleware={['readAuthentication']}
           />
         )}

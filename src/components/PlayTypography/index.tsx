@@ -4,21 +4,22 @@ import './style.scss';
 import OakTab from '../../oakui/wc/OakTab';
 import OakSection from '../../oakui/wc/OakSection';
 import Playground from './playground';
-import OakInputOverview from '../../assets/OakInputOverview.json';
-import OakInputApi from '../../assets/OakInputApi.json';
-import OverviewSection from '../OverviewSection';
+
+import overviewContent from '../../assets/OakTypographyOverview.json';
+import apiContent from '../../assets/OakTypographyApi.json';
 import ApiSection from '../ApiSection';
-import Example from './Example';
+import OverviewSection from '../OverviewSection';
 
 interface Props {
   match: any;
   history: any;
 }
 
-const PlayButton = (props: Props) => {
+const PlayTypography = (props: Props) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const changeTab = (detail: any) => {
+    console.log(detail);
     setActiveTab(detail.value);
   };
 
@@ -28,15 +29,15 @@ const PlayButton = (props: Props) => {
       handleChange={changeTab}
     >
       <OakSection fillColor="none">
-        {activeTab === 0 && <OverviewSection data={OakInputOverview} />}
-        {activeTab === 2 && <ApiSection data={OakInputApi} />}
+        {activeTab === 0 && <OverviewSection data={overviewContent} />}
+        {activeTab === 2 && <ApiSection data={apiContent} />}
         {activeTab === 1 && (
           <Playground match={props.match} history={props.history} />
         )}
-        {activeTab === 3 && <Example />}
+        {activeTab === 3 && <div className="dash-grid">Examples</div>}
       </OakSection>
     </OakTab>
   );
 };
 
-export default PlayButton;
+export default PlayTypography;

@@ -27,6 +27,7 @@ interface Props {
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
   fill?: 'container' | 'surface' | 'float' | 'none';
+  errorStyle?: 'outline' | 'fill';
   gutterBottom?: boolean;
 }
 const OakInput = (props: Props) => {
@@ -131,6 +132,7 @@ const OakInput = (props: Props) => {
       size={props.size}
       shape={props.shape}
       fill={props.fill}
+      errorStyle={props.errorStyle}
     />
   );
 };
