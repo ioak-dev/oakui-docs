@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ReactElement, useRef } from 'react';
 import { useLocation } from 'react-router';
 
-import { TAB_CHANGE_EVENT } from 'oakui/dist/event/OakTabEvent';
+import { TAB_CHANGE_EVENT } from '@oakui/core-stage/event/OakTabEvent';
 import { AccessAlarm } from '@material-ui/icons';
 
 interface Props {

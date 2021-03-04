@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { OakTypographyProps } from 'oakui/dist/style-composer/OakTypographyComposer';
+import { OakTypographyProps } from '@oakui/core-stage/style-composer/OakTypographyComposer';
 
 import './style.scss';
 import OakTypography from '../../oakui/wc/OakTypography';

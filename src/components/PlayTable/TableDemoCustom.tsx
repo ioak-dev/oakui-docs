@@ -1,13 +1,13 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { PaginatePref } from 'oakui/dist/types/PaginatePrefType';
-import { SortDirection, SortPref } from 'oakui/dist/types/SortPrefType';
+import { PaginatePref } from '@oakui/core-stage/types/PaginatePrefType';
+import { SortDirection, SortPref } from '@oakui/core-stage/types/SortPrefType';
 import {
   TableCellDatatype,
   TableHeader,
-} from 'oakui/dist/types/TableHeaderType';
-import { getPage } from 'oakui/dist/service/OakTableService';
+} from '@oakui/core-stage/types/TableHeaderType';
+import { getPage } from '@oakui/core-stage/service/OakTableService';
 import './TableDemo.scss';
 import OakButton from '../../oakui/wc/OakButton';
 import { newId } from '../../events/MessageService';

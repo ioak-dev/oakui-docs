@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   TABLE_DATA_CHANGE_EVENT,
   TABLE_PAGINATE_EVENT,
-} from 'oakui/dist/types/TableEventTypes';
-import { compose } from 'oakui/dist/style-composer/OakTableComposer';
-import { TableHeader } from 'oakui/dist/types/TableHeaderType';
-import { PaginatePref } from 'oakui/dist/types/PaginatePrefType';
+} from '@oakui/core-stage/types/TableEventTypes';
+import { compose } from '@oakui/core-stage/style-composer/OakTableComposer';
+import { TableHeader } from '@oakui/core-stage/types/TableHeaderType';
+import { PaginatePref } from '@oakui/core-stage/types/PaginatePrefType';
 
 interface Props {
   children: any;

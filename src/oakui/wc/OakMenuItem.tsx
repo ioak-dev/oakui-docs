@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { MENU_CLICK_EVENT } from 'oakui/dist/event/OakMenuEvent';
+import { MENU_CLICK_EVENT } from '@oakui/core-stage/event/OakMenuEvent';
 
 interface Props {
   children: any;

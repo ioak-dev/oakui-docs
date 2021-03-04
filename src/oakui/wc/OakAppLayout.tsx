@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import OakAppLayoutEvent from 'oakui/dist/event/OakAppLayoutEvent';
+import OakAppLayoutEvent from '@oakui/core-stage/event/OakAppLayoutEvent';
 
 interface Props {
   topbarVariant?: 'sticky' | 'static' | 'auto';

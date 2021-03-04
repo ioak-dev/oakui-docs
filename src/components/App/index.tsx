@@ -4,7 +4,7 @@ import store from '../../store';
 import './style.scss';
 import './metric.scss';
 import Content from './Content';
-import 'oakui';
+import '@oakui/core-stage';
 
 const App = (props: any) => {
   return (

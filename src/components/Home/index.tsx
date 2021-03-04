@@ -3,7 +3,7 @@ import { FaceTwoTone } from '@material-ui/icons';
 import {
   addNotification,
   removeNotification,
-} from 'oakui/dist/NotificationStore';
+} from '@oakui/core-stage/NotificationStore';
 
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
@@ -16,7 +16,7 @@ import OakLink from '../../oakui/OakLink';
 import { newId } from '../../events/MessageService';
 import OakMenu from '../../oakui/wc/OakMenu';
 import OakMenuItem from '../../oakui/wc/OakMenuItem';
-import { compose as composeTypography } from 'oakui/dist/style-composer/OakTypographyComposer';
+import { compose as composeTypography } from '@oakui/core-stage/style-composer/OakTypographyComposer';
 
 interface Props {
   match: any;

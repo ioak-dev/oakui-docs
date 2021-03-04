@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import OakSheetEvent from 'oakui/dist/event/OakSheetEvent';
+import OakSheetEvent from '@oakui/core-stage/event/OakSheetEvent';
 
 interface Props {
   isOpen: boolean;

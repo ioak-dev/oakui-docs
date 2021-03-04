@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ReactElement, useRef } from 'react';
 import { useLocation } from 'react-router';
-import { compose } from 'oakui/dist/style-composer/OakMenuComposer';
+import { compose } from '@oakui/core-stage/style-composer/OakMenuComposer';
 
 interface Props {
   children: any;

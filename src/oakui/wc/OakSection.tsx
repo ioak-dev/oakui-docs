@@ -1,7 +1,7 @@
 import {
   compose,
   OakSectionProps,
-} from 'oakui/dist/style-composer/OakSectionComposer';
+} from '@oakui/core-stage/style-composer/OakSectionComposer';
 import React, { useState, useEffect, useRef } from 'react';
 
 interface Props extends OakSectionProps {

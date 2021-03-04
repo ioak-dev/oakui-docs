@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { OakSectionProps } from 'oakui/dist/style-composer/OakSectionComposer';
+import { OakSectionProps } from '@oakui/core-stage/style-composer/OakSectionComposer';
 
 import './style.scss';
 import OakTypography from '../../oakui/wc/OakTypography';

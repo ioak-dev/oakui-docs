@@ -1,5 +1,5 @@
 import React, { useEffect, ReactNode, useState, useRef } from 'react';
-import ModalEventTypes from 'oakui/dist/event/OakModalEvent';
+import ModalEventTypes from '@oakui/core-stage/event/OakModalEvent';
 
 interface Props {
   showModal: boolean;

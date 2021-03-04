@@ -3,8 +3,8 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   FORM_SUBMIT_EVENT,
   FORM_RESET_EVENT,
-} from 'oakui/dist/event/OakFormEvent';
-// import { OakForm as OakFormTag } from 'oakui/dist/components/public/oak-form';
+} from '@oakui/core-stage/event/OakFormEvent';
+// import { OakForm as OakFormTag } from '@oakui/core-stage/components/public/oak-form';
 
 interface Props {
   handleSubmit: any;

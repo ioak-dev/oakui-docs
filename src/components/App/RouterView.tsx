@@ -24,6 +24,7 @@ import PlayDrawer from '../PlayDrawer';
 import PlaySheet from '../PlaySheet';
 import PlayInput from '../PlayInput';
 import PlayTypography from '../PlayTypography';
+import PlayDivider from '../PlayDivider';
 
 interface Props {
   cookies: any;
@@ -108,6 +109,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayTypography}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-divider"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayDivider}
             middleware={['readAuthentication']}
           />
         )}
