@@ -24,12 +24,7 @@ const Header = () => {
     dispatch(setProfile({ ...profile, sidebar: !profile.sidebar }));
   };
 
-  return (
-    <div className="header">
-      <MenuOpen className="mobile-only" onClick={toggleSidebar} />
-      <Logo />
-    </div>
-  );
+  return <div className="header">{/* <Logo /> */}</div>;
 };
 
 export default Header;

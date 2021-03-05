@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, connect, useDispatch } from 'react-redux';
 import './style.scss';
-import expensoWhite from '../../images/expenso_white.svg';
-import expensoBlack from '../../images/expenso_black.svg';
+import oakuiWhite from '../../images/oakui_white.svg';
+import oakuiBlack from '../../images/oakui_black.svg';
 
 const Logo = () => {
   const authorization = useSelector((state: any) => state.authorization);
@@ -14,10 +14,10 @@ const Logo = () => {
   return (
     <div className="logo">
       {profile.theme === 'theme_light' && (
-        <img className="logo--image" src={expensoWhite} alt="Expenso logo" />
+        <img className="logo--image" src={oakuiBlack} alt="OAKUI logo" />
       )}
       {profile.theme !== 'theme_light' && (
-        <img className="logo--image" src={expensoWhite} alt="Expenso logo" />
+        <img className="logo--image" src={oakuiWhite} alt="OAKUI logo" />
       )}
     </div>
   );

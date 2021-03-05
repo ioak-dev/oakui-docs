@@ -4,8 +4,8 @@
   display: grid;
   height: 100%;
   grid-auto-flow: column;
+  justify-content: space-between;
   column-gap: 10px;
-  padding: 0 20px 0 10px;
   .topbar--left {
     display: grid;
     grid-auto-flow: column;

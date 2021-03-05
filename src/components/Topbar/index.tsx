@@ -32,25 +32,10 @@ const Topbar = (props: Props) => {
   return (
     <div className="topbar">
       <div className="topbar--left">
-        <div className={`${props.hideSidebarOnDesktop ? 'mobile-only' : ''}`}>
-          <ExpandIcon controls="left" />
-        </div>
-        {props.hideSidebarOnDesktop && (
-          <div className="desktop-only">
-            <Logo />
-          </div>
-        )}
-        <div className="topbar--left--nav desktop-only">
-          {/* <Links space={props.space}/> */}
-          <ChangeAsset space={props.space} />
-        </div>
-        {/* <div className="mobile-only"><Logo /></div> */}
+        <Logo />
       </div>
       <div className="topbar--right">
         <RightNav cookies={props.cookies} />
-        <div className={`${props.hideSidebarOnDesktop ? 'mobile-only' : ''}`}>
-          <ExpandIcon controls="right" />
-        </div>
       </div>
     </div>
   );

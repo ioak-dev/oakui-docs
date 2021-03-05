@@ -76,19 +76,12 @@ const Content = (props: Props) => {
         />
 
         <OakAppLayout
-          leftDrawerOpen={profile.sidebar}
-          rightDrawerOpen={profile.rightSidebar}
-          leftDrawerType="side"
-          rightDrawerType="push"
-          topbarVariant="sticky"
-          topElevation={0}
-          handleClose={handleClose}
-          topbarColor="container"
+          topbarVariant="static"
+          sidebarVariant="push"
+          topbarElevation={2}
+          sidebarElevation={2}
         >
-          <div slot="drawer-left" className="drawer-left">
-            <SidebarContainer />
-          </div>
-          <div slot="drawer-right" className="drawer-right">
+          <div slot="sidebar">
             <SidebarContainer />
           </div>
           <div slot="topbar">
@@ -97,7 +90,7 @@ const Content = (props: Props) => {
           <div slot="toolbar">
             <TopbarContainer cookies={props.cookies} />
           </div>
-          <div slot="content">
+          <div slot="main">
             <BodyContainer {...props} />
           </div>
         </OakAppLayout>

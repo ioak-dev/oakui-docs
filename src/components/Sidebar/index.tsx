@@ -27,9 +27,9 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <div className="sidebar--header">
+      {/* <div className="sidebar--header">
         <Header />
-      </div>
+      </div> */}
       <div className="sidebar--nav desktop-only">
         <NavElements space={space} />
       </div>
