@@ -25,6 +25,9 @@ declare global {
       'oak-tab': any;
       'oak-app-layout': any;
       'oak-sheet': any;
+      'oak-expansion-panel': any;
+      'oak-click-area': any;
+      'oak-toolbar': any;
     }
   }
 }

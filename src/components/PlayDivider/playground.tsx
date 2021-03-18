@@ -79,18 +79,10 @@ const Playground = (props: Props) => {
           <OakSelect
             label="colorMode"
             value={state.colorMode}
-            options={['darker', 'lighter']}
+            options={['darker', 'lighter', 'even', 'i']}
             name="colorMode"
             handleChange={handleChange}
             gutterBottom
-          />
-          <OakInput
-            type="number"
-            name="marginVertical"
-            label="marginVertical"
-            value={state.marginVertical}
-            gutterBottom
-            handleInput={handleChange}
           />
         </OakSection>
       </OakSheet>

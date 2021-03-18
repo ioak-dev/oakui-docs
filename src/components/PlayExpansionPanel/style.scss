@@ -1,0 +1,21 @@
+.expansion-panel__header {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 10px;
+  &.panel-active {
+    background-color: var(--color-primary);
+    color: var(--color-primary-i);
+  }
+}
+
+.expansion-panel-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  padding-top: 20px;
+}
+
+.expansion-panel {
+}

@@ -5,7 +5,7 @@ import {
 import React, { useState, useEffect, useRef } from 'react';
 
 const OakDivider = (props: OakDividerProps) => {
-  return <hr className={compose(props)} />;
+  return <div className={compose(props)} />;
 };
 
 export default OakDivider;

@@ -56,6 +56,11 @@ const NavElements = (props: Props) => {
           label="Button"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
+        <NavItem
+          to={`/${props.space}/play-click-area`}
+          label="Click area"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
       </NavGroup>
       <NavGroup
         space={props.space}
@@ -74,6 +79,11 @@ const NavElements = (props: Props) => {
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
+          to={`/${props.space}/play-spacing`}
+          label="Spacing"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
           to={`/${props.space}/play-table`}
           label="Table"
           closeAfterRouteChange={props.closeAfterRouteChange}
@@ -86,13 +96,18 @@ const NavElements = (props: Props) => {
         context="surfaces-group"
       >
         <NavItem
-          to={`/${props.space}/play-sheet`}
-          label="Sheet"
+          to={`/${props.space}/play-section`}
+          label="Section"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
-          to={`/${props.space}/play-section`}
-          label="Section"
+          to={`/${props.space}/play-expansion-panel`}
+          label="Expansion Panel"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-sheet`}
+          label="Sheet"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
@@ -107,6 +122,11 @@ const NavElements = (props: Props) => {
         label="Navigation"
         context="navigation-group"
       >
+        <NavItem
+          to={`/${props.space}/play-toolbar`}
+          label="Toolbar"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
         <NavItem
           to={`/${props.space}/play-drawer`}
           label="App Drawer"

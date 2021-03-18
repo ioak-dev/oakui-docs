@@ -25,6 +25,10 @@ import PlaySheet from '../PlaySheet';
 import PlayInput from '../PlayInput';
 import PlayTypography from '../PlayTypography';
 import PlayDivider from '../PlayDivider';
+import PlayExpansionPanel from '../PlayExpansionPanel';
+import PlaySpacing from '../PlaySpacing';
+import PlayClickArea from '../PlayClickArea';
+import PlayToolbar from '../PlayToolbar';
 
 interface Props {
   cookies: any;
@@ -103,6 +107,17 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
+        path="/:space/play-click-area"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayClickArea}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
         path="/:space/play-typography"
         render={(propsLocal) => (
           <OakRoute
@@ -125,12 +140,45 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
+        path="/:space/play-spacing"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlaySpacing}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-expansion-panel"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayExpansionPanel}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
         path="/:space/play-tab"
         render={(propsLocal) => (
           <OakRoute
             {...propsLocal}
             {...props}
             component={PlayTab}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-toolbar"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayToolbar}
             middleware={['readAuthentication']}
           />
         )}

@@ -1,0 +1,21 @@
+.spacing-content {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: flex-start;
+  .spacing-content__one {
+    background-color: var(--color-success);
+    color: var(--color-success-i);
+  }
+  .spacing-content__two {
+    background-color: var(--color-primary);
+    color: var(--color-primary-i);
+  }
+  .spacing-content__three {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-i);
+  }
+  .spacing-content__four {
+    background-color: var(--color-tertiary);
+    color: var(--color-tertiary-i);
+  }
+}
