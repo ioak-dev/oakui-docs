@@ -29,6 +29,7 @@ import PlayExpansionPanel from '../PlayExpansionPanel';
 import PlaySpacing from '../PlaySpacing';
 import PlayClickArea from '../PlayClickArea';
 import PlayToolbar from '../PlayToolbar';
+import PlaySelect from '../PlaySelect';
 
 interface Props {
   cookies: any;
@@ -212,6 +213,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayInput}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-select"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlaySelect}
             middleware={['readAuthentication']}
           />
         )}

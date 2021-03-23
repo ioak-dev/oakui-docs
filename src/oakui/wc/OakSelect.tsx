@@ -1,14 +1,15 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
-  INPUT_CHANGE_EVENT,
-  INPUT_INPUT_EVENT,
-} from '@oakui/core-stage/event/OakInputEvent';
+  SELECT_CHANGE_EVENT,
+  SELECT_INPUT_EVENT,
+} from '@oakui/core-stage/event/OakSelectEvent';
 
 interface Props {
   name: string;
   label?: string;
   placeholder?: string;
   value: any;
+  values: any[];
   formGroupName?: string;
   handleChange?: any;
   handleInput?: any;
@@ -22,6 +23,7 @@ interface Props {
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf';
   fill?: 'container' | 'surface' | 'float' | 'none';
   gutterBottom?: boolean;
+  autoCompleteVariant?: 'none' | 'autocomplete' | 'searchbox';
 }
 
 const OakSelect = (props: Props) => {
@@ -43,25 +45,29 @@ const OakSelect = (props: Props) => {
 
   useEffect(() => {
     (elementRef as any).current.addEventListener(
-      INPUT_CHANGE_EVENT,
+      SELECT_CHANGE_EVENT,
       handleChange
     );
     (elementRef as any).current.addEventListener(
-      INPUT_INPUT_EVENT,
+      SELECT_INPUT_EVENT,
       handleInput
     );
 
     return () => {
       (elementRef as any).current?.removeEventListener(
-        INPUT_CHANGE_EVENT,
+        SELECT_CHANGE_EVENT,
         handleChange
       );
       (elementRef as any).current?.removeEventListener(
-        INPUT_INPUT_EVENT,
+        SELECT_INPUT_EVENT,
         handleInput
       );
     };
   });
+
+  useEffect(() => {
+    (elementRef.current as any)!.values = props.values;
+  }, [props.values]);
 
   useEffect(() => {
     (elementRef.current as any)!.multiple = props.multiple;
@@ -100,6 +106,7 @@ const OakSelect = (props: Props) => {
       size={props.size}
       shape={props.shape}
       fill={props.fill}
+      autoCompleteVariant={props.autoCompleteVariant}
     />
   );
 };
