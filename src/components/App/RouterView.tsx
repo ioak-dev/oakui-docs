@@ -25,11 +25,14 @@ import PlaySheet from '../PlaySheet';
 import PlayInput from '../PlayInput';
 import PlayTypography from '../PlayTypography';
 import PlayDivider from '../PlayDivider';
-import PlayExpansionPanel from '../PlayExpansionPanel';
+import PlayExpanse from '../PlayExpanse';
 import PlaySpacing from '../PlaySpacing';
 import PlayClickArea from '../PlayClickArea';
 import PlayToolbar from '../PlayToolbar';
 import PlaySelect from '../PlaySelect';
+import PlayNavGroup from '../PlayNavGroup';
+import PlayNavElement from '../PlayNavElement';
+import PlayInfiniteScroll from '../PlayInfiniteScroll';
 
 interface Props {
   cookies: any;
@@ -152,12 +155,45 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-expansion-panel"
+        path="/:space/play-expanse"
         render={(propsLocal) => (
           <OakRoute
             {...propsLocal}
             {...props}
-            component={PlayExpansionPanel}
+            component={PlayExpanse}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-nav-group"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayNavGroup}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-nav-element"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayNavElement}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-infinite-scroll"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayInfiniteScroll}
             middleware={['readAuthentication']}
           />
         )}

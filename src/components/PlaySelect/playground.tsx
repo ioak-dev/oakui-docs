@@ -207,8 +207,7 @@ const Playground = (props: Props) => {
           tooltip={state.tooltip}
           placeholder={state.placeholder}
           fill={state.fill}
-          value={demoList}
-          values={demoListM}
+          value={state.multiple ? demoListM : demoList}
           options={[
             'Deserunt ut',
             'labore iure',
@@ -232,8 +231,7 @@ const Playground = (props: Props) => {
           tooltip={state.tooltip}
           placeholder={state.placeholder}
           fill={state.fill}
-          value={demoList}
-          values={demoListM}
+          value={state.multiple ? demoListM : demoList}
           options={[
             'Deserunt ut',
             'labore iure',

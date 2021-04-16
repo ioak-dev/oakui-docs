@@ -9,7 +9,6 @@ interface Props {
   label?: string;
   placeholder?: string;
   value: any;
-  values: any[];
   formGroupName?: string;
   handleChange?: any;
   handleInput?: any;
@@ -66,8 +65,8 @@ const OakSelect = (props: Props) => {
   });
 
   useEffect(() => {
-    (elementRef.current as any)!.values = props.values;
-  }, [props.values]);
+    (elementRef.current as any)!.value = props.value;
+  }, [props.value]);
 
   useEffect(() => {
     (elementRef.current as any)!.multiple = props.multiple;
@@ -99,7 +98,6 @@ const OakSelect = (props: Props) => {
       formGroupName={props.formGroupName}
       label={props.label}
       name={props.name}
-      value={props.value}
       placeholder={props.placeholder}
       tooltip={props.tooltip}
       multiple={props.multiple}

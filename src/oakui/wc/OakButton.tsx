@@ -27,9 +27,36 @@ interface Props {
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   shape?: 'sharp' | 'rectangle' | 'rounded' | 'leaf' | 'icon';
   align?: 'left' | 'right' | 'center';
+  fullWidth?: boolean;
   children?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   formGroupName?: string;
+  elevation?:
+    | 0
+    | 1
+    | 2
+    | 3
+    | 4
+    | 5
+    | 6
+    | 7
+    | 8
+    | 9
+    | 10
+    | 11
+    | 12
+    | 13
+    | 14
+    | 15
+    | 16
+    | 17
+    | 18
+    | 19
+    | 20
+    | 21
+    | 22
+    | 23
+    | 24;
 }
 
 const OakButton = (props: Props) => {
@@ -46,6 +73,10 @@ const OakButton = (props: Props) => {
     console.log('**submit');
     props.handleClick(event);
   };
+
+  useEffect(() => {
+    (elementRef.current as any)!.fullWidth = props.fullWidth;
+  }, [props.fullWidth]);
 
   useEffect(() => {
     (elementRef.current as any)!.semitransparent = props.semitransparent;
@@ -79,6 +110,7 @@ const OakButton = (props: Props) => {
       shape={props.shape}
       type={props.type}
       visualmode={profile.theme === 'theme_dark' ? 'dark' : 'light'}
+      elevation={props.elevation}
       formGroupName={props.formGroupName}
     >
       {props.children}

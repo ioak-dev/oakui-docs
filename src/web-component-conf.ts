@@ -21,13 +21,16 @@ declare global {
       'oak-modal': any;
       'oak-notification': any;
       'oak-paginate': any;
+      'oak-infinite-scroll': any;
       'oak-table': any;
       'oak-tab': any;
       'oak-app-layout': any;
       'oak-sheet': any;
-      'oak-expansion-panel': any;
+      'oak-expanse': any;
       'oak-click-area': any;
       'oak-toolbar': any;
+      'oak-nav-group': any;
+      'oak-nav-element': any;
     }
   }
 }

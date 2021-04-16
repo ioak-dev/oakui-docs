@@ -89,6 +89,11 @@ const NavElements = (props: Props) => {
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
+          to={`/${props.space}/play-infinite-scroll`}
+          label="Infinite scroll"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
           to={`/${props.space}/play-table`}
           label="Table"
           closeAfterRouteChange={props.closeAfterRouteChange}
@@ -106,8 +111,8 @@ const NavElements = (props: Props) => {
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
-          to={`/${props.space}/play-expansion-panel`}
-          label="Expansion Panel"
+          to={`/${props.space}/play-expanse`}
+          label="Expanse"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
@@ -140,6 +145,16 @@ const NavElements = (props: Props) => {
         <NavItem
           to={`/${props.space}/play-tab`}
           label="Tab"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-nav-group`}
+          label="Nav group"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to={`/${props.space}/play-nav-element`}
+          label="Nav element"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
       </NavGroup>
