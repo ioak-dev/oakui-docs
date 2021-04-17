@@ -13,6 +13,7 @@ declare global {
       'oak-checkbox-group': any;
       'oak-radio': any;
       'oak-radio-group': any;
+      'oak-popup': any;
       'oak-menu': any;
       'oak-menu-item': any;
       'oak-popover': any;

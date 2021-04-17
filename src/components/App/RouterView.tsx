@@ -33,6 +33,7 @@ import PlaySelect from '../PlaySelect';
 import PlayNavGroup from '../PlayNavGroup';
 import PlayNavElement from '../PlayNavElement';
 import PlayInfiniteScroll from '../PlayInfiniteScroll';
+import PlayMenu from '../PlayMenu';
 
 interface Props {
   cookies: any;
@@ -205,6 +206,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayTab}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/:space/play-menu"
+        render={(propsLocal) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayMenu}
             middleware={['readAuthentication']}
           />
         )}

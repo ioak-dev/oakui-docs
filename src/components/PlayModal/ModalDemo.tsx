@@ -160,6 +160,47 @@ const ModalDemo = () => {
                 formGroupName="modal-test"
                 type="number"
               />
+              <OakSelect
+                label="select"
+                name="city"
+                formGroupName="modal-test"
+                value={state.city}
+                handleChange={handleChange}
+                options={[
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                  'test',
+                  'one',
+                  'two',
+                  'lorem ipsum',
+                ]}
+              />
             </OakForm>
           </div>
           <div slot="footer">

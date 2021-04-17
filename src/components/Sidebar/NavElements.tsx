@@ -66,6 +66,11 @@ const NavElements = (props: Props) => {
           label="Click area"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
+        <NavItem
+          to={`/${props.space}/play-menu`}
+          label="Menu"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
       </NavGroup>
       <NavGroup
         space={props.space}
