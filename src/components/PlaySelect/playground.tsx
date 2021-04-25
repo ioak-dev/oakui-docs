@@ -23,15 +23,18 @@ const Playground = (props: Props) => {
     label: 'Ratione quaerat unde',
     tooltip:
       'cupiditate laborum hic iste nam doloribus dolorem deleniti quod omnis quasi mollitia consequatur',
-    color: 'primary',
-    fill: 'container',
+    color: 'container',
+    popupColor: 'auto',
+    fill: false,
     native: false,
     multiple: true,
     size: 'small',
     shape: 'rectangle',
     validatorFunction: null,
     placeholder: 'Maxime dolores',
-    autoCompleteVariant: 'autocomplete',
+    autoCompleteVariant: 'searchbox',
+    positioningStrategy: 'fixed',
+    gutterBottom: true,
   });
 
   const [demoList, setDemoList] = useState('');
@@ -86,11 +89,25 @@ const Playground = (props: Props) => {
             multiple
           </OakCheckbox>
           <OakCheckbox
+            name="gutterBottom"
+            value={state.gutterBottom || true}
+            handleChange={handleChange}
+          >
+            gutterBottom
+          </OakCheckbox>
+          <OakCheckbox
             name="native"
             value={state.native || false}
             handleChange={handleChange}
           >
             native
+          </OakCheckbox>
+          <OakCheckbox
+            name="fill"
+            value={state.fill || false}
+            handleChange={handleChange}
+          >
+            fill
           </OakCheckbox>
           <OakSelect
             label="autoCompleteVariant"
@@ -101,9 +118,15 @@ const Playground = (props: Props) => {
             gutterBottom
           />
           <OakSelect
-            label="Color"
+            label="color"
             value={state.color}
+            positioningStrategy="fixed"
             options={[
+              'none',
+              'global',
+              'container',
+              'surface',
+              'float',
               'primary',
               'secondary',
               'tertiary',
@@ -111,20 +134,45 @@ const Playground = (props: Props) => {
               'danger',
               'warning',
               'success',
-              'invert',
               'info',
+              'invert',
             ]}
             name="color"
-            handleChange={handleChange}
             gutterBottom
+            handleChange={handleChange}
           />
           <OakSelect
-            label="fill"
-            value={state.fill}
-            options={['global', 'container', 'surface', 'float']}
-            name="fill"
-            handleChange={handleChange}
+            label="popupColor"
+            value={state.popupColor}
+            positioningStrategy="fixed"
+            options={[
+              'auto',
+              'global',
+              'container',
+              'surface',
+              'float',
+              'primary',
+              'secondary',
+              'tertiary',
+              'default',
+              'danger',
+              'warning',
+              'success',
+              'info',
+              'invert',
+            ]}
+            name="popupColor"
             gutterBottom
+            handleChange={handleChange}
+          />
+          <OakSelect
+            label="positioningStrategy"
+            value={state.positioningStrategy}
+            positioningStrategy="fixed"
+            options={['absolute', 'fixed']}
+            name="positioningStrategy"
+            gutterBottom
+            handleChange={handleChange}
           />
           <OakSelect
             label="size"
@@ -137,7 +185,7 @@ const Playground = (props: Props) => {
           <OakSelect
             label="shape"
             value={state.shape}
-            options={['rectangle', 'sharp', 'rounded', 'leaf']}
+            options={['rectangle', 'sharp', 'rounded', 'leaf', 'underline']}
             name="shape"
             handleChange={handleChange}
             gutterBottom
@@ -193,89 +241,106 @@ const Playground = (props: Props) => {
           />
         </OakSection>
       </OakSheet>
-      {/* <OakSection fillColor="none"> */}
-      <OakForm
-        formGroupName="play-checkbox-form-group"
-        handleSubmit={handleSubmit}
-      >
-        <OakSelect
-          multiple={state.multiple}
-          native={state.native}
-          label={state.label}
-          size={state.size}
-          shape={state.shape}
-          tooltip={state.tooltip}
-          placeholder={state.placeholder}
-          fill={state.fill}
-          value={state.multiple ? demoListM : demoList}
-          options={[
-            'Deserunt ut',
-            'labore iure',
-            'dolores quo odit eos voluptatem doloribus',
-            'Cum accusantium',
-            'quia cumque ex praesentium',
-            'corporis nulla dicta',
-            'reprehenderit impedit',
-          ]}
-          name="demoList"
-          handleChange={handleDemoListChange}
-          autoCompleteVariant={state.autoCompleteVariant}
-          gutterBottom
-        />
-        <OakSelect
-          label={state.label}
-          size={state.size}
-          multiple={state.multiple}
-          native={state.native}
-          shape={state.shape}
-          tooltip={state.tooltip}
-          placeholder={state.placeholder}
-          fill={state.fill}
-          value={state.multiple ? demoListM : demoList}
-          options={[
-            'Deserunt ut',
-            'labore iure',
-            'dolores quo odit eos voluptatem doloribus',
-            'Cum accusantium',
-            'quia cumque ex praesentium',
-            'corporis nulla dicta',
-            'reprehenderit impedit',
-          ]}
-          name="demoList"
-          handleChange={handleDemoListChange}
-          autoCompleteVariant={state.autoCompleteVariant}
-          gutterBottom
-        />
-      </OakForm>
-      <br />
-      <OakFormActionsContainer align="left">
-        <OakButton
-          theme="info"
-          variant="appear"
-          handleClick={() => setIsOpen(true)}
-          size="xsmall"
-        >
-          Component settings
-        </OakButton>
-        <OakButton
-          theme="info"
-          variant="appear"
-          handleClick={() => setIsValidationSettingsOpen(true)}
-          size="xsmall"
-        >
-          Validation settings
-        </OakButton>
-        <OakButton
-          theme="info"
-          variant="block"
-          type="submit"
+      <OakSection fillColor="none" marginHorizontal={1} marginVertical={2}>
+        <OakForm
           formGroupName="play-checkbox-form-group"
-          size="xsmall"
+          handleSubmit={handleSubmit}
         >
-          Submit to validate
-        </OakButton>
-      </OakFormActionsContainer>
-      {/* </OakSection> */}
+          <OakInput
+            name="testField"
+            value="test"
+            size={state.size}
+            shape={state.shape}
+            label={state.label}
+            tooltip={state.tooltip}
+            color={state.color}
+            fill={state.fill}
+            gutterBottom={state.gutterBottom}
+          />
+          <OakSelect
+            multiple={state.multiple}
+            native={state.native}
+            label={state.label}
+            size={state.size}
+            shape={state.shape}
+            tooltip={state.tooltip}
+            placeholder={state.placeholder}
+            color={state.color}
+            popupColor={state.popupColor}
+            fill={state.fill}
+            value={state.multiple ? demoListM : demoList}
+            positioningStrategy={state.positioningStrategy}
+            options={[
+              'Deserunt ut',
+              'labore iure',
+              'dolores quo odit eos voluptatem doloribus',
+              'Cum accusantium',
+              'quia cumque ex praesentium',
+              'corporis nulla dicta',
+              'reprehenderit impedit',
+            ]}
+            name="demoList"
+            handleChange={handleDemoListChange}
+            autoCompleteVariant={state.autoCompleteVariant}
+            gutterBottom
+          />
+          <OakSelect
+            label={state.label}
+            size={state.size}
+            multiple={state.multiple}
+            native={state.native}
+            shape={state.shape}
+            tooltip={state.tooltip}
+            placeholder={state.placeholder}
+            color={state.color}
+            popupColor={state.popupColor}
+            fill={state.fill}
+            value={state.multiple ? demoListM : demoList}
+            positioningStrategy={state.positioningStrategy}
+            options={[
+              'Deserunt ut',
+              'labore iure',
+              'dolores quo odit eos voluptatem doloribus',
+              'Cum accusantium',
+              'quia cumque ex praesentium',
+              'corporis nulla dicta',
+              'reprehenderit impedit',
+            ]}
+            name="demoList"
+            handleChange={handleDemoListChange}
+            autoCompleteVariant={state.autoCompleteVariant}
+            gutterBottom
+          />
+        </OakForm>
+        <br />
+        <OakFormActionsContainer align="left">
+          <OakButton
+            theme="info"
+            variant="appear"
+            handleClick={() => setIsOpen(true)}
+            size="xsmall"
+          >
+            Component settings
+          </OakButton>
+          <OakButton
+            theme="info"
+            variant="appear"
+            handleClick={() => setIsValidationSettingsOpen(true)}
+            size="xsmall"
+          >
+            Validation settings
+          </OakButton>
+          <OakButton
+            theme="info"
+            variant="block"
+            type="submit"
+            formGroupName="play-checkbox-form-group"
+            size="xsmall"
+          >
+            Submit to validate
+          </OakButton>
+        </OakFormActionsContainer>
+      </OakSection>
     </>
   );
 };

@@ -26,9 +26,10 @@ const Playground = (props: Props) => {
     size: 'small',
     shape: 'rectangle',
     rounded: true,
+    fill: true,
     elevation: 0,
     gutterBottom: true,
-    fill: 'container',
+    color: 'container',
     min: null,
     max: null,
     minLength: null,
@@ -89,6 +90,7 @@ const Playground = (props: Props) => {
           shape={state.shape}
           label={state.label}
           tooltip={state.tooltip}
+          color={state.color}
           fill={state.fill}
           type={state.type}
           max={state.max}
@@ -230,16 +232,18 @@ const Playground = (props: Props) => {
           <OakSelect
             label="shape"
             value={state.shape}
-            options={['sharp', 'rectangle', 'rounded', 'leaf']}
+            options={['sharp', 'rectangle', 'rounded', 'leaf', 'underline']}
             name="shape"
             gutterBottom
             handleChange={handleChange}
           />
           <OakSelect
-            label="fill"
-            value={state.fill}
+            label="color"
+            value={state.color}
+            positioningStrategy="fixed"
             options={[
               'none',
+              'global',
               'container',
               'surface',
               'float',
@@ -253,7 +257,7 @@ const Playground = (props: Props) => {
               'info',
               'invert',
             ]}
-            name="fill"
+            name="color"
             gutterBottom
             handleChange={handleChange}
           />
@@ -283,6 +287,13 @@ const Playground = (props: Props) => {
             gutterBottom
             handleInput={handleChange}
           />
+          <OakCheckbox
+            name="fill"
+            value={state.fill || false}
+            handleChange={handleChange}
+          >
+            fill
+          </OakCheckbox>
           <OakCheckbox
             name="rounded"
             value={state.rounded || false}

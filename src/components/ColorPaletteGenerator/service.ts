@@ -2,8 +2,9 @@
 
 const tinycolor = require('tinycolor2');
 
-const DARK_LIGHT_BY = 4;
-const DARKER_LIGHTER_BY = 8;
+const DARK_LIGHT_BY = 6;
+const DARKER_LIGHTER_BY = 10;
+const DARKEST_LIGHTEST_BY = 30;
 const LIGHT = '#fcfcfc';
 const DARK = '#0f0f0f';
 
@@ -18,6 +19,20 @@ export const computePalette = (
       getColorPair(`--color-${themeName}`, tinycolor(base))
     );
     if (isDarkMode) {
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-darkest`,
+          tinycolor(base).lighten(DARKEST_LIGHTEST_BY),
+          tinycolor(base)
+        )
+      );
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-lightest`,
+          tinycolor(base).darken(DARKEST_LIGHTEST_BY),
+          tinycolor(base)
+        )
+      );
       output = output.concat(
         getColorPair(
           `--color-${themeName}-darker`,
@@ -47,6 +62,20 @@ export const computePalette = (
         )
       );
     } else {
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-darkest`,
+          tinycolor(base).darken(DARKEST_LIGHTEST_BY),
+          tinycolor(base)
+        )
+      );
+      output = output.concat(
+        getColorPair(
+          `--color-${themeName}-lightest`,
+          tinycolor(base).lighten(DARKEST_LIGHTEST_BY),
+          tinycolor(base)
+        )
+      );
       output = output.concat(
         getColorPair(
           `--color-${themeName}-darker`,

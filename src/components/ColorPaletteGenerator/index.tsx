@@ -27,18 +27,18 @@ const darkModeVariants = {
 };
 
 const lightModeVariants = {
-  global: 'f0f2f5',
-  container: 'ffffff',
-  surface: 'e4e6eb',
-  float: 'd8dadf',
+  global: 'ffffff',
+  container: 'fafafa',
+  surface: 'f4f4f4',
+  float: 'efefef',
 };
 
 const ColorPaletteGenerator = (props: Props) => {
   const [state, setState] = useState({
-    global: '141b2d',
-    container: '1f2940',
-    surface: '2b3858',
-    float: '36466D',
+    global: darkModeVariants.global,
+    container: darkModeVariants.container,
+    surface: darkModeVariants.surface,
+    float: darkModeVariants.float,
     // primary: '4b8ca6',
     primary: '01a982',
     secondary: 'd9ae5f',

@@ -8,12 +8,15 @@ import {
   TableHeader,
 } from '@oakui/core-stage/types/TableHeaderType';
 import { getPage } from '@oakui/core-stage/service/OakTableService';
+import { compose as tableCompose } from '@oakui/core-stage/style-composer/OakTableComposer';
 import './TableDemo.scss';
 import OakButton from '../../oakui/wc/OakButton';
 import { newId } from '../../events/MessageService';
 import OakTable from '../../oakui/wc/OakTable';
 import OakInput from '../../oakui/wc/OakInput';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
+import OakPaginate from '../../oakui/wc/OakPaginate';
+import OakSection from '../../oakui/wc/OakSection';
 
 const TableDemoCustom = () => {
   const authorization = useSelector((state) => state.authorization);
@@ -199,14 +202,21 @@ const TableDemoCustom = () => {
 
   return (
     <>
-      <OakTable
-        paginatePref={paginatePref}
-        fill="surface"
-        formElementSize="xsmall"
-        navPlacement="top"
-        totalRows={totalRows}
-      >
-        <table>
+      <OakSection elevation={6} fillColor="container" rounded>
+        <OakPaginate
+          paginatePref={paginatePref}
+          formElementSize="xsmall"
+          variant="table"
+          handleChange={() => {}}
+          color="container"
+          totalRows={totalRows}
+        />
+        <table
+          className={tableCompose({
+            color: 'container',
+            headerColor: 'primary',
+          })}
+        >
           <thead>
             <tr>
               {header?.map((item) => (
@@ -256,7 +266,7 @@ const TableDemoCustom = () => {
             ))}
           </tbody>
         </table>
-      </OakTable>
+      </OakSection>
       <br />
       <OakFormActionsContainer align="left">
         <OakButton theme="default" variant="regular" handleClick={addData}>

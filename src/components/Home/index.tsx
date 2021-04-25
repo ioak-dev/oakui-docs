@@ -209,7 +209,7 @@ const Home = (props: Props) => {
           handleChange={handleChange}
           formGroupName="home-form"
           regexp={/^[a-z]*$/}
-          fill="container"
+          color="container"
           minLength={2}
           tooltip="Your personal information will be protected"
         />
