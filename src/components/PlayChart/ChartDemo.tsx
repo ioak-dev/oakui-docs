@@ -5,11 +5,10 @@ import OakChartBar from '../../oakui/OakChartBar';
 import OakChartDoughnut from '../../oakui/OakChartDoughnut';
 import OakChartLine from '../../oakui/OakChartLine';
 import OakSection from '../../oakui/wc/OakSection';
-import OakTable from '../../oakui/OakTable';
 import './ChartDemo.scss';
 
 const ChartDemo = () => {
-  const authorization = useSelector((state) => state.authorization);
+  const authorization = useSelector((state: any) => state.authorization);
   const [show, setShow] = useState(true);
   useEffect(() => {
     receiveMessage().subscribe((message) => {
@@ -115,10 +114,7 @@ const ChartDemo = () => {
       <div className="chart-demo-container" id="chart-demo-container">
         <div>
           {show && (
-            <OakSection
-              heading="Doughnut chart - concentric"
-              headerVariant="apparent"
-            >
+            <OakSection>
               <OakChartDoughnut
                 datasets={doughnutData}
                 type="doughnut"
@@ -130,7 +126,7 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Doughnut chart">
+            <OakSection>
               <OakChartDoughnut
                 datasets={[doughnutData[1]]}
                 type="doughnut"
@@ -142,7 +138,7 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Piechart">
+            <OakSection>
               <OakChartDoughnut
                 datasets={[doughnutData[1]]}
                 type="pie"
@@ -154,7 +150,7 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Bar chart, by category - stacked">
+            <OakSection>
               <OakChartBar
                 datasets={data}
                 type="category"
@@ -166,7 +162,7 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Bar chart, by category">
+            <OakSection>
               <OakChartBar
                 datasets={data}
                 type="category"
@@ -177,7 +173,7 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Line chart, by category - stacked">
+            <OakSection>
               <OakChartLine
                 datasets={data}
                 type="category"
@@ -189,7 +185,7 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Line chart, by category">
+            <OakSection>
               <OakChartLine
                 datasets={data}
                 type="category"
@@ -200,14 +196,14 @@ const ChartDemo = () => {
         </div>
         <div>
           {show && (
-            <OakSection heading="Linear line chart - stacked">
+            <OakSection>
               <OakChartLine datasets={dataPoint} type="linear" stacked />
             </OakSection>
           )}
         </div>
         <div>
           {show && (
-            <OakSection heading="Linear line chart">
+            <OakSection>
               <OakChartLine datasets={dataPoint} type="linear" />
             </OakSection>
           )}

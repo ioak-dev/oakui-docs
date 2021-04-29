@@ -5,20 +5,22 @@ import constants from '../components/Constants';
 
 const domain = 'user';
 
-export const getUser = () => (dispatch) => {
+export const getUser = () => (dispatch: any) => {
   dispatch({
     type: GET_USER,
   });
 };
 
-export const addUser = (data) => (dispatch) => {
+export const addUser = (data: any) => (dispatch: any) => {
   dispatch({
     type: ADD_USER,
     payload: data,
   });
 };
 
-export const fetchAllUsers = (tenant, authorization) => (dispatch) => {
+export const fetchAllUsers = (tenant: string, authorization: any) => (
+  dispatch: any
+) => {
   httpGet(`${constants.API_URL_USER}/${tenant}/all`, {
     headers: {
       Authorization: authorization.token,
@@ -31,7 +33,9 @@ export const fetchAllUsers = (tenant, authorization) => (dispatch) => {
   });
 };
 
-export const saveUser = (tenant, authorization, payload) => (dispatch) => {
+export const saveUser = (tenant: string, authorization: any, payload: any) => (
+  dispatch: any
+) => {
   httpPut(`${constants.API_URL_USER}/${tenant}/`, payload, {
     headers: {
       Authorization: authorization.token,

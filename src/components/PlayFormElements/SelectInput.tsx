@@ -17,7 +17,7 @@ const SelectInput = () => {
   };
 
   return (
-    <OakSection heading="Select input">
+    <OakSection>
       <OakSelect
         value={state.testField}
         name="testField"

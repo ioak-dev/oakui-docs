@@ -4,8 +4,8 @@ import { setProfile } from '../../actions/ProfileActions';
 import { receiveMessage, sendMessage } from '../../events/MessageService';
 
 const Init = () => {
-  const authorization = useSelector((state) => state.authorization);
-  const profile = useSelector((state) => state.profile);
+  const authorization = useSelector((state: any) => state.authorization);
+  const profile = useSelector((state: any) => state.profile);
   const [
     previousAuthorizationState,
     setPreviousAuthorizationState,

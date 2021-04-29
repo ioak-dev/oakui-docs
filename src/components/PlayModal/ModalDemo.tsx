@@ -72,7 +72,6 @@ const ModalDemo = () => {
                 handleChange={handleChange}
                 shape="leaf"
                 size="large"
-                fill="none"
                 options={['wert', 'lorem', 'dolor sit', 'sad asfd sdf ads']}
               />
               <OakSelect
@@ -85,7 +84,6 @@ const ModalDemo = () => {
                 native
                 size="large"
                 shape="leaf"
-                fill="none"
               />
               <OakSelect
                 label="select"

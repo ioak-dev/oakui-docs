@@ -20,7 +20,7 @@ const PlayFormElements = (props: Props) => {
     console.log(state);
   };
 
-  const handleChange = (detail) => {
+  const handleChange = (detail: any) => {
     setState((currentState) => ({
       ...currentState,
       [detail.name]: detail.value,

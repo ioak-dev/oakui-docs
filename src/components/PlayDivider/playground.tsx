@@ -35,7 +35,7 @@ const Playground = (props: Props) => {
     setState({ ...state, [detail.name]: detail.value });
   };
 
-  const validatorFunction = (_, __, value: any): string[] => {
+  const validatorFunction = (_: any, __: any, value: any): string[] => {
     if (state.validatorFunction) {
       const outcome: string[] = [];
       outcome.push(state.validatorFunction);
@@ -118,11 +118,7 @@ const Playground = (props: Props) => {
       >
         <div className="divider-content">
           <OakTypography variant="body1">Lorem ipsum</OakTypography>
-          <OakDivider
-            color={state.color}
-            colorMode={state.colorMode}
-            marginVertical={state.marginVertical}
-          />
+          <OakDivider color={state.color} colorMode={state.colorMode} />
           <OakTypography variant="body1">Dolor sit</OakTypography>
         </div>
       </OakSection>

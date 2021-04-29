@@ -3,8 +3,9 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import './style.scss';
 import OakTypography from '../../oakui/wc/OakTypography';
 import KeyDetails from './KeyDetails';
+import OverviewType from './OverviewType';
 
-interface Props {
+type Props = {
   data: {
     title: string;
     componentName: string;
@@ -14,7 +15,7 @@ interface Props {
       body: string;
     }[];
   };
-}
+};
 
 const OverviewSection = (props: Props) => {
   return (

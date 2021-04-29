@@ -7,8 +7,6 @@ import OaLogin from '../Auth/OaLogin';
 import Landing from '../Landing';
 import OakRoute from '../Auth/OakRoute';
 import Unauthorized from '../Auth/Unauthorized';
-import OneAuth from '../Login/OneAuth/index';
-import Login from '../Login/index';
 import PlaySpinner from '../PlaySpinner';
 import PlayButton from '../PlayButton';
 import PlayModal from '../PlayModal';
@@ -44,44 +42,21 @@ const RouterView = (props: Props) => {
     <div className="router-view">
       <Route
         path="/login"
-        render={(propsLocal) => (
+        render={(propsLocal: any) => (
           <OakRoute {...propsLocal} {...props} component={OaLogin} />
-        )}
-      />
-      <Route
-        path="/:space/unauthorized"
-        render={(propsLocal) => (
-          <OakRoute
-            {...propsLocal}
-            {...props}
-            component={Unauthorized}
-            middleware={['isAuthenticated']}
-          />
         )}
       />
       <Route
         path="/"
         exact
-        render={(propsLocal) => (
-          <OakRoute
-            {...propsLocal}
-            {...props}
-            component={Landing}
-            middleware={['readAuthentication']}
-          />
-        )}
-      />
-      <Route
-        path="/home"
-        exact
-        render={(propsLocal) => (
+        render={(propsLocal: any) => (
           <OakRoute {...propsLocal} {...props} component={Landing} />
         )}
       />
       <Route
         path="/palette"
         exact
-        render={(propsLocal) => (
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -90,8 +65,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/home"
-        render={(propsLocal) => (
+        path="/home"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -101,8 +76,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-drawer"
-        render={(propsLocal) => (
+        path="/play-drawer"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -112,8 +87,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-click-area"
-        render={(propsLocal) => (
+        path="/play-click-area"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -123,8 +98,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-typography"
-        render={(propsLocal) => (
+        path="/play-typography"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -134,8 +109,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-divider"
-        render={(propsLocal) => (
+        path="/play-divider"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -145,8 +120,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-spacing"
-        render={(propsLocal) => (
+        path="/play-spacing"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -156,8 +131,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-expanse"
-        render={(propsLocal) => (
+        path="/play-expanse"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -167,8 +142,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-nav-group"
-        render={(propsLocal) => (
+        path="/play-nav-group"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -178,8 +153,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-nav-element"
-        render={(propsLocal) => (
+        path="/play-nav-element"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -189,8 +164,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-infinite-scroll"
-        render={(propsLocal) => (
+        path="/play-infinite-scroll"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -200,8 +175,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-tab"
-        render={(propsLocal) => (
+        path="/play-tab"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -211,8 +186,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-menu"
-        render={(propsLocal) => (
+        path="/play-menu"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -222,8 +197,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-toolbar"
-        render={(propsLocal) => (
+        path="/play-toolbar"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -233,8 +208,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-sheet"
-        render={(propsLocal) => (
+        path="/play-sheet"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -244,8 +219,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-section"
-        render={(propsLocal) => (
+        path="/play-section"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -255,8 +230,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-input"
-        render={(propsLocal) => (
+        path="/play-input"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -266,8 +241,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-select"
-        render={(propsLocal) => (
+        path="/play-select"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -277,8 +252,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-checkbox"
-        render={(propsLocal) => (
+        path="/play-checkbox"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -288,8 +263,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-radio"
-        render={(propsLocal) => (
+        path="/play-radio"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -299,8 +274,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-spinner"
-        render={(propsLocal) => (
+        path="/play-spinner"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -310,8 +285,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-button"
-        render={(propsLocal) => (
+        path="/play-button"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -321,8 +296,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-modal"
-        render={(propsLocal) => (
+        path="/play-modal"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -332,8 +307,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-chart"
-        render={(propsLocal) => (
+        path="/play-chart"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -343,8 +318,8 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-table"
-        render={(propsLocal) => (
+        path="/play-table"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
@@ -354,34 +329,12 @@ const RouterView = (props: Props) => {
         )}
       />
       <Route
-        path="/:space/play-form-elements"
-        render={(propsLocal) => (
+        path="/play-form-elements"
+        render={(propsLocal: any) => (
           <OakRoute
             {...propsLocal}
             {...props}
             component={PlayFormElements}
-            middleware={['readAuthentication']}
-          />
-        )}
-      />
-      <Route
-        path="/:space/login/home"
-        render={(propsLocal) => (
-          <OakRoute
-            {...propsLocal}
-            {...props}
-            component={Login}
-            middleware={['readAuthentication']}
-          />
-        )}
-      />
-      <Route
-        path="/:space/login/oa"
-        render={(propsLocal) => (
-          <OakRoute
-            {...propsLocal}
-            {...props}
-            component={OneAuth}
             middleware={['readAuthentication']}
           />
         )}

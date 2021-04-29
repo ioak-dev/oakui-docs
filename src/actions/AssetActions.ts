@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { REFRESH_ASSETS } from './types';
 
-export const fetchAllAssets = () => (dispatch) => {
+export const fetchAllAssets = () => (dispatch: any) => {
   axios.get(`${process.env.REACT_APP_API_URL}/asset`).then((response) => {
     dispatch({
       type: REFRESH_ASSETS,

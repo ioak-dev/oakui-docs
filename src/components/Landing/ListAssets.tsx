@@ -8,14 +8,14 @@ interface Props {
 }
 
 const ListAssets = (props: Props) => {
-  const assetList = useSelector((state) => state.asset);
+  const assetList = useSelector((state: any) => state.asset);
   return (
     <div className="list-assets">
       <div className="typography-7 space-bottom-2">
         Choose an asset to proceed
       </div>
       <div className="list-assets--content">
-        {assetList?.assets?.map((asset) => (
+        {assetList?.assets?.map((asset: any) => (
           <AssetItem asset={asset} history={props.history} key={asset.id} />
         ))}
       </div>

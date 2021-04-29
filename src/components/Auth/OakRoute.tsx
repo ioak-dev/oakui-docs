@@ -16,8 +16,8 @@ interface Props {
 }
 
 const OakRoute = (props: Props) => {
-  const authorization = useSelector((state) => state.authorization);
-  const profile = useSelector((state) => state.profile);
+  const authorization = useSelector((state: any) => state.authorization);
+  const profile = useSelector((state: any) => state.profile);
   const dispatch = useDispatch();
 
   const middlewares = () => {
@@ -29,7 +29,7 @@ const OakRoute = (props: Props) => {
     return true;
   };
 
-  const runMidleware = (middlewareName) => {
+  const runMidleware = (middlewareName: string) => {
     sendMessage('spaceChange', true, '');
     switch (middlewareName) {
       case 'readAuthentication':
@@ -50,7 +50,7 @@ const OakRoute = (props: Props) => {
     return authenticate('space', false);
   };
 
-  const authenticate = async (type, redirect = true) => {
+  const authenticate = async (type: string, redirect = true) => {
     sendMessage('spaceChange', true, props.match.params.space);
     if (authorization.isAuth) {
       return true;
@@ -107,7 +107,7 @@ const OakRoute = (props: Props) => {
     return false;
   };
 
-  const redirectToLogin = (space) => {
+  const redirectToLogin = (space: string) => {
     window.location.href = `${process.env.REACT_APP_ONEAUTH_URL}/#/appspace/${process.env.REACT_APP_ONEAUTH_APPSPACE_ID}/login?type=signin&appId=${process.env.REACT_APP_ONEAUTH_APP_ID}`;
     // props.history.push(`/${space}/login/home`);
   };

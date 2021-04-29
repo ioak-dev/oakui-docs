@@ -1,9 +1,6 @@
 import React from 'react';
 import OakTypography from '../../oakui/wc/OakTypography';
 import './style.scss';
-import TableDemo from './TableDemo';
-import TableDemoCustom from './TableDemoCustom';
-import TableDemoNew from './TableDemoNew';
 
 interface Props {
   match: any;
@@ -23,7 +20,8 @@ const PlayTable = (props: Props) => {
       <div className="play-table--list">
         <div className="play-table--list--item">
           {/* <TableDemoNew /> */}
-          <TableDemoCustom />
+          {/* <TableDemoCustom /> */}
+          TBD
         </div>
       </div>
     </>

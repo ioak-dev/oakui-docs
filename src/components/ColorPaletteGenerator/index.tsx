@@ -264,8 +264,8 @@ const ColorPaletteGenerator = (props: Props) => {
         Copy below variables into your theme.css file
       </OakTypography>
       <OakSection
-        fillType="none"
-        variant="outlined"
+        fillColor="none"
+        outlineColor="container"
         paddingHorizontal={4}
         paddingVertical={4}
         rounded

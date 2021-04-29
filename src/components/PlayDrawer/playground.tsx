@@ -6,7 +6,6 @@ import OakAppLayout from '../../oakui/wc/OakAppLayout';
 import OakButton from '../../oakui/wc/OakButton';
 import OakSection from '../../oakui/wc/OakSection';
 import OakTypography from '../../oakui/wc/OakTypography';
-import OakSelect from '../../oakui/wc/OakSelect';
 import OakRadioGroup from '../../oakui/wc/OakRadioGroup';
 import OakRadio from '../../oakui/wc/OakRadio';
 
@@ -50,7 +49,7 @@ const Playground = (props: Props) => {
           </OakRadio>
         </OakRadioGroup>
       </OakSection>
-      <OakAppLayout leftDrawerOpen={isOpen}>
+      <OakAppLayout>
         <div slot="drawer">
           <div className="drawer-side">
             <OakSection fillColor="primary">

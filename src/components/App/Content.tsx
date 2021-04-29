@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { HashRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Chart from 'chart.js';
@@ -7,7 +7,6 @@ import Chart from 'chart.js';
 import './style.scss';
 import { withCookies } from 'react-cookie';
 
-import Notification from '../Notification';
 import { fetchAllSpaces } from '../../actions/SpaceActions';
 import Init from './Init';
 import { fetchAllAssets } from '../../actions/AssetActions';
@@ -24,7 +23,7 @@ interface Props {
 }
 
 const Content = (props: Props) => {
-  const profile = useSelector((state) => state.profile);
+  const profile = useSelector((state: any) => state.profile);
   const dispatch = useDispatch();
   const [usingMouse, setUsingMouse] = useState(false);
 

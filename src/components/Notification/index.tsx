@@ -9,14 +9,14 @@ const Notification = () => {
   const [notificationList, setNotificationList] = useState<any | undefined>([]);
   const [data, setData] = useState<any>({ notificationList: [] });
 
-  const removeNotification = (notificationData) => {
+  const removeNotification = (notificationData: { id: any }) => {
     setNotificationList(
-      notificationList.filter((item) => {
+      notificationList.filter((item: { id: any }) => {
         return item.id !== notificationData.id;
       })
     );
   };
-  const addNotification = (notificationData) => {
+  const addNotification = (notificationData: { duration: number; id: any }) => {
     const localCopy = [...notificationList];
     localCopy.unshift(notificationData);
     // setNotificationList([notificationData].concat(notificationList));
@@ -67,7 +67,7 @@ const Notification = () => {
           {notificationList
             .slice(0, 5)
             .reverse()
-            .map((notification) => (
+            .map((notification: { id: any; message: any }) => (
               <div key={notification.id || notification.message}>
                 <NotificationMessage
                   notification={notification}

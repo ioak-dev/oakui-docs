@@ -71,7 +71,7 @@ const Playground = (props: Props) => {
     console.log('form submit');
   };
 
-  const validatorFunction = (_, __, value: any): string[] => {
+  const validatorFunction = (_: any, __: any, value: any): string[] => {
     if (state.validatorFunction) {
       const outcome: string[] = [];
       outcome.push(state.validatorFunction);

@@ -1,9 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { FaceTwoTone } from '@material-ui/icons';
-import {
-  addNotification,
-  removeNotification,
-} from '@oakui/core-stage/NotificationStore';
+import { addNotification } from '@oakui/core-stage/NotificationStore';
+import { compose as composeTypography } from '@oakui/core-stage/style-composer/OakTypographyComposer';
 
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
@@ -12,11 +9,9 @@ import OakForm from '../../oakui/wc/OakForm';
 import OakSelect from '../../oakui/wc/OakSelect';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakTypography from '../../oakui/wc/OakTypography';
-import OakLink from '../../oakui/OakLink';
 import { newId } from '../../events/MessageService';
 import OakMenu from '../../oakui/wc/OakMenu';
 import OakMenuItem from '../../oakui/wc/OakMenuItem';
-import { compose as composeTypography } from '@oakui/core-stage/style-composer/OakTypographyComposer';
 
 interface Props {
   match: any;
@@ -41,7 +36,7 @@ const Home = (props: Props) => {
       id,
       heading: state.category || 'lorem ipsum',
       description: state.firstName || 'lorem ipsum dolor sit',
-      type: state.email,
+      type: 'info',
     });
   };
 
@@ -75,7 +70,7 @@ const Home = (props: Props) => {
     console.log(event);
   };
 
-  const validateEmail = (_, __, value: any): string[] => {
+  const validateEmail = (_: any, __: any, value: any): string[] => {
     const outcome: string[] = [];
     if (!value.toString().includes('@')) {
       outcome.push('Not a valid email');
@@ -115,54 +110,12 @@ const Home = (props: Props) => {
         <OakMenuItem handleClick={handleMenuClick}>one two three</OakMenuItem>
         <OakMenuItem handleClick={handleMenuClick}>lorem ipsum</OakMenuItem>
       </OakMenu>
-      <OakLink
-        href="https://google.com"
-        variant="body1"
-        color="secondary"
-        underline="hover"
-      >
-        Heading two based link
-        <FaceTwoTone />
-        Heading two based link
-      </OakLink>
       <div className="inline-row">
         asdsdasdsadsadasdsad
         <OakMenu>
           <OakMenuItem handleClick={handleMenuClick}>Test</OakMenuItem>
         </OakMenu>
       </div>
-      <OakLink href="https://google.com" variant="body1" color="primary">
-        body hyperlink
-      </OakLink>
-      <OakLink
-        variant="body1"
-        color="secondary"
-        handleClick={clickLink}
-        block
-        blockSize="small"
-        blockShape="rectangle"
-      >
-        Not a Hyperlink
-      </OakLink>
-      <OakLink
-        href="a"
-        variant="body1"
-        color="invert"
-        handleClick={clickLink}
-        block
-        blockSize="small"
-        blockShape="rectangle"
-      >
-        Hyperlink
-      </OakLink>
-      <OakLink
-        variant="body1"
-        color="secondary"
-        underline="always"
-        handleClick={clickLink}
-      >
-        not a hyperlink
-      </OakLink>
       <OakForm
         formGroupName="home-form"
         handleSubmit={submit}
@@ -185,7 +138,6 @@ const Home = (props: Props) => {
           formGroupName="home-form"
           size="small"
           shape="leaf"
-          fill="float"
           options={['category one', 'category two', 'sadgasd sagd sga']}
         />
         <OakInput
@@ -199,7 +151,6 @@ const Home = (props: Props) => {
           formGroupName="home-form"
           size="medium"
           shape="leaf"
-          fill="float"
         />
         <OakInput
           label="First name"
@@ -221,7 +172,6 @@ const Home = (props: Props) => {
           handleChange={handleChange}
           formGroupName="home-form"
           type="number"
-          fill="surface"
           min={2}
           max={10}
         />
@@ -232,7 +182,6 @@ const Home = (props: Props) => {
           placeholder="Your Email"
           handleChange={handleChange}
           formGroupName="home-form"
-          fill="float"
           minLength={5}
           validatorFunction={validateEmail}
         />
