@@ -22,13 +22,24 @@ const ModalDemo = () => {
   const handleChange = (detail: any) => {
     setState({ ...state, [detail.name]: detail.value });
   };
+
   return (
     <>
       <div className="modal-demo">
         <OakModal
-          showModal={visible}
-          handleClose={() => setVisible(!visible)}
+          isOpen={visible}
+          handleClose={() => setVisible(false)}
           heading="Modal test dialog"
+          backdropIntensity={5}
+          elevation={10}
+          paddingHorizontal={10}
+          paddingVertical={4}
+          animationSpeed="fast"
+          animationStyle="slide"
+          color="surface"
+          width="full"
+          height="small"
+          rounded
         >
           <div slot="body">
             <OakForm formGroupName="modal-test" handleSubmit={submitForm}>

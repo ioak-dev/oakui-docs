@@ -6,6 +6,7 @@
   "homepage": "https://oakui-docs.ioak.io",
   "scripts": {
     "start": "tsc && webpack serve --env target=development --config webpack.config.js --mode development",
+    "start:fast": "webpack serve --env target=development --config webpack.config.js --mode development",
     "build:local": "tsc -w",
     "build": "tsc && webpack --env target=production --config webpack.config.js --mode production",
     "deploy": "npm run build&&gh-pages -d build",

@@ -2,6 +2,20 @@
   --color-global-darkmode: #18191a;
   --color-global-lightmode: #ffffff;
   .theme_dark {
+    --oak-backdrop-color-1: rgba(0, 0, 0, 0.2);
+    --oak-backdrop-color-2: rgba(0, 0, 0, 0.3);
+    --oak-backdrop-color-3: rgba(0, 0, 0, 0.4);
+    --oak-backdrop-color-4: rgba(0, 0, 0, 0.5);
+    --oak-backdrop-color-5: rgba(0, 0, 0, 0.6);
+  }
+  .theme_light {
+    --oak-backdrop-color-1: rgba(0, 0, 0, 0.2);
+    --oak-backdrop-color-2: rgba(0, 0, 0, 0.3);
+    --oak-backdrop-color-3: rgba(0, 0, 0, 0.4);
+    --oak-backdrop-color-4: rgba(0, 0, 0, 0.5);
+    --oak-backdrop-color-5: rgba(0, 0, 0, 0.6);
+  }
+  .theme_dark {
     // Grey color schemes for background and foreground text
     --color-1: #ffffff;
     --color-2: #ffffff;
