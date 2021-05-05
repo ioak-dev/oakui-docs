@@ -13,12 +13,14 @@ const Logo = () => {
 
   return (
     <div className="logo">
-      {profile.theme === 'theme_light' && (
-        <img className="logo--image" src={oakuiBlack} alt="OAKUI logo" />
-      )}
-      {profile.theme !== 'theme_light' && (
-        <img className="logo--image" src={oakuiWhite} alt="OAKUI logo" />
-      )}
+      <oak-link href="/">
+        {profile.theme === 'theme_light' && (
+          <img className="logo--image" src={oakuiBlack} alt="OAKUI logo" />
+        )}
+        {profile.theme !== 'theme_light' && (
+          <img className="logo--image" src={oakuiWhite} alt="OAKUI logo" />
+        )}
+      </oak-link>
     </div>
   );
 };
