@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles/oak-editor.scss';
 import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
+import 'react-quill/dist/quill.core.css';
 import { Warning } from '@material-ui/icons';
 
 interface Props {

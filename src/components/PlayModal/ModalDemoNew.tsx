@@ -3,9 +3,7 @@ import OakButton from '../../oakui/wc/OakButton';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakModal from '../../oakui/wc/OakModal';
 import './ModalDemo.scss';
-import OakForm from '../../oakui/wc/OakForm';
-import OakInput from '../../oakui/wc/OakInput';
-import OakSelect from '../../oakui/wc/OakSelect';
+import OakEdit from '../../oakui/OakEdit';
 
 const ModalDemoNew = () => {
   const [state, setState] = useState({
@@ -34,26 +32,9 @@ const ModalDemoNew = () => {
           height="full"
           width="full"
         >
-          <div slot="body">lorem ipsum </div>
-          {/* <div slot="footer">
-            <OakFormActionsContainer align="right">
-              <OakButton
-                theme="primary"
-                variant="regular"
-                type="submit"
-                formGroupName="modal-test"
-              >
-                Submit
-              </OakButton>
-              <OakButton
-                handleClick={() => setVisible(false)}
-                theme="default"
-                variant="regular"
-              >
-                Close
-              </OakButton>
-            </OakFormActionsContainer>
-          </div> */}
+          <div slot="body">
+            <OakEdit />
+          </div>
         </OakModal>
       </div>
       <OakFormActionsContainer align="left">

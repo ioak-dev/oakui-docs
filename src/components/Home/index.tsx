@@ -1,17 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { addNotification } from '@oakui/core-stage/NotificationStore';
-import { compose as composeTypography } from '@oakui/core-stage/style-composer/OakTypographyComposer';
 
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
-import OakInput from '../../oakui/wc/OakInput';
-import OakForm from '../../oakui/wc/OakForm';
-import OakSelect from '../../oakui/wc/OakSelect';
-import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
-import OakTypography from '../../oakui/wc/OakTypography';
-import { newId } from '../../events/MessageService';
-import OakMenu from '../../oakui/wc/OakMenu';
-import OakMenuItem from '../../oakui/wc/OakMenuItem';
+import OakEdit from '../../oakui/OakEdit';
+import OakEditRichText from '../../oakui/OakEdit/OakEditRichText';
+import OakRichTextControlType from '../../oakui/OakEdit/types/OakRichTextControlType';
+import OakImageUpload from '../../oakui/OakImageUpload';
 
 interface Props {
   match: any;
@@ -19,209 +13,55 @@ interface Props {
 }
 
 const Home = (props: Props) => {
-  const [state, setState] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    fileexample: '',
-    category: '',
-    country: '',
-  });
+  const [state, setState] = useState<any>([
+    {
+      data: { text: '<b>lorem ipsum</b>' },
+      id: '9793aa3e-0b59-477b-9f2e-8b74517f6bc1',
+      type: 'PARAGRAPH',
+    },
+    {
+      data: { text: 'lorem ipsum', level: 1 },
+      id: '9793aa3e-0b59-477b-9f2e-8b74517f6bc2',
+      type: 'HEADING',
+    },
+  ]);
 
-  const submit = (event: any) => {
-    // event.preventDefault();
+  const handleChange = (_value: any) => {
+    setState([..._value]);
+  };
+
+  const handleSubmit = () => {
     console.log(state);
-    const id = newId();
-    addNotification({
-      id,
-      heading: state.category || 'lorem ipsum',
-      description: state.firstName || 'lorem ipsum dolor sit',
-      type: 'info',
-    });
   };
 
-  const reset = (event: any) => {
-    // event.preventDefault();
-    console.log(event);
-    setState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      fileexample: '',
-      category: '',
-      country: '',
-    });
+  const handleChangeRt = (text: any) => {
+    console.log(text);
   };
 
-  useEffect(() => {
-    console.log('saSAsaS'.match(/^[0-9]+$/));
-    console.log('787'.match(/^[0-9]+$/));
-  }, []);
-
-  const handleChange = (detail: any) => {
-    setState({ ...state, [detail.name]: detail.value });
-  };
-
-  const clickLink = (detail: any) => {
-    console.log(detail);
-  };
-
-  const handleMenuClick = (event: any) => {
-    console.log(event);
-  };
-
-  const validateEmail = (_: any, __: any, value: any): string[] => {
-    const outcome: string[] = [];
-    if (!value.toString().includes('@')) {
-      outcome.push('Not a valid email');
-      outcome.push('Should be from a company domain');
-    }
-    console.log(outcome);
-    return outcome;
+  const handleImageChange = (image: any) => {
+    console.log(image);
   };
 
   return (
-    <>
-      <OakTypography variant="h2">Home</OakTypography>
-      <div
-        className={composeTypography({
-          variant: 'h1',
-        })}
-      >
-        custom styling
-      </div>
-      <OakTypography variant="h1">heading one</OakTypography>
-      <OakTypography variant="h2">heading two</OakTypography>
-      <OakTypography variant="h3">heading three</OakTypography>
-      <OakTypography variant="h4">heading four</OakTypography>
-      <OakTypography variant="h5">heading five</OakTypography>
-      <OakTypography variant="h6">heading six</OakTypography>
-      <OakTypography variant="body1">Body one</OakTypography>
-      <OakTypography variant="body2">Body two</OakTypography>
-      <OakTypography variant="caption">Caption</OakTypography>
-      <OakTypography variant="subtitle1">Subtitle one</OakTypography>
-      <OakTypography variant="subtitle2">Subtitle two</OakTypography>
-      <OakTypography variant="overline">Overline</OakTypography>
-      <OakTypography>Default</OakTypography>
-      <OakTypography variant="inherit" paragraph>
-        Inherit
-      </OakTypography>
-      <OakMenu>
-        <OakMenuItem handleClick={handleMenuClick}>one two three</OakMenuItem>
-        <OakMenuItem handleClick={handleMenuClick}>lorem ipsum</OakMenuItem>
-      </OakMenu>
-      <div className="inline-row">
-        asdsdasdsadsadasdsad
-        <OakMenu>
-          <OakMenuItem handleClick={handleMenuClick}>Test</OakMenuItem>
-        </OakMenu>
-      </div>
-      <OakForm
-        formGroupName="home-form"
-        handleSubmit={submit}
-        handleReset={reset}
-      >
-        <OakSelect
-          name="country"
-          value={state.country}
-          placeholder="Choose country"
-          label="Country"
-          formGroupName="home-form"
-          handleChange={handleChange}
-        />
-        <OakSelect
-          label="Category"
-          name="category"
-          value={state.category}
-          placeholder="Choose a category"
-          handleChange={handleChange}
-          formGroupName="home-form"
-          size="small"
-          shape="leaf"
-          options={['category one', 'category two', 'sadgasd sagd sga']}
-        />
-        <OakInput
-          label="File upload"
-          name="fileexample"
-          type="file"
-          value={state.fileexample}
-          placeholder="File upload"
-          handleChange={handleChange}
-          multiple
-          formGroupName="home-form"
-          size="medium"
-          shape="leaf"
-        />
-        <OakInput
-          label="First name"
-          name="firstName"
-          value={state.firstName}
-          placeholder="Your first name"
-          handleChange={handleChange}
-          formGroupName="home-form"
-          regexp={/^[a-z]*$/}
-          color="container"
-          minLength={2}
-          tooltip="Your personal information will be protected"
-        />
-        <OakInput
-          label="Last name"
-          name="lastName"
-          value={state.lastName}
-          placeholder="Your last name"
-          handleChange={handleChange}
-          formGroupName="home-form"
-          type="number"
-          min={2}
-          max={10}
-        />
-        <OakInput
-          label="Email"
-          name="email"
-          value={state.email}
-          placeholder="Your Email"
-          handleChange={handleChange}
-          formGroupName="home-form"
-          minLength={5}
-          validatorFunction={validateEmail}
-        />
-        <OakSelect
-          name="country"
-          value={state.country}
-          placeholder="Choose country"
-          label="Country"
-          formGroupName="home-form"
-          handleChange={handleChange}
-        />
-        <OakFormActionsContainer>
-          <OakButton
-            theme="primary"
-            variant="appear"
-            type="submit"
-            formGroupName="home-form"
-          >
-            Submit button
-          </OakButton>
-          <OakButton
-            theme="default"
-            variant="appear"
-            type="reset"
-            formGroupName="home-form"
-          >
-            Reset button
-          </OakButton>
-          <OakButton
-            theme="default"
-            variant="appear"
-            handleClick={submit}
-            type="button"
-            formGroupName="home-form"
-          >
-            Normal button
-          </OakButton>
-        </OakFormActionsContainer>
-      </OakForm>
-    </>
+    <div>
+      <div>Home</div>
+      <br />
+      <OakImageUpload handleChange={handleImageChange} />
+      <br />
+      <OakEdit value={state} handleChange={handleChange} />
+      <br />
+      <OakButton handleClick={handleSubmit}>Submit</OakButton>
+      <br />
+      {/* <OakEditRichText
+        value="abcd"
+        handleChange={handleChangeRt}
+        controls={[
+          OakRichTextControlType.BOLD,
+          OakRichTextControlType.ITALIC,
+          OakRichTextControlType.BULLET_LIST,
+        ]}
+      /> */}
+    </div>
   );
 };
 

@@ -1,0 +1,10 @@
+.oak-edit-toolbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  visibility: hidden;
+  justify-content: flex-end;
+}
+.oak-edit-toolbar--active {
+  visibility: visible;
+}

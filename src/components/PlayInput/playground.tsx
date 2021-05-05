@@ -1,9 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
-import { OakSectionProps } from '@oakui/core-stage/style-composer/OakSectionComposer';
+import React, { useState } from 'react';
 
 import './style.scss';
-import OakTypography from '../../oakui/wc/OakTypography';
 import OakSection from '../../oakui/wc/OakSection';
 import OakInput from '../../oakui/wc/OakInput';
 import OakSelect from '../../oakui/wc/OakSelect';
@@ -61,6 +58,7 @@ const Playground = (props: Props) => {
         break;
       case 'example: /S+@S+.S+/':
         val = /\S+@\S+\.\S+/;
+        break;
       default:
         break;
     }
@@ -139,14 +137,6 @@ const Playground = (props: Props) => {
       >
         <OakSection fillColor="surface" outlineColor="none" rounded fullWidth>
           <OakSelect
-            label="type"
-            value={state.type}
-            options={['text', 'number', 'password', 'date', 'file']}
-            name="type"
-            gutterBottom
-            handleChange={handleChange}
-          />
-          <OakSelect
             label="errorStyle"
             value={state.errorStyle}
             options={['outline', 'fill']}
@@ -221,6 +211,24 @@ const Playground = (props: Props) => {
         sizeHorizontal="full"
       >
         <OakSection fillColor="surface" outlineColor="none" rounded fullWidth>
+          <OakSelect
+            label="type"
+            value={state.type}
+            options={[
+              'text',
+              'textarea',
+              'richtext',
+              'number',
+              'password',
+              'date',
+              'file',
+              'time',
+              'datetime',
+            ]}
+            name="type"
+            gutterBottom
+            handleChange={handleChange}
+          />
           <OakSelect
             label="size"
             value={state.size}

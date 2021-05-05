@@ -25,6 +25,7 @@ interface Props {
   type?:
     | 'text'
     | 'textarea'
+    | 'richtext'
     | 'number'
     | 'password'
     | 'date'

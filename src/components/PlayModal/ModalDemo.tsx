@@ -6,6 +6,7 @@ import './ModalDemo.scss';
 import OakForm from '../../oakui/wc/OakForm';
 import OakInput from '../../oakui/wc/OakInput';
 import OakSelect from '../../oakui/wc/OakSelect';
+import OakEdit from '../../oakui/OakEdit';
 
 const ModalDemo = () => {
   const [state, setState] = useState({
@@ -42,6 +43,7 @@ const ModalDemo = () => {
           rounded
         >
           <div slot="body">
+            <OakEdit />
             <OakForm formGroupName="modal-test" handleSubmit={submitForm}>
               <OakInput
                 label="City"
