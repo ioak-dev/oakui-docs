@@ -75,9 +75,10 @@ const Content = (props: Props) => {
         />
 
         <OakAppLayout
-          topbarVariant="static"
-          sidebarVariant="side"
-          topbarElevation={2}
+          topbarVariant="sticky"
+          sidebarVariant="push"
+          topbarElevation={0}
+          topbarOutlined
           sidebarElevation={2}
           sidebarToggleIconVariant="chevron"
         >

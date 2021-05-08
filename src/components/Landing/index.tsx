@@ -30,87 +30,71 @@ const Landing = (props: Props) => {
 
   return (
     <OakPage>
-      {/* <div className="landing">
-        {authorization.isAuth && (
-          <>
-            <ListAssets history={props.history} />
-            <hr />
-            <GettingStartedAsset history={props.history} />
-          </>
-        )}
-        {!authorization.isAuth && (
-          <OakFormActionsContainer align="center">
-            <OakButton theme="primary" variant="appear" handleClick={goToLogin}>
-              Login
-            </OakButton>
-          </OakFormActionsContainer>
-        )}
-      </div> */}
       <div className="landing-page">
         <div className="top-banner">
           <img src={topBannerLogo} />
-          <h1>Build scalable experiences in the open.</h1>
+          <h1>Lorem ipsum dolor sit amet, consectetur</h1>
           <p>
-            OakUI is an open source design system built to drive consistency and
-            unify teams.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor
           </p>
           <div className="action-buttons">
             <OakButton size="large" variant="regular" theme="default">
-              Get Started
+              Lorem ipsum
             </OakButton>
             <OakButton size="large" variant="appear" theme="default">
-              Code
+              Lorem
             </OakButton>
           </div>
         </div>
         <div className="about-oakui-section">
-          <h2>Hello, we're OakUI.</h2>
+          <h2>Lorem ipsum dolor.</h2>
           <p>
-            We think quality product experiences should be easy to build and
-            easy to scale, so we provide the tools to make that happen.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <p>
-            From documentation and components to code examples and tutorials,
-            OakUIhas it all—and our community of Flyers help make it better
-            every day.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam,
           </p>
         </div>
         <div className="feature-oakui-section">
           <div className="feature">
-            <h2>We guide, you decide</h2>
+            <h2>Lorem ipsum, dolor sit</h2>
             <p>
-              PatternFly’s foundation is made of design guidelines, so help is
-              always there when you need it. Check out our approach to icons,
-              color, content, and more.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis.
             </p>
-            <a href="#">View design guidelines </a>
+            <a href="#">Dolore magna aliqua </a>
           </div>
           <div className="feature">
-            <h2>Lay it out</h2>
+            <h2>Ut enim ad</h2>
             <p>
-              A layout provides a fully responsive page structure that keeps
-              your components organized and aligned regardless of screen size.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a href="#">View layouts </a>
+            <a href="#">Excepteur sint </a>
           </div>
           <div className="feature">
-            <h2>Build things your way</h2>
+            <h2>Duis aute irure dolor</h2>
             <p>
-              Components are like building blocks. Designed to be flexible and
-              modular, you can mix and match components to create a solution for
-              almost any UI problem.
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              eu fugiat nulla pariatur.
             </p>
-            <a href="#">View components </a>
+            <a href="#">Ut enim ad minim </a>
           </div>
           <div className="feature">
-            <h2>See it in action</h2>
+            <h2>Excepteur sint occaecat</h2>
             <p>
-              Components are better together. Demos show how multiple components
-              can be used in a single design. They also provide some useful
-              starter code, so the days of creating complex layouts from scratch
-              are over.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
             </p>
-            <a href="#">View demos </a>
+            <a href="#">Duis aute </a>
           </div>
           <div className="images">
             <div className="image__laptop"></div>
@@ -121,75 +105,76 @@ const Landing = (props: Props) => {
         </div>
         <div className="fundamentals-oakui-section">
           <div className="fundamentals-header">
-            <h2>Flyer fundamentals</h2>
+            <h2>Dolor in reprehenderit</h2>
             <p>
-              Every Flyer is unique, with different ideas and opinions. But
-              there are some things we all agree on. These are our Flyer
-              fundamentals.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident.
             </p>
           </div>
           <div className="fundamentals">
             <img src={modular} alt="" />
             <div>
-              <h2>Make it flexible.</h2>
+              <h2>Excepteur sint occaecat.</h2>
               <p>
-                Open source thrives on variety, and our resources do too. Our
-                components can be arranged in any number of ways, and our CSS
-                variable system can be used for all kinds of customization.
+                Aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
               </p>
             </div>
           </div>
           <div className="fundamentals">
             <img src={accessible} alt="" />
             <div>
-              <h2>Make it accessible.</h2>
+              <h2>nostrud exercitation.</h2>
               <p>
-                Building applications that work for everyone, regardless of
-                ability, is just the right thing to do. Our accessible markup
-                and guidance is geared towards creating experiences that people
-                of all abilities can enjoy.
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur.
               </p>
             </div>
           </div>
           <div className="fundamentals">
             <img src={consistent} alt="" />
             <div>
-              <h2>Make it consistent.</h2>
+              <h2>Sed ut perspiciatis.</h2>
               <p>
-                The best product experiences stem from teamwork. Our clear
-                guidelines and tools help streamline communication so that all
-                teams can create unified applications and interfaces.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae.
               </p>
             </div>
           </div>
           <div className="fundamentals">
             <img src={scale} alt="" />
             <div>
-              <h2>Make it scalable.</h2>
+              <h2>Nemo enim ipsam.</h2>
               <p>
-                Helping teams work productively at scale is at the heart of
-                everything we do. Our components are designed for enterprise IT
-                applications used in businesses of all sizes.
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+                ipsum quia dolor sit amet, consectetur.
               </p>
             </div>
           </div>
           <div className="fundamentals">
             <img src={open} alt="" />
             <div>
-              <h2>Make it open.</h2>
+              <h2>Quis autem vel.</h2>
               <p>
-                We're focused on shaping the future of open source design and
-                development, and we can't do this alone. So we work as an open
-                source community, where everyone is free to share their ideas
-                and contribute their work.
+                Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+                esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+                fugiat quo voluptas nulla pariatur. Ut enim ad minima veniam,
+                quis nostrum
               </p>
             </div>
           </div>
           <p className="link">
-            <a href="#">Get started for developers</a>
+            <a href="#">Nemo enim ipsam voluptatem</a>
           </p>
           <p className="link">
-            <a href="#">Get started for designers</a>
+            <a href="#">Neque porro quisquam est</a>
           </p>
         </div>
         <div className="footer-oakui-section">
@@ -225,25 +210,33 @@ const Landing = (props: Props) => {
           <div className="footer-about">
             <h4>OakUI</h4>
             <p>
-            OakUI is an open source design system built to drive
-              consistency and unify teams. From documentation and components to
-              code examples and tutorials, OakUI is a place where design
-              and development can thrive. We’re on a mission to help teams build
-              consistent, accessible, and scalable enterprise product
-              experiences—the open source way.
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur magni dolores eos qui ratione
+              voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+              ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+              non numquam eius modi tempora incidunt ut labore et dolore magnam
+              aliquam quaerat voluptatem.
             </p>
           </div>
         </div>
         <div className="copyright-oakui-section">
           <div className="right-text">
-      <oak-link href="/">
-        {profile.theme === 'theme_light' && (
-          <img className="logo--image" src={oakuiBlack} alt="OAKUI logo" />
-        )}
-        {profile.theme !== 'theme_light' && (
-          <img className="logo--image" src={oakuiWhite} alt="OAKUI logo" />
-        )}
-      </oak-link>
+            <oak-link href="/">
+              {profile.theme === 'theme_light' && (
+                <img
+                  className="logo--image"
+                  src={oakuiBlack}
+                  alt="OAKUI logo"
+                />
+              )}
+              {profile.theme !== 'theme_light' && (
+                <img
+                  className="logo--image"
+                  src={oakuiWhite}
+                  alt="OAKUI logo"
+                />
+              )}
+            </oak-link>
             Copyright © 2021 ioak.org, Inc.
           </div>
           <ul>
