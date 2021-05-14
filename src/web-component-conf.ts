@@ -19,6 +19,7 @@ declare global {
       'oak-popover': any;
       'oak-button': any;
       'oak-link': any;
+      'oak-image-upload': any;
       'oak-modal': any;
       'oak-notification': any;
       'oak-paginate': any;

@@ -3,7 +3,7 @@ import OakButton from '../../oakui/wc/OakButton';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakModal from '../../oakui/wc/OakModal';
 import './ModalDemo.scss';
-import OakEdit from '../../oakui/OakEdit';
+import OakEditor from '../../oakui/OakEditor';
 
 const ModalDemoNew = () => {
   const [state, setState] = useState({
@@ -33,7 +33,7 @@ const ModalDemoNew = () => {
           width="full"
         >
           <div slot="body">
-            <OakEdit />
+            <OakEditor />
           </div>
         </OakModal>
       </div>

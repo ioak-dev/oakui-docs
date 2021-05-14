@@ -2,10 +2,8 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import './style.scss';
 import OakButton from '../../oakui/wc/OakButton';
-import OakEdit from '../../oakui/OakEdit';
-import OakEditRichText from '../../oakui/OakEdit/OakEditRichText';
-import OakRichTextControlType from '../../oakui/OakEdit/types/OakRichTextControlType';
-import OakImageUpload from '../../oakui/OakImageUpload';
+import OakEditor from '../../oakui/OakEditor';
+import OakImageUpload from '../../oakui/wc/OakImageUpload';
 
 interface Props {
   match: any;
@@ -46,13 +44,17 @@ const Home = (props: Props) => {
     <div>
       <div>Home</div>
       <br />
-      <OakImageUpload handleChange={handleImageChange} />
+
+      {/* <OakImageUpload handleChange={handleImageChange} /> */}
+      <div className="image-container">
+        <OakImageUpload handleChange={handleImageChange} />
+      </div>
       <br />
-      <OakEdit value={state} handleChange={handleChange} />
+      <OakEditor value={state} handleChange={handleChange} />
       <br />
       <OakButton handleClick={handleSubmit}>Submit</OakButton>
       <br />
-      {/* <OakEditRichText
+      {/* <OakEditorRichText
         value="abcd"
         handleChange={handleChangeRt}
         controls={[

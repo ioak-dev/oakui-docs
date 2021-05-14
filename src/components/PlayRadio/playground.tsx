@@ -14,6 +14,7 @@ import OakSheet from '../../oakui/wc/OakSheet';
 import OakFormActionsContainer from '../../oakui/wc/OakFormActionsContainer';
 import OakRadio from '../../oakui/wc/OakRadio';
 import OakRadioGroup from '../../oakui/wc/OakRadioGroup';
+import { newId } from '../../events/MessageService';
 
 interface Props {
   match: any;
@@ -31,6 +32,8 @@ const Playground = (props: Props) => {
     max: 0,
     validatorFunction: null,
   });
+
+  const [groupName, setGroupName] = useState(newId());
 
   const [radioValue, setRadioValue] = useState('one');
   const [isOpen, setIsOpen] = useState(false);
@@ -155,7 +158,7 @@ const Playground = (props: Props) => {
           label={state.label}
           tooltip={state.tooltip}
           formGroupName="play-radio-form-group"
-          radioGroupName="play-radio-group"
+          radioGroupName={groupName}
           name="checkboxGroupElement"
           value={radioValue}
           handleChange={handleCheckedChange}
@@ -165,7 +168,7 @@ const Playground = (props: Props) => {
           <div className="align-checkbox">
             <OakRadio
               name="one"
-              radioGroupName="play-radio-group"
+              radioGroupName={groupName}
               color={state.color}
               size={state.size}
               // handleChange={handleCheckedChange}
@@ -174,7 +177,7 @@ const Playground = (props: Props) => {
             </OakRadio>
             <OakRadio
               name="two"
-              radioGroupName="play-radio-group"
+              radioGroupName={groupName}
               color={state.color}
               size={state.size}
               // handleChange={handleCheckedChange}
@@ -183,7 +186,7 @@ const Playground = (props: Props) => {
             </OakRadio>
             <OakRadio
               name="three"
-              radioGroupName="play-radio-group"
+              radioGroupName={groupName}
               color={state.color}
               size={state.size}
               // handleChange={handleCheckedChange}
@@ -192,7 +195,7 @@ const Playground = (props: Props) => {
             </OakRadio>
             <OakRadio
               name="four"
-              radioGroupName="play-radio-group"
+              radioGroupName={groupName}
               color={state.color}
               size={state.size}
               // handleChange={handleCheckedChange}
@@ -201,7 +204,7 @@ const Playground = (props: Props) => {
             </OakRadio>
             <OakRadio
               name="five"
-              radioGroupName="play-radio-group"
+              radioGroupName={groupName}
               color={state.color}
               size={state.size}
               // handleChange={handleCheckedChange}

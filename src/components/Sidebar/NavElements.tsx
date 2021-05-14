@@ -56,8 +56,23 @@ const NavElements = (props: Props) => {
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem
+          to="/play-image-upload"
+          label="Image upload and crop"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to="/play-editor"
+          label="Content Editor"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
           to="/play-button"
           label="Button"
+          closeAfterRouteChange={props.closeAfterRouteChange}
+        />
+        <NavItem
+          to="/play-link"
+          label="Link"
           closeAfterRouteChange={props.closeAfterRouteChange}
         />
         <NavItem

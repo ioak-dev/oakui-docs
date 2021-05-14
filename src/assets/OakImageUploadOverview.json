@@ -1,0 +1,14 @@
+{
+  "title": "Image upload is",
+  "componentName": "oak-image-upload",
+  "composerName": "",
+  "sections": [
+    {
+      "body": "To adjust dimensions of the image container area, adjust the mounted container in your app. It takes full width of your parent container. Dimensions of the image container is directly controlled by it's enclosing element."
+    },
+    {
+      "heading": "Theming",
+      "body": "A section can be stylized in a variety of ways. You can vary the fill color of a section by using the fillColor property. Outline of the section can be changed using outlineColor. Color of the text can be changed using textColor property. Color related properties support any oakui color theme."
+    }
+  ]
+}

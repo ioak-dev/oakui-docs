@@ -21,6 +21,7 @@ import PlaySection from '../PlaySection';
 import PlayDrawer from '../PlayDrawer';
 import PlaySheet from '../PlaySheet';
 import PlayInput from '../PlayInput';
+import PlayImageUpload from '../PlayImageUpload';
 import PlayTypography from '../PlayTypography';
 import PlayDivider from '../PlayDivider';
 import PlayExpanse from '../PlayExpanse';
@@ -32,6 +33,8 @@ import PlayNavGroup from '../PlayNavGroup';
 import PlayNavElement from '../PlayNavElement';
 import PlayInfiniteScroll from '../PlayInfiniteScroll';
 import PlayMenu from '../PlayMenu';
+import PlayEditor from '../PlayEditor';
+import PlayLink from '../PlayLink';
 
 interface Props {
   cookies: any;
@@ -93,6 +96,17 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayClickArea}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/play-link"
+        render={(propsLocal: any) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayLink}
             middleware={['readAuthentication']}
           />
         )}
@@ -269,6 +283,28 @@ const RouterView = (props: Props) => {
             {...propsLocal}
             {...props}
             component={PlayRadio}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/play-image-upload"
+        render={(propsLocal: any) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayImageUpload}
+            middleware={['readAuthentication']}
+          />
+        )}
+      />
+      <Route
+        path="/play-editor"
+        render={(propsLocal: any) => (
+          <OakRoute
+            {...propsLocal}
+            {...props}
+            component={PlayEditor}
             middleware={['readAuthentication']}
           />
         )}
