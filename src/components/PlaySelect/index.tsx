@@ -23,19 +23,23 @@ const PlaySelect = (props: Props) => {
   };
 
   return (
-    <OakTab
-      tabs={['Overview', 'Playground', 'API', 'Examples']}
-      handleChange={changeTab}
-    >
-      <OakSection fillColor="none">
-        {activeTab === 0 && <OverviewSection data={overviewContent} />}
-        {activeTab === 2 && <ApiSection data={apiContent} />}
-        {activeTab === 1 && (
-          <Playground match={props.match} history={props.history} />
-        )}
-        {activeTab === 3 && <Example />}
-      </OakSection>
-    </OakTab>
+    <div className="section-container">
+      <OakTab
+        tabs={['Overview', 'Playground', 'API', 'Examples']}
+        handleChange={changeTab}
+        fill
+        variant="fill"
+      >
+        <OakSection fillColor="none" paddingHorizontal={2} paddingVertical={4}>
+          {activeTab === 0 && <OverviewSection data={overviewContent} />}
+          {activeTab === 2 && <ApiSection data={apiContent} />}
+          {activeTab === 1 && (
+            <Playground match={props.match} history={props.history} />
+          )}
+          {activeTab === 3 && <Example />}
+        </OakSection>
+      </OakTab>
+    </div>
   );
 };
 

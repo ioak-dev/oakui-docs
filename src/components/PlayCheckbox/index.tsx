@@ -4,8 +4,8 @@ import './style.scss';
 import OakTab from '../../oakui/wc/OakTab';
 import OakSection from '../../oakui/wc/OakSection';
 import Playground from './playground';
-import OakInputOverview from '../../assets/OakInputOverview.json';
-import OakInputApi from '../../assets/OakInputApi.json';
+import overviewContent from '../../assets/OakCheckboxOverview.json';
+import overviewApi from '../../assets/OakCheckboxApi.json';
 import OverviewSection from '../OverviewSection';
 import ApiSection from '../ApiSection';
 import Example from './Example';
@@ -23,19 +23,23 @@ const PlayCheckbox = (props: Props) => {
   };
 
   return (
-    <OakTab
-      tabs={['Overview', 'Playground', 'API', 'Examples']}
-      handleChange={changeTab}
-    >
-      <OakSection fillColor="none">
-        {activeTab === 0 && <OverviewSection data={OakInputOverview} />}
-        {activeTab === 2 && <ApiSection data={OakInputApi} />}
-        {activeTab === 1 && (
-          <Playground match={props.match} history={props.history} />
-        )}
-        {activeTab === 3 && <Example />}
-      </OakSection>
-    </OakTab>
+    <div className="section-container">
+      <OakTab
+        tabs={['Overview', 'Playground', 'API', 'Examples']}
+        handleChange={changeTab}
+        fill
+        variant="fill"
+      >
+        <OakSection fillColor="none" paddingHorizontal={2} paddingVertical={4}>
+          {activeTab === 0 && <OverviewSection data={overviewContent} />}
+          {activeTab === 2 && <ApiSection data={overviewApi} />}
+          {activeTab === 1 && (
+            <Playground match={props.match} history={props.history} />
+          )}
+          {activeTab === 3 && <Example />}
+        </OakSection>
+      </OakTab>
+    </div>
   );
 };
 

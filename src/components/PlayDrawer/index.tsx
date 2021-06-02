@@ -19,20 +19,24 @@ const PlayDrawer = (props: Props) => {
   };
 
   return (
-    <OakTab
-      tabs={['Overview', 'Playground', 'API', 'Examples']}
-      handleChange={changeTab}
-    >
-      <OakSection fillColor="none">
-        {activeTab === 0 && (
-          <Overview match={props.match} history={props.history} />
-        )}
-        {activeTab === 1 && (
-          <Playground match={props.match} history={props.history} />
-        )}
-        {activeTab === 3 && <div>examples</div>}
-      </OakSection>
-    </OakTab>
+    <div className="section-container">
+      <OakTab
+        tabs={['Overview', 'Playground', 'API', 'Examples']}
+        handleChange={changeTab}
+        fill
+        variant="fill"
+      >
+        <OakSection fillColor="none" paddingHorizontal={2} paddingVertical={4}>
+          {activeTab === 0 && (
+            <Overview match={props.match} history={props.history} />
+          )}
+          {activeTab === 1 && (
+            <Playground match={props.match} history={props.history} />
+          )}
+          {activeTab === 3 && <div>examples</div>}
+        </OakSection>
+      </OakTab>
+    </div>
   );
 };
 

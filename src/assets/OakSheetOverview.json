@@ -1,18 +1,20 @@
 {
-  "title": "Sheet is ...",
-  "componentName": "oak-sheet",
-  "composerName": "",
+  "componentName": "oak-Sheet",
+  "composerName": "-",
   "sections": [
     {
-      "body": "Sheet is a section that slides out from one edge of the screen, to show additional controls or content. It helps achieve clutter free interface, by keeping user attention in focus and free from distracting details. Move secondary piece of content into a hidden section and show only when needed by the user."
+      "body": "Sheet is a customizable Sheet that appears on screen with the click of a button. There are diverse customizations provided by OakUI in the Sheet component which are available to the users for customizing the UI components as per their requirement."
     },
     {
-      "heading": "Theming",
-      "body": "A section can be stylized in a variety of ways. You can vary the fill color of a section by using the fillColor property. Outline of the section can be changed using outlineColor. Color of the text can be changed using textColor property. Color related properties support any oakui color theme."
+      "heading": "Styling",
+      "body": "Styling brings cohesion to the Sheet component with all the properties available with OakUI tools. Each configuration in these tools allows the user to display a variety of Sheet fields as the end-user desires. Each customization feature in styling has alternatives available for the end-user to decide upon."
     },
     {
-      "heading": "Contrast",
-      "body": "Contrast between background and foreground is always taken care, when you choose the textColor as auto. For all other textColor values, you should consider the color combinations wisely."
+      "body": "Each Sheet component has its importance of appearance according to where and how it is being displayed. The user can make use of these tools to equip the ideal design."
+    },
+    {
+      "heading": "Native Support",
+      "body": "Native Support is provided by OakUI, being a distinct feature, it enables characteristics such as, the Sheet to get embedded into the format of the device that is being used. The look and feel of the component would feel no different from the other components we see in the end-user's device."
     }
   ]
 }

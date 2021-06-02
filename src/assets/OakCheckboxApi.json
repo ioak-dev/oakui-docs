@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "color",
+      "type": "global<br>|container<br>| surface<br>| float<br>| primary<br>| secondary<br>| teritary<br>| default<br>| danger<br>| warning<br>| success<br>| info<br>| invert",
+      "default": "primary",
+      "description": "The variety of options available in this feature of color are used to color the checkbox, i.e., the square, with a tick mark that contrasts the color of the checkbox."
+    },
+    {
+      "name": "size",
+      "type": "xsmall<br>|small<br>|medium<br>|large",
+      "default": "small",
+      "description": "Size, explicitly means that the dimensions of the checkbox component can be altered using this property. It allocates a specific size to the square-shaped checkbox. The user can choose from within the given options to project the component in concrete dimensions."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "default": "",
+      "description": "A label entitles the information that the end-user must know to tick the checkboxes. Any number of checkboxes can be entitled to one Label, i.e., each Label can have multiple checkboxes for the end-user to choose relevant options."
+    },
+    {
+      "name": "tooltip",
+      "type": "string",
+      "default": "",
+      "description": "Tooltip is commonly used to provide specific detail about the component. It is commonly used in the checkbox to inform the user of minimum and maximum checkboxes to be ticked. Henceforth, the user does not confuse with the error that may occur by ticking more or less the number of checkboxes."
+    }
+  ],
+  "events": []
+}

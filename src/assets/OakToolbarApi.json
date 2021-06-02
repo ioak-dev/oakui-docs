@@ -1,10 +1,34 @@
 {
   "properties": [
     {
-      "name": "variant",
-      "type": "h1",
-      "default": "body1",
-      "description": "Variant"
+      "name": "fillcolor",
+      "type": "none<br>|global<br>|container<br>|surface<br>|float<br>|default<br>|info<br>|invert",
+      "default": "container",
+      "description": "What color must be added to the interior of the component"
+    },
+    {
+      "name": "bordervariant",
+      "type": "top<br>|bottom<br>|both<br>|none",
+      "default": "both",
+      "description": "Where the border must be added on the top and bottom edges of the component"
+    },
+    {
+      "name": "elevation",
+      "type": "0..24",
+      "default": "0",
+      "description": "How raised the component should appear in relation to its surrounding."
+    },
+    {
+      "name": "paddinghorizontal",
+      "type": "0..10",
+      "default": "1",
+      "description": "How much padding should be added to the section on the left and right edges."
+    },
+    {
+      "name": "paddingvertical",
+      "type": "0..10",
+      "default": "1",
+      "description": "How much padding should be added to the section on the top and bottom edges."
     }
   ],
   "events": []

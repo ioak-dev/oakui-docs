@@ -1,22 +1,40 @@
 {
   "properties": [
     {
+      "name": "size",
+      "type": "xsmall<br> small<br> medium<br> large",
+      "default": "small",
+      "description": "What should be the overall dimension of component. Size explicitly means that the dimensions of the text field component can be altered using this property. It allocates a specific length to the text field component while its width remains intact. The user can choose from within the given options to project the component in concrete dimensions."
+    },
+    {
+      "name": "shape",
+      "type": "sharp<br> rectangle<br> rounded<br> leaf",
+      "default": "rectangle",
+      "description": "How the external form of the component shoule appear. Input component can be forged into different shapes. Acknowledging the various places in which different shapes come into usage, commonly used shapes are provided by OakUI."
+    },
+    {
+      "name": "fill",
+      "type": "container<br> surface<br> float<br> primary<br> secondary<br> teritary<br> default<br> danger<br> warning<br> success<br> info<br> invert",
+      "default": "container",
+      "description": "How the color is applied to the interior of a shape. A certain color can be filled in the background of the text field component. There are vast options to decide on which color to fill the input component with. However, there is also an option to keep it intact as \"default\", this necessarily projects the input component in the default color of the web page."
+    },
+    {
       "name": "elevation",
       "type": "0..24",
       "default": "0",
-      "description": "How raised the component should appear in relation to its surrounding."
+      "description": "How raised the component should appear in relation to its surrounding. The elevation here describes the position of the component source along the vertical and horizontal axis of the viewer's interface. The amount of elevation to be applied to the input component can be customized by the user."
     },
     {
-      "name": "rounded",
-      "type": "boolean",
-      "default": "false",
-      "description": "If true, component will have rounded corners."
+      "name": "label",
+      "type": "text",
+      "default": "test field",
+      "description": "What is the text that has to be entered in the component. A label entitles the information that has to be entered into the input component. Each input component must be entitled to a label."
     },
     {
-      "name": "fillColor",
-      "type": "container <br>| surface <br>| float <br>| primary <br>| secondary <br>| tertiary <br>| default <br>| danger <br>| warning <br>| success <br>| info <br>| invert <br>| none",
-      "default": "container",
-      "description": "Fill color of the component. It supports those theme colors that make sense for this role."
+      "name": "tooltip",
+      "type": "text",
+      "default": "null",
+      "description": "Displays information in relation to the content to be entered in the component. Tooltip is commonly used to provide specific detail on what has to be filled in the input component. If the information has to be of a specific sort, then it is mentioned in the tooltip. Henceforth, the user does not confuse with the error that may occur if wrong information has been entered."
     },
     {
       "name": "gutterBottom",

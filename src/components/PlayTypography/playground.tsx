@@ -23,18 +23,14 @@ const Playground = (props: Props) => {
     highlightColor: 'none',
     color: 'inherit',
     align: 'left',
-    display: 'inherit',
     noWrap: false,
-    paragraph: false,
   });
   const [stateTwo, setStateTwo] = useState<OakTypographyProps>({
     variant: 'body1',
     highlightColor: 'none',
     color: 'inherit',
     align: 'left',
-    display: 'inherit',
     noWrap: false,
-    paragraph: false,
   });
 
   const [slotText, setSlotText] = useState(
@@ -62,9 +58,7 @@ const Playground = (props: Props) => {
         color={state.color}
         highlightColor={state.highlightColor}
         align={state.align}
-        display={state.display}
         noWrap={state.noWrap}
-        paragraph={state.paragraph}
         gutterBottom
       >
         {slotText}
@@ -74,9 +68,7 @@ const Playground = (props: Props) => {
         color={stateTwo.color}
         highlightColor={stateTwo.highlightColor}
         align={stateTwo.align}
-        display={stateTwo.display}
         noWrap={stateTwo.noWrap}
-        paragraph={stateTwo.paragraph}
         gutterBottom
       >
         {slotTextTwo}
@@ -142,21 +134,6 @@ const Playground = (props: Props) => {
             handleChange={handleChange}
           />
           <OakSelect
-            label="display"
-            value={state.display}
-            options={[
-              'inherit',
-              'initial',
-              'inline',
-              'block',
-              'inline-block',
-              'inline-flex',
-            ]}
-            name="display"
-            gutterBottom
-            handleChange={handleChange}
-          />
-          <OakSelect
             label="color"
             value={state.color}
             options={[
@@ -209,13 +186,6 @@ const Playground = (props: Props) => {
           >
             noWrap
           </OakCheckbox>
-          <OakCheckbox
-            name="paragraph"
-            value={state.paragraph || false}
-            handleChange={handleChange}
-          >
-            paragraph
-          </OakCheckbox>
         </OakSection>
       </OakSheet>
       <OakSheet
@@ -255,21 +225,6 @@ const Playground = (props: Props) => {
             value={stateTwo.align}
             options={['inherit', 'left', 'center', 'right', 'justify']}
             name="align"
-            gutterBottom
-            handleChange={handleChangeTwo}
-          />
-          <OakSelect
-            label="display"
-            value={stateTwo.display}
-            options={[
-              'inherit',
-              'initial',
-              'inline',
-              'block',
-              'inline-block',
-              'inline-flex',
-            ]}
-            name="display"
             gutterBottom
             handleChange={handleChangeTwo}
           />
@@ -325,13 +280,6 @@ const Playground = (props: Props) => {
             handleChange={handleChangeTwo}
           >
             noWrap
-          </OakCheckbox>
-          <OakCheckbox
-            name="paragraph"
-            value={stateTwo.paragraph || false}
-            handleChange={handleChangeTwo}
-          >
-            paragraph
           </OakCheckbox>
         </OakSection>
       </OakSheet>

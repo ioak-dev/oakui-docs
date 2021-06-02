@@ -27,7 +27,7 @@ const PlayInfiniteScroll = (props: Props) => {
       tabs={['Overview', 'Playground', 'API', 'Examples']}
       handleChange={changeTab}
     >
-      <OakSection fillColor="none">
+      <OakSection fillColor="none" paddingHorizontal={2} paddingVertical={4}>
         {activeTab === 0 && <OverviewSection data={overviewContent} />}
         {activeTab === 2 && <ApiSection data={overviewApi} />}
         {activeTab === 1 && (

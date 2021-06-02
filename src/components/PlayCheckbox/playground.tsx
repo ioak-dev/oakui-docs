@@ -151,7 +151,7 @@ const Playground = (props: Props) => {
           />
         </OakSection>
       </OakSheet>
-      {/* <OakSection fillColor="none"> */}
+      {/* <OakSection fillColor="none" paddingHorizontal={2} paddingVertical={4}> */}
       <OakForm
         formGroupName="play-checkbox-form-group"
         handleSubmit={handleSubmit}

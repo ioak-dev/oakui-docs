@@ -1,7 +1,7 @@
 {
   "title": "Image upload is",
   "componentName": "oak-image-upload",
-  "composerName": "",
+  "composerName": "-",
   "sections": [
     {
       "body": "To adjust dimensions of the image container area, adjust the mounted container in your app. It takes full width of your parent container. Dimensions of the image container is directly controlled by it's enclosing element."

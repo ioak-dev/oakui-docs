@@ -1,10 +1,28 @@
 {
   "properties": [
     {
-      "name": "variant",
-      "type": "h1",
-      "default": "body1",
-      "description": "Variant"
+      "name": "marginhorizontal",
+      "type": "0..10",
+      "default": "0",
+      "description": "How much margin space is required horizontally for the components"
+    },
+    {
+      "name": "marginvertical",
+      "type": "0..10",
+      "default": "0",
+      "description": "How much margin space is required vertically for the components"
+    },
+    {
+      "name": "paddinghorizontal",
+      "type": "0..10",
+      "default": "0",
+      "description": "How much padding should be added to the section on the left and right edges."
+    },
+    {
+      "name": "paddingvertical",
+      "type": "0..10",
+      "default": "0",
+      "description": "How much padding should be added to the section on the top and bottom edges."
     }
   ],
   "events": []

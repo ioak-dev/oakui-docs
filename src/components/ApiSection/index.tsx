@@ -23,11 +23,11 @@ interface Props {
 const ApiSection = (props: Props) => {
   return (
     <div className="api-section">
-      <OakTypography variant="h5" gutterBottom>
+      <OakTypography variant="h3" gutterBottom>
         Properties
       </OakTypography>
       <PropertySection properties={props.data.properties} />
-      <OakTypography variant="h5">Events</OakTypography>
+      <OakTypography variant="h3">Events</OakTypography>
       <EventSection events={props.data.events} />
     </div>
   );

@@ -4,43 +4,56 @@
       "name": "elevation",
       "type": "0..24",
       "default": "0",
-      "description": "How raised the component should appear in relation to its surrounding."
+      "description": "How raised the component should appear in relation to its surrounding. The elevation here describes the position of the component source along the vertical and horizontal axis of the viewer's interface. The amount of elevation to be applied to the Sheet component can be customized by the user."
     },
     {
-      "name": "rounded",
+      "name": "outlined",
       "type": "boolean",
       "default": "false",
-      "description": "If true, component will have rounded corners."
+      "description": "If it is enabled, then the SHEET will have an outline with the color same as FillColor. If disabled, the Sheet will have no outline."
     },
     {
       "name": "paddingHorizontal",
       "type": "0..10",
       "default": "2",
-      "description": "How much padding should be added to the section on the left and right edges."
+      "description": "How much padding should be added to the section on the left and right edges. The gap created between the text and the left and right sides of the SHEET is called Padding Horizontal. The measurement of the gap can be modified as per the user's requirement."
     },
     {
       "name": "paddingVertical",
       "type": "0..10",
       "default": "2",
-      "description": "How much padding should be added to the section on the top and bottom edges."
+      "description": "How much padding should be added to the section on the top and bottom edges. The gap created between the text and the top and bottom of the SHEET is called Padding Vertical. The measurement of the gap can be modified as per the user's requirement."
     },
     {
       "name": "fillColor",
       "type": "container <br>| surface <br>| float <br>| primary <br>| secondary <br>| tertiary <br>| default <br>| danger <br>| warning <br>| success <br>| info <br>| invert <br>| none",
       "default": "container",
-      "description": "Fill color of the component. It supports those theme colors that make sense for this role."
+      "description": "Fill color of the component. It supports those theme colors that make sense for this role. A variety of colors are available to the user. It fills the selected color in the Sheet and the text color changes accordingly in contrast to the chosen color."
     },
     {
-      "name": "outlineColor",
-      "type": "container <br>| surface<br>| float<br>| primary<br>| secondary<br>| tertiary<br>| default<br>| danger<br>| warning<br>| success<br>| info<br>| invert<br>| none",
-      "default": "none",
-      "description": "If set, will show an outline border with the specified color scheme. It supports those theme colors that make sense for this role"
+      "name": "backdropIntensity",
+      "type": "0..5",
+      "default": "2",
+      "description": "BackdropIntensity is the translucent property that a page possesses when the Sheet is displayed. Its level of intensity can be modified by the user. An increase in number will give a more intense effect and a decrease in number will result in more transparency to the background."
     },
     {
-      "name": "textColor",
-      "type": "primary<br>| secondary<br>| tertiary<br>| default<br>| danger<br>| warning<br>| success<br>| info<br>| invert<br>| auto",
+      "name": "position",
+      "type": "left<br>| right<br>| middle<br>| top<br>| bottom",
+      "default": "bottom",
+      "description": "In the SHEET component, the position defines on which side the Sheet must be displayed on the screen. If the user chooses, bottom, the Sheet will pop up and displayed in the middle of the bottom side of the screen."
+    },
+
+    {
+      "name": "sizeVertical",
+      "type": "'one-third<br>| half<br>| two-third<br>| full<br>| auto",
       "default": "auto",
-      "description": "Text color of the section. If set to auto - the component auto selects the foreground color as dark or light, depending on dynamic contrast with fillColor. It supports those theme colors that make sense for this role"
+      "description": "The height of the Sheet can be defined using SizeVertical, based on the size chosen by the user, the Sheet will have appeared and it caps the content displayed on the main screen behind it and the rest of the page will have a translucent effect. For example, if the user chooses half, the Sheet will cover half of the page vertically and in the position chosen by the user. While the rest of the page will emit a translucent effect."
+    },
+    {
+      "name": "sizeHorizontal",
+      "type": "'one-third<br>| half<br>| two-third<br>| full<br>| auto",
+      "default": "auto",
+      "description": "The width of the Sheet can be defined using SizeHorizontal, based on the size chosen by the user, the Sheet will have appeared and it caps the content displayed on the main screen behind it and the rest of the page will have a translucent effect. For example, if the user chooses one-third, the Sheet will cover one-third of the page horizontally and in the position chosen by the user. While the rest of the page will emit a translucent effect."
     }
   ],
   "events": []

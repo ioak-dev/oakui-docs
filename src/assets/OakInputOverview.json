@@ -1,14 +1,53 @@
 {
-  "title": "Input is",
   "componentName": "oak-input",
-  "composerName": "",
+  "composerName": "-",
   "sections": [
     {
-      "body": "Input is the form element for user inputs in the form of text, number, file, password or date."
+      "body": "Input component is created for end-users to enter information into the component. There are diverse customizations provided by OakUI in the Input component which are available to the users for customizing the UI components as per their requirement."
     },
     {
-      "heading": "Theming",
-      "body": "A section can be stylized in a variety of ways. You can vary the fill color of a section by using the fillColor property. Outline of the section can be changed using outlineColor. Color of the text can be changed using textColor property. Color related properties support any oakui color theme."
+      "heading": "Styling",
+      "body": "Styling brings cohesion to the text box component with all the properties available with OakUI tools. Each configuration in these tools allows the user to display a variety of text fields as the end-user desires. Each customization feature in styling has alternatives available for the end-user to decide upon."
+    },
+    {
+      "body": "Each input component has its importance of appearance according to where and how it is being displayed. The user can make use of these tools of colors and shapes to equip the ideal design."
+    },
+    {
+      "heading": "Validation",
+      "body": "A Validator Function is a customizable tool, which is essentially used to validate the entered data and communicate with the backend database for further validations if there aren’t any cross-validations i.e., validating information in one input component against validating information in another."
+    },
+    {
+      "body": "Customization of Validator Function has no limitations. It can be designed as per the requirement of the end-user."
+    },
+    {
+      "body": "Consider two various examples of validation. When the form is made for a job application, and it has a component entitled “UG course” with an available drop-down field consisting of all the undergraduate courses. If the end-user chooses, CSE, then a few input components such as specialization course or collage name automatically get displayed below this component for the end-user to fill in further details."
+    },
+    {
+      "body": "Another example case being gender selection, if the end-user selects the gender from the customized drop-down and when another component requires the information of the gender, then this component communicates with the database to get information of the gender selection component to autofill the current component."
+    },
+    {
+      "heading": "Minimum and Maximum Length",
+      "body": "It defines the number of characters that could be entered in the input component. If the condition is not satisfied, then it displays an error message."
+    },
+    {
+      "body": "If the minimum length is 2 and maximum length is 5, the input characters must contain characters within the length 2-5, if it exceeds 5 or happens to be less than 2 the error message."
+    },
+    {
+      "heading": "Regular Expression",
+      "body": "A regular expression is a group of letters, numbers, or symbols. It is used to make sure that the end-user enters the exactly formatted information along with the content that must be filled into the component. This is used when the information that is being filled in must be of certain format. If the regular expression content is not present in the filled-in content, it throws an error stating that the filled-in content does not match the regular expression."
+    },
+    {
+      "body": "Consider the Regular Expression to be @gmail.com in the input component titled E-mail. If the end-user enters email@yahoo.com, the entered information does not get validated considering the Regular Expression to be @gmail.com. If entered otherwise, email@gmail.com, then the entered information gets validated. i.e., the information entered must contain the Regular Expression somewhere in the information along with the content."
+    },
+    {
+      "heading": "Accessibility",
+      "body": "Accessibility is the specifications of how a user can access the text field component. When the cursor is set on one of the text field components, there must be an indication implying that the user can input information. For the same, it shows a highlighted effect which is further customizable by the user as per their desired design. Furthermore, there are multiple ways in which the user can design how the highlight effect has to be displayed."
+    },
+    {
+      "body": "The multiple options include setting the color of the outline of the component in which it could be displayed when the cursor is pointed to it. And to set the width of the outliner as to how thick it must be displayed."
+    },
+    {
+      "body": "It also includes custom-built accessibility features for end-users with visual impairment. The usage of \"tab\" is significant here, we could go from one component to another just with one click of the tab button. This feature enables the user to directly access the component instead of using the cursor."
     }
   ]
 }

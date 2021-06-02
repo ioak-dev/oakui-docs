@@ -28,3 +28,10 @@
 .tab-playground {
   margin-top: 20px;
 }
+
+.section-container {
+  margin: 40px;
+  @media (max-width: 767px) {
+    margin: 14px;
+  }
+}

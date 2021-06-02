@@ -2,9 +2,39 @@
   "properties": [
     {
       "name": "variant",
-      "type": "h1",
+      "type": "h1<br>|h2<br>|h3<br>|h4<br>|h5<br>|h6<br>|subtitle1<br>|subtitle2<br>|body1<br>|body2<br>|caption<br>|overline<br>|inherit",
       "default": "body1",
-      "description": "Variant"
+      "description": "What size should the text be displayed."
+    },
+    {
+      "name": "align",
+      "type": "inherit<br>|left<br>|center<br>|right<br>|justify",
+      "default": "left",
+      "description": "Where the text has to be placed in the page."
+    },
+    {
+      "name": "display",
+      "type": "inherit<br>|initial<br>|inline<br>|block<br>|inline-block<br>|inline-flex",
+      "default": "inherit",
+      "description": "How the alignment of the text block must be displayed."
+    },
+    {
+      "name": "color",
+      "type": "inherit<br>|primary<br>|secondary<br>|tertiary<br>|default<br>|danger<br>|warning<br>|success<br>|invert<br>|info",
+      "default": "inherit",
+      "description": "What color should be added to the selected text inorder to differentiate it from the rest of the text block."
+    },
+    {
+      "name": "highlightcolor",
+      "type": "none<br>|primary<br>|secondary<br>|tertiary<br>|default<br>|danger<br>|warning<br>|success<br>|invert<br>|info",
+      "default": "none",
+      "description": "What color should be used to highlight the selected text inorder to differentiate it from the rest of the text block."
+    },
+    {
+      "name": "slot text",
+      "type": "text",
+      "default": "This is first instance of typography component.",
+      "description": "What is the text that has to be entered in the component."
     }
   ],
   "events": []

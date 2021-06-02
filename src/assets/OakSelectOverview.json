@@ -1,11 +1,47 @@
 {
-  "title": "Select is ...",
   "componentName": "oak-select",
-  "composerName": "",
+  "composerName": "-",
   "sections": [
     {
-      "heading": "Theming",
-      "body": "tbd"
+      "body": "Select component is a form of input component which enables the user to select a value from the list of drop-down items. There are diverse customizations provided by OAKUI in the Select component which are available to the users for customizing the UI components as per their requirement."
+    },
+    {
+      "heading": "Styling",
+      "body": "Styling brings cohesion to the Select component with all the properties available with OAKUI tools. Each configuration in these tools allows the user to display a variety of select fields as the end-user desires. Each customization feature in styling has alternatives available for the end-user to decide upon."
+    },
+    {
+      "body": "Each select component has its importance of appearance according to where and how it is being displayed. The user can make use of these tools of colors and shapes to equip the ideal design."
+    },
+    {
+      "heading": "Validation",
+      "body": "A Validator Function is a customizable tool, which is essentially used to validate the entered data and communicate with the backend database for further validations if there aren’t any cross-validations i.e., validating information in one select component against validating information in another."
+    },
+    {
+      "body": "Customization of the Validator Function has no limitations. It can be designed as per the requirement of the end-user."
+    },
+    {
+      "body": "Consider two various examples of validation. When the form is made for a job application, it has a component entitled “UG course” with an available drop-down field consisting of all the undergraduate courses. If the end-user chooses, CSE, then other components such as a specialization course or college name automatically get displayed below this component for the end-user to fill in further details."
+    },
+    {
+      "body": "Another example case being gender selection, if the end-user selects the gender from the customized drop-down and when another component requires the information of the gender, then this component communicates with the database to get information of the gender selection component to autofill the current component."
+    },
+    {
+      "heading": "Minimum and Maximum Length",
+      "body": "It defines the number of options that can be chosen from the given options in the dropdown. If the condition is not satisfied, then it displays an error message."
+    },
+    {
+      "heading": "Native Support",
+      "body": "Native Support is provided by OAKUI, being a distinct feature, it enables characteristics such as the Select to get embedded into the format of the device that is being used. The look and feel of the component would feel no different from the other components we see in the end-user's device."
+    },
+    {
+      "heading": "Accessibility",
+      "body": "Accessibility is the specification of how a user can access the select field component. When the cursor is set on one of the select field components, there must be an indication implying that the user can input information. For the same, it shows a highlighted effect which is further customizable by the user as per their desired design. Furthermore, there are multiple ways in which the user can design how the highlight effect must be displayed."
+    },
+    {
+      "body": "The multiple options include setting the color of the outline of the component in which it could be displayed when the cursor is pointed to it. And to set the width of the outliner as to how thick it must be displayed."
+    },
+    {
+      "body": "It also includes custom-built accessibility features for end-users with visual impairment. The usage of \"tab\" is significant here, we could go from one component to another just with one click of the tab button. This feature enables the user to directly access the component instead of using the cursor. Once the component is accessed, the dropdown will be displayed when the user clicks on the Enter key. By using the up and down arrow, the user can access the options from the dropdown and click on Enter key again to choose from the given options in the dropdown."
     }
   ]
 }

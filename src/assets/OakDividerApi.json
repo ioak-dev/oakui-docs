@@ -1,10 +1,16 @@
 {
   "properties": [
     {
-      "name": "variant",
-      "type": "h1",
-      "default": "body1",
-      "description": "Variant"
+      "name": "color",
+      "type": "none<br>|global<br>|container<br>|surface<br>|float<br>|primary<br>|secondary<br>|tertiary<br>|default<br>|info<br>|danger<br>|warning<br>|success<br>|invert",
+      "default": "global",
+      "description": "What color should the components be displayed"
+    },
+    {
+      "name": "colormode",
+      "type": "darker<br>|lighter<br>|even<br>|i",
+      "default": "darker",
+      "description": "Which variant of the horizantal divider should be added in between the components."
     }
   ],
   "events": []

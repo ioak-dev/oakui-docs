@@ -1,50 +1,45 @@
 * {
-  --oak-typography-body2-font-size: 0.875rem;
-  --oak-typography-body2-font-weight: 400;
-  --oak-typography-body2-line-height: 1.43;
-  --oak-typography-body2-letter-spacing: 0.01071em;
+  --oak-typography-h1-font-size: 34px;
+  --oak-typography-h1-font-weight: 600;
+  --oak-typography-h1-line-height: 1.3;
+  --oak-typography-h1-letter-spacing: inherit;
 
-  --oak-typography-body1-font-size: 1rem;
+  --oak-typography-h2-font-size: 24px;
+  --oak-typography-h2-font-weight: 600;
+  --oak-typography-h2-line-height: 1.3;
+  --oak-typography-h2-letter-spacing: inherit;
+
+  --oak-typography-h3-font-size: 20px;
+  --oak-typography-h3-font-weight: 600;
+  --oak-typography-h3-line-height: 1.3;
+  --oak-typography-h3-letter-spacing: inherit;
+
+  --oak-typography-h4-font-size: 15px;
+  --oak-typography-h4-font-weight: 600;
+  --oak-typography-h4-line-height: 1.3;
+  --oak-typography-h4-letter-spacing: inherit;
+
+  --oak-typography-h5-font-size: 15px;
+  --oak-typography-h5-font-weight: 600;
+  --oak-typography-h5-line-height: 1.3;
+  --oak-typography-h5-letter-spacing: inherit;
+
+  --oak-typography-body1-font-size: 16px;
   --oak-typography-body1-font-weight: 400;
-  --oak-typography-body1-line-height: 1.5;
-  --oak-typography-body1-letter-spacing: 0.00938em;
+  --oak-typography-body1-line-height: 1.7;
+  --oak-typography-body1-letter-spacing: inherit;
 
-  --oak-typography-caption-font-size: 0.75rem;
+  --oak-typography-body2-font-size: 14px;
+  --oak-typography-body2-font-weight: 400;
+  --oak-typography-body2-line-height: 1.7;
+  --oak-typography-body2-letter-spacing: inherit;
+
+  --oak-typography-caption-font-size: 12px;
   --oak-typography-caption-font-weight: 400;
-  --oak-typography-caption-line-height: 1.66;
+  --oak-typography-caption-line-height: 1.3;
   --oak-typography-caption-letter-spacing: 0.03333em;
 
-  --oak-typography-h1-font-size: 3.052rem;
-  --oak-typography-h1-font-weight: 300;
-  --oak-typography-h1-line-height: 1.167;
-  --oak-typography-h1-letter-spacing: -0.01562em;
-
-  --oak-typography-h2-font-size: 2.441rem;
-  --oak-typography-h2-font-weight: 300;
-  --oak-typography-h2-line-height: 1.2;
-  --oak-typography-h2-letter-spacing: -0.00833em;
-
-  --oak-typography-h3-font-size: 1.953rem;
-  --oak-typography-h3-font-weight: 400;
-  --oak-typography-h3-line-height: 1.167;
-  --oak-typography-h3-letter-spacing: 0em;
-
-  --oak-typography-h4-font-size: 1.563rem;
-  --oak-typography-h4-font-weight: 400;
-  --oak-typography-h4-line-height: 1.235;
-  --oak-typography-h4-letter-spacing: 0.00735em;
-
-  --oak-typography-h5-font-size: 1.25rem;
-  --oak-typography-h5-font-weight: 400;
-  --oak-typography-h5-line-height: 1.334;
-  --oak-typography-h5-letter-spacing: 0em;
-
-  --oak-typography-h6-font-size: 1rem;
-  --oak-typography-h6-font-weight: 500;
-  --oak-typography-h6-line-height: 1.6;
-  --oak-typography-h6-letter-spacing: 0.0075em;
-
-  --oak-typography-subtitle1-font-size: 1rem;
+  --oak-typography-subtitle1-font-size: 12px;
   --oak-typography-subtitle1-font-weight: 400;
   --oak-typography-subtitle1-line-height: 1.75;
   --oak-typography-subtitle1-letter-spacing: 0.00938em;
@@ -60,4 +55,12 @@
   --oak-typography-overline-letter-spacing: 0.08333em;
 
   --oak-typography-paragraph-margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  * {
+    --oak-typography-h1-font-size: 48px;
+    --oak-typography-h2-font-size: 38px;
+    --oak-typography-h3-font-size: 26px;
+  }
 }

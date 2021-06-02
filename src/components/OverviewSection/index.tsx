@@ -7,7 +7,7 @@ import OverviewType from './OverviewType';
 
 type Props = {
   data: {
-    title: string;
+    title?: string;
     componentName: string;
     composerName: string;
     sections: {
@@ -25,9 +25,9 @@ const OverviewSection = (props: Props) => {
         {props.data?.sections?.map((content, index) => (
           <div key={content.heading || index}>
             {content.heading && (
-              <OakTypography variant="h6">{content.heading}</OakTypography>
+              <OakTypography variant="h3">{content.heading}</OakTypography>
             )}
-            <OakTypography variant="body2">{content.body}</OakTypography>
+            <OakTypography variant="body1">{content.body}</OakTypography>
           </div>
         ))}
       </div>

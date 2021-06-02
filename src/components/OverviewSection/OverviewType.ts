@@ -1,5 +1,5 @@
 export default interface OverviewType {
-  title: string;
+  title?: string;
   componentName: string;
   composerName: string;
   sections: {

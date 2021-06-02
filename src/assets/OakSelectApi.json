@@ -1,10 +1,107 @@
 {
   "properties": [
     {
-      "name": "variant",
-      "type": "h1",
-      "default": "body1",
-      "description": "Variant"
+      "name": "multiple",
+      "type": "boolean",
+      "default": "false",
+      "description": "On enabling this attribute, the user will be able to choose multiple options from the dropdown."
+    },
+    {
+      "name": "gutterBottom",
+      "type": "boolean",
+      "default": "false",
+      "description": "The space created between two form elements is called Gutter Bottom. A form element has a title, select component, and tooltip. When these three elements make a form element then the space created between the tooltip of the first form element and the title of the second form element is Gutter Bottom."
+    },
+    {
+      "name": "fill",
+      "type": "boolean",
+      "default": "false",
+      "description": "The fill attribute when enabled, it fills the textbox with the color chosen from the Color component. When it is disabled, the background color of the textbox will not have any color."
+    },
+    {
+      "name": "autocomplete",
+      "type": "boolean",
+      "default": "false",
+      "description": "If the AutoComplete is enabled, then the user can type the first few characters that may be present in the options from the dropdown. If the typed characters match with the options present in the dropdown, only the options that match with characters will be displayed, but, if the present option does not match with the typed characters, then a \"No results found\" message will be displayed. If the AutoComplete is disabled, then the user cannot search for the desired option by typing characters."
+    },
+    {
+      "name": "color",
+      "type": "global<br>|container<br>|surface<br>|float<br>|primary<br>|secondary<br>|tertiary<br>|default<br>|danger<br>|warning<br>|success<br>|invert<br>|info",
+      "default": "container",
+      "description": "The variety of options available in this feature of color is used to color the borderline, i.e. The outline of the SELECT component."
+    },
+    {
+      "name": "popupColor",
+      "type": "auto<br>|global<br>|container<br>|surface<br>|float<br>|primary<br>|secondary<br>|tertiary<br>|default<br>|danger<br>|warning<br>|success<br>|invert<br>|info",
+      "default": "auto",
+      "description": "The PopupColor has the same options that are available for the color to choose from. These available options are applied to the drop-down of the SELECT component."
+    },
+    {
+      "name": "positioningStrategy",
+      "type": "absolute<br>|fixed",
+      "default": "absolute",
+      "description": "There are two types of positioning strategies used in the SELECT component, absolute and fixed. The absolute positioning strategy works dynamically with the scrolling of the web page. For example, when we click on the dropdown menu of the component at the end of the page, for the dropdown menu to be displayed it adds another scrollbar dynamically. The fixed positioning strategy does not work dynamically with the scrolling of the web page. For example, when we click on the dropdown menu of the component at the end of the page, the dropdown menu is displayed at the top of the textbox instead of adding another scrollbar."
+    },
+    {
+      "name": "size",
+      "type": "xsmall<br>|small<br>|medium<br>|large",
+      "default": "small",
+      "description": "The term size explicitly means that the dimensions of the text field component can be altered using this property. It allocates a specific length to the text field component while its width remains intact. The user can choose from within the given options to project the component in concrete dimensions."
+    },
+    {
+      "name": "shape",
+      "type": "rectangle<br>|sharp<br>|rounded<br>|leaf<br>|underline",
+      "default": "rectangle",
+      "description": "The select component can be forged into different shapes. Acknowledging the various places in which different shapes come into usage, commonly used shapes are provided by OakUI."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "default": "",
+      "description": "A label entitles the information that has to be chosen from the dropdown to fill in the select component. Each select component must be entitled to a label."
+    },
+    {
+      "name": "tooltip",
+      "type": "string",
+      "default": "",
+      "description": "Tooltip is commonly used to provide specific detail on what has to be selected from the dropdown options in the select component. If the information has to be of a specific sort, then it is mentioned in the tooltip. Henceforth, the user is not confused with the error that may occur if wrong information has been entered."
+    },
+    {
+      "name": "paddingVertical",
+      "type": "0..10",
+      "default": "2",
+      "description": "How much padding should be added to the section on the top and bottom edges. The gap created between the text and the top and bottom of the Sheet is called Padding Vertical. The measurement of the gap can be modified as per the user's requirement."
+    },
+    {
+      "name": "fillColor",
+      "type": "container <br>| surface <br>| float <br>| primary <br>| secondary <br>| tertiary <br>| default <br>| danger <br>| warning <br>| success <br>| info <br>| invert <br>| none",
+      "default": "container",
+      "description": "Fill color of the component. It supports those theme colors that make sense for this role. A variety of colors are available to the user. It fills the selected color in the Sheet and the text color changes accordingly in contrast to the chosen color."
+    },
+    {
+      "name": "backdropIntensity",
+      "type": "0..5",
+      "default": "2",
+      "description": "BackdropIntensity is the translucent property that a page possesses when the Sheet is displayed. Its level of intensity can be modified by the user. An increase in number will give a more intense effect and a decrease in number will result in more transparency to the background."
+    },
+    {
+      "name": "position",
+      "type": "left<br>| right<br>| middle<br>| top<br>| bottom",
+      "default": "bottom",
+      "description": "In the Sheet component, the position defines on which side the Sheet must be displayed on the screen. If the user chooses, bottom, the Sheet will pop up and displayed in the middle of the bottom side of the screen."
+    },
+
+    {
+      "name": "sizeVertical",
+      "type": "'one-third<br>| half<br>| two-third<br>| full<br>| auto",
+      "default": "auto",
+      "description": "The height of the Sheet can be defined using SizeVertical, based on the size chosen by the user, the Sheet will have appeared and it caps the content displayed on the main screen behind it and the rest of the page will have a translucent effect. For example, if the user chooses half, the Sheet will cover half of the page vertically and in the position chosen by the user. While the rest of the page will emit a translucent effect."
+    },
+    {
+      "name": "sizeHorizontal",
+      "type": "'one-third<br>| half<br>| two-third<br>| full<br>| auto",
+      "default": "auto",
+      "description": "The width of the Sheet can be defined using SizeHorizontal, based on the size chosen by the user, the Sheet will have appeared and it caps the content displayed on the main screen behind it and the rest of the page will have a translucent effect. For example, if the user chooses one-third, the Sheet will cover one-third of the page horizontally and in the position chosen by the user. While the rest of the page will emit a translucent effect."
     }
   ],
   "events": []
