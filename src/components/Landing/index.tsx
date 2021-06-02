@@ -32,7 +32,7 @@ const Landing = (props: Props) => {
     <OakPage>
       <div className="landing-page">
         <div className="top-banner">
-          <img src={topBannerLogo} />
+          {/* <img src={topBannerLogo} /> */}
           <h1>Lorem ipsum dolor sit amet, consectetur</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -113,7 +113,7 @@ const Landing = (props: Props) => {
             </p>
           </div>
           <div className="fundamentals">
-            <img src={modular} alt="" />
+            {/* <img src={modular} alt="" /> */}
             <div>
               <h2>Excepteur sint occaecat.</h2>
               <p>
@@ -124,7 +124,7 @@ const Landing = (props: Props) => {
             </div>
           </div>
           <div className="fundamentals">
-            <img src={accessible} alt="" />
+            {/* <img src={accessible} alt="" /> */}
             <div>
               <h2>nostrud exercitation.</h2>
               <p>
@@ -135,7 +135,7 @@ const Landing = (props: Props) => {
             </div>
           </div>
           <div className="fundamentals">
-            <img src={consistent} alt="" />
+            {/* <img src={consistent} alt="" /> */}
             <div>
               <h2>Sed ut perspiciatis.</h2>
               <p>
@@ -147,7 +147,7 @@ const Landing = (props: Props) => {
             </div>
           </div>
           <div className="fundamentals">
-            <img src={scale} alt="" />
+            {/* <img src={scale} alt="" /> */}
             <div>
               <h2>Nemo enim ipsam.</h2>
               <p>
@@ -159,7 +159,7 @@ const Landing = (props: Props) => {
             </div>
           </div>
           <div className="fundamentals">
-            <img src={open} alt="" />
+            {/* <img src={open} alt="" /> */}
             <div>
               <h2>Quis autem vel.</h2>
               <p>
